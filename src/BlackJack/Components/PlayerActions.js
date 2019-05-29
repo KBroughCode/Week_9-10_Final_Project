@@ -6,8 +6,12 @@ const PlayerActions = (props) =>{
 
   return(
     <div className = "action-buttons">
-      <TwistButton />
-      <Start />
+      <TwistButton
+        twistPlayer={props.twistPlayer}
+      />
+      <StartButton
+        shufflePlayer={props.shufflePlayer}
+      />
     </div>
   )
 }

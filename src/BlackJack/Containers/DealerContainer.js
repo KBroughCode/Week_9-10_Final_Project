@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DealerCards from '../components/DealerCards';
+import DealerCards from '../Components/DealerCards';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,12 +10,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   shuffleDealer() {
-    dispatch(() => {
+    dispatch({
       type: 'SHUFFLE_DEALER'
     })
   },
   twistDealer() {
-    dispatch(() => {
+    dispatch({
       type: 'TWIST_DEALER'
     })
   }

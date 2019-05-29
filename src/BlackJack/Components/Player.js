@@ -6,8 +6,13 @@ const Player = (props) =>{
 
   return(
     <div>
-      <PlayerCards />
-      <PlayerActions />
+      <PlayerCards
+        cards={props.cards}
+      />
+      <PlayerActions
+        twistPlayer={props.twistPlayer}
+        shufflePlayer={props.shufflePlayer}
+      />
     </div>
   )
 }

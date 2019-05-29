@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from './Card';
 
-class DealerCards {
+class DealerCards extends Component {
 
   constructor(props) {
     super(props)
@@ -10,8 +10,8 @@ class DealerCards {
   }
 
   componentDidMount() {
-    this.props.shuffleDealer(this.props.deck);
-
+    console.log('cdm runs');
+    this.props.shuffleDealer();
   }
 
   mapCards() {
@@ -30,10 +30,8 @@ class DealerCards {
 
   render(){
     return(
-      <div>
       <div className='dealer-cards'>
         {this.mapCards}
-      </div>
       </div>
     )
   }

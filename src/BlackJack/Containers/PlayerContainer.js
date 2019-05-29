@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PlayerCards from '../components/PlayerCards';
+import Player from '../components/Player';
 
 const mapStateToProps = (state) => {
   return {
@@ -41,4 +41,4 @@ const mapDispatchToProps = (dispatch) => ({
   // }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerCards);
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

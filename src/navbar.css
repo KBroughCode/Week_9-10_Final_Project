@@ -1,0 +1,12 @@
+.navbar li {
+  display: inline;
+  margin: auto 10px auto;
+}
+
+.navbar li a {
+  text-decoration: none;
+}
+
+.App-link {
+  color: #61dafb;
+}

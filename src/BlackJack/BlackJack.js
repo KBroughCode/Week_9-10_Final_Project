@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-
-
+import PlayerContainer from './Containers/PlayerContainer';
+import DealerContainer from './Containers/DealerContainer';
 
 class BlackJack extends Component {
 
@@ -11,8 +11,9 @@ class BlackJack extends Component {
 
   render(){
     return (
-      <div className="App">
-        <h1>CASINO BLACKJACK</h1>
+      <div className="black-jack">
+        <PlayerContainer />
+        <DealerContainer />
       </div>
     );
   }
@@ -35,4 +36,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(BlackJack);

@@ -1,12 +1,15 @@
 import React from 'react';
+import TwistButton from './TwistButton';
+import StartButton from './StartButton';
 
+const PlayerActions = (props) =>{
 
-
-const PlayerActions = (pr) =>{
   return(
-    <TwistButton />
+    <div className = "action-buttons">
+      <TwistButton />
+      <Start />
+    </div>
   )
-
 }
 
 export default PlayerActions;

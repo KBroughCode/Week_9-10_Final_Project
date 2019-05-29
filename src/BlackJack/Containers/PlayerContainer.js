@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CardBox from '../components/CardBox';
+import Player from '../components/Player';
 
 const mapStateToProps = (state) => {
   return {
@@ -34,11 +34,11 @@ const mapDispatchToProps = (dispatch) => ({
       })
     })
   },
-  playerStick() {
-    dispatch({
-      type: 'PLAYER_STICK'
-    })
-  }
+  // playerStick() {
+  //   dispatch({
+  //     type: 'PLAYER_STICK'
+  //   })
+  // }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardBox);
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

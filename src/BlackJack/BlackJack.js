@@ -36,7 +36,6 @@ const mapDispatchToProps = (dispatch) => ({
           })
         })
       })
-    })
   }
 })
 

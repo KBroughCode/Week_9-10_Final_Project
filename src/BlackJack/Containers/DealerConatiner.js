@@ -1,39 +1,24 @@
 import { connect } from 'react-redux';
-import ResultBox from '../components/ResultBox';
+import DealerCards from '../components/DealerCards';
 
 const mapStateToProps = (state) => {
   return {
     deck: state.deck,
-    player: state.shuffle,
     cards: state.dealer
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  shuffleDealer(deck) {
+  shuffleDealer() {
     dispatch(() => {
-      fetch(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=2`)
-      .then(res => res.json())
-      .then(cards => {
-        dispatch({
-          type: 'SHUFFLE_DEALER',
-          cards
-        })
-      })
+      type: 'SHUFFLE_DEALER'
     })
   },
-  twistDealer(deck) {
+  twistDealer() {
     dispatch(() => {
-      fetch(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`)
-      .then(res => res.json())
-      .then(card => {
-        dispatch({
-          type: 'TWIST_DEALER',
-          card
-        })
-      })
+      type: 'TWIST_DEALER'
     })
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResultBox);
+export default connect(mapStateToProps, mapDispatchToProps)(DealerCards);

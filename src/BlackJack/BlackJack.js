@@ -26,9 +26,14 @@ const mapDispatchToProps = (dispatch) => ({
       fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6`)
       .then(res => res.json())
       .then(deck => {
-        dispatch({
-          type: 'GET_DECK',
-          deck
+        fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=312`)
+        })
+        .then(res => res.json())
+        .then(deck => {
+          dispatch({
+            type: 'GET_DECK',
+            deck
+          })
         })
       })
     })

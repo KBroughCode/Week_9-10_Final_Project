@@ -33,6 +33,7 @@ class BlackJack extends Component {
             <PlayerContainer />
             <WinnerDisplay
               winner= {this.props.winner}
+              resetDefault= {this.props.resetDefault}
             />
           </div>
         );
@@ -77,6 +78,11 @@ const mapDispatchToProps = (dispatch) => ({
         })
         })
       })
+  },
+  resetDefault() {
+    dispatch({
+      type: 'RETURN_DEFAULT'
+    })
   }
 })
 

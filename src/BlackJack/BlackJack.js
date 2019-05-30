@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import PlayerContainer from "./Containers/PlayerContainer";
 import DealerContainer from "./Containers/DealerContainer";

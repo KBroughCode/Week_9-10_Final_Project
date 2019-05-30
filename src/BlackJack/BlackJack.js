@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { connect } from "react-redux";
-=======
 import { connect } from 'react-redux';
 import PlayerContainer from './Containers/PlayerContainer';
 import DealerContainer from './Containers/DealerContainer';
->>>>>>> develop
 
 class BlackJack extends Component {
+
   componentDidMount() {
     this.props.getDeck();
   }
 
-  render() {
+  render(){
     return (
       <div className="black-jack">
         <PlayerContainer />
@@ -20,22 +17,13 @@ class BlackJack extends Component {
       </div>
     );
   }
+
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   getDeck() {
     dispatch(() => {
       fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6`)
-<<<<<<< HEAD
-        .then(res => res.json())
-        .then(deck => {
-          dispatch({
-            type: "GET_DECK",
-            deck
-          });
-        });
-    });
-=======
       .then(res => res.json())
       .then(deck => {
         console.log(deck.deck_id);
@@ -50,15 +38,8 @@ const mapDispatchToProps = dispatch => ({
         })
         })
       })
->>>>>>> develop
   }
-});
+})
 
-<<<<<<< HEAD
-export default connect(
-  null,
-  mapDispatchToProps
-)(BlackJack);
-=======
+
 export default connect(null, mapDispatchToProps)(BlackJack);
->>>>>>> develop

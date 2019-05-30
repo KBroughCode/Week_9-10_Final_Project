@@ -9,6 +9,7 @@ const PlayerCard = (props) =>{
     code = {playerCard.code}
     value = {playerCard.value}
     suit = {playerCard.suit}
+    key= {i}
     />
   })
 

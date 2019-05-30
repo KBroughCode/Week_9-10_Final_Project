@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import Card from './Card';
 import dealerHand from '../Logic/DealerLogic';
 import './dealerCards.css'
@@ -8,6 +9,7 @@ class DealerCards extends Component {
   constructor(props) {
     super(props)
     this.mapCards = this.mapCards.bind(this)
+    this.handleErrorClick = this.handleErrorClick.bind(this)
   }
 
   componentDidMount(){
@@ -37,6 +39,10 @@ class DealerCards extends Component {
     })
   }
 
+  handleErrorClick() {
+    this.props.resetDefault();
+  }
+
   render(){
     if(this.props.cards.length > 0){
       return(
@@ -46,7 +52,7 @@ class DealerCards extends Component {
       )
     } else {
         return(
-        <h1>Dealing...</h1>
+        <Link to="/Blackjack" onClick={this.handleErrorClick}>Whoops! The Dealer dropped his cards! Click here to get him to pick them up</Link>
       )
     }
   }

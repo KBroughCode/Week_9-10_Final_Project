@@ -1,4 +1,4 @@
-const cardReducer = (state = {deck: [], player: [], dealer: [], winner: {}}, action) => {
+const cardReducer = (state = {deck: [], player: [], dealer: [], winner: null}, action) => {
   switch (action.type) {
     case 'GET_DECK':
       const newState = {...state, deck: [...action.deck.cards]}

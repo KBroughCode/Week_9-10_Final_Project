@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PlayerContainer from './Containers/PlayerContainer';
 import DealerContainer from './Containers/DealerContainer';
 import StartBlackjackButton from './Components/StartBlackjackButton';
+import WinnerDisplay from './Components/WinnerDisplay';
 
 class BlackJack extends Component {
   constructor(props) {
@@ -24,12 +25,25 @@ class BlackJack extends Component {
 
   render(){
     if(this.state.reveal){
-      return (
-        <div className="black-jack">
-          <DealerContainer />
-          <PlayerContainer />
-        </div>
-      );
+      if(this.props.winner){
+        console.log(this.props.winner);
+        return (
+          <div className="black-jack">
+            <DealerContainer />
+            <PlayerContainer />
+            <WinnerDisplay
+              winner= {this.props.winner}
+            />
+          </div>
+        );
+      } else{
+        return(
+          <div className="black-jack">
+            <DealerContainer />
+            <PlayerContainer />
+          </div>
+        )
+      }
     } else{
       return(
         <div className="start-button">
@@ -43,7 +57,7 @@ class BlackJack extends Component {
 
 const mapStateToProps = (state) => {
   return{
-
+    winner: state.winner
   }
 }
 
@@ -67,4 +81,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(null, mapDispatchToProps)(BlackJack);
+export default connect(mapStateToProps, mapDispatchToProps)(BlackJack);

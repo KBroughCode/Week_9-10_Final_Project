@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
-import 
+import dealerHand from '../Logic/DealerLogic';
 
 class DealerCards extends Component {
 
@@ -11,6 +11,9 @@ class DealerCards extends Component {
 
   componentDidMount(){
     this.props.shuffleDealer()
+    while (!dealerHand(this.props.cards).stick) {
+      this.props.twistDealer()
+    }
 
   }
 

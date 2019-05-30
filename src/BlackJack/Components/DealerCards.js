@@ -5,13 +5,7 @@ class DealerCards extends Component {
 
   constructor(props) {
     super(props)
-
     this.mapCards = this.mapCards.bind(this)
-  }
-
-  componentDidMount() {
-    console.log('cdm runs');
-    this.props.shuffleDealer();
   }
 
   mapCards() {
@@ -31,7 +25,7 @@ class DealerCards extends Component {
   render(){
     return(
       <div className='dealer-cards'>
-        {this.mapCards}
+        {this.mapCards()}
       </div>
     )
   }

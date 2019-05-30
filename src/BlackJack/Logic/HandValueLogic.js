@@ -14,7 +14,7 @@ const cardValue = require('./cardValueLogic');
    });
    total = removeDuplicates(total);
    total = removeOver21(total);
-   return  total
+   return total
  };
 
  const removeDuplicates=(array) => {
@@ -31,6 +31,6 @@ const cardValue = require('./cardValueLogic');
    return newArray;
  }
 
+// console.log( evaluateCards(['QUEEN','KING']) );
 
-
- console.log( evaluateCards(['QUEEN','KING']) );
+module.exports = evaluateCards;

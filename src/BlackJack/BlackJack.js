@@ -41,6 +41,12 @@ class BlackJack extends Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return{
+
+  }
+}
+
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
     dispatch(() => {

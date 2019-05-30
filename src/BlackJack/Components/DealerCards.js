@@ -16,14 +16,11 @@ class DealerCards extends Component {
 
   componentDidUpdate(prevProps){
     if(this.props.cards !== prevProps.cards) {
-      console.log('cdu runs');
       while (!dealerHand(this.props.cards).stick) {
         this.props.twistDealer();
         break;
       }
     }
-    console.log();
-    console.log(dealerHand(this.props.cards));
   }
 
   mapCards() {

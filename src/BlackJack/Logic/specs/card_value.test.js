@@ -10,4 +10,9 @@ describe('a card', () => {
     expect(cardValue.QUEEN).toBe(10);
     expect(cardValue.KING).toBe(10);
   })
+  test(`numbered cards should receive the correct number`,() => {
+    expect(cardValue['5']).toBe(5);
+    expect(typeof(cardValue.QUEEN)).toBe('number');
+  })
+
 })

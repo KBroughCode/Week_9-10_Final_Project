@@ -1,11 +1,11 @@
-import React from 'react';
-import BlackJack from './BlackJack/BlackJack.js'
+import React from "react";
+
+// import App from "./App";
 
 function Main() {
   return (
     <>
-    <h1>Casino-Royale</h1>
-    <BlackJack />
+      <h1>Casino-Royale Codeclan Style</h1>
     </>
   );
 }

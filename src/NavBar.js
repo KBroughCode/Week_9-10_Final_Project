@@ -4,13 +4,13 @@ import "./navbar.css";
 
 const Navbar = () => (
 
-  <ul id= "nav">
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/Blackjack">Blackjack</Link>
-    </li>
+  <ul className='navbar'>
+    <div className='link one'>
+      <Link className='link' to="/">Home</Link>
+    </div>
+    <div className='link two'>
+      <Link className='link' to="/Blackjack">Blackjack</Link>
+    </div>
   </ul>
 
 

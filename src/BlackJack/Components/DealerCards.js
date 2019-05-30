@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import 
 
 class DealerCards extends Component {
 
@@ -8,8 +9,13 @@ class DealerCards extends Component {
     this.mapCards = this.mapCards.bind(this)
   }
 
+  componentDidMount(){
+    this.props.shuffleDealer()
+
+  }
+
   mapCards() {
-    this.props.cards.map((element, index) => {
+    return this.props.cards.map((element, index) => {
       return(
         <Card
           key={index}
@@ -23,14 +29,19 @@ class DealerCards extends Component {
   }
 
   render(){
-    return(
-      <div>
-        <div className='dealer-cards'>
-          {this.mapCards()}
-        </div>
-      </div>
-    )
+    if(this.props.cards.length > 0){
+      return(
+          <div className='dealer-cards'>
+            {this.mapCards()}
+          </div>
+      )
+    } else {
+        return(
+        <h1>Dealing...</h1>
+      )
+    }
   }
+
 }
 
 export default DealerCards;

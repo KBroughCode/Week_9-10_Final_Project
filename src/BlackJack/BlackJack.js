@@ -26,8 +26,8 @@ class BlackJack extends Component {
     if(this.state.reveal){
       return (
         <div className="black-jack">
-          <PlayerContainer />
           <DealerContainer />
+          <PlayerContainer />
         </div>
       );
     } else{
@@ -47,11 +47,9 @@ const mapDispatchToProps = (dispatch) => ({
       fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6`)
       .then(res => res.json())
       .then(deck => {
-        console.log(deck.deck_id);
         fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=312`)
         .then(res => res.json())
         .then(deck => {
-          console.log("AFTER SECOND API", deck);
           dispatch({
             type: 'GET_DECK',
             deck

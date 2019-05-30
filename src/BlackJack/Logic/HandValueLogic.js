@@ -31,6 +31,4 @@ const cardValue = require('./cardValueLogic');
    return newArray;
  }
 
-// console.log( evaluateCards(['QUEEN','KING']) );
-
 module.exports = evaluateCards;

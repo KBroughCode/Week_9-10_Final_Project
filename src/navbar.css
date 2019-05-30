@@ -1,17 +1,30 @@
-#nav {
-width:750px;
-margin:0 auto;
-list-style:none;
+.navbar{
+  color: #A4243B;
+  background-color: #D8C99B;
+
+  display:grid;
+  grid-template-columns: 0.2fr 0.2fr;
+  grid-template-rows: 30px;
+  grid-template-areas:
+  " button-1 button-2"
 }
-#nav li {
-float:left;
+
+.one{
+  grid-area: button-1;
 }
-#nav a {
-display:block;
-text-align:center;
-width:150px; /* fixed width */
-text-decoration:none;
+.two{
+  grid-area: button-2;
 }
-#App-link {
-  color: #61dafb;
+
+.link{
+  margin-left: 20px;
+  text-align: center;
+  border-width: thin;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+  color: #A4243B;
+}
+.link:visited{
+  margin-left: 20px;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+  color: #A4243B;
 }

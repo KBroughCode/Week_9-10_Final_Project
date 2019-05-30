@@ -1,4 +1,4 @@
-const cardReducer = (state = {deck: [], player: [], dealer: []}, action) => {
+const cardReducer = (state = {deck: [], player: [], dealer: [], winner: null}, action) => {
   switch (action.type) {
     case 'GET_DECK':
       const newState = {...state, deck: [...action.deck.cards]}
@@ -31,6 +31,12 @@ const cardReducer = (state = {deck: [], player: [], dealer: []}, action) => {
         player: [...state.player, ...state.deck.slice(-1)]
       }
       return newPlayerHand;
+    case 'WINNER_DETERMINED':
+      const winnerState = {...state, winner: action.winner}
+      return winnerState
+    case 'RETURN DEFAULT':
+      const defaultState = {deck: [], player: [], dealer: [], winner: null}
+      return defaultState
     default:
       return state
   }

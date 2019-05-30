@@ -12,6 +12,9 @@ const Player = (props) =>{
       <PlayerActions
         twistPlayer={props.twistPlayer}
         shufflePlayer={props.shufflePlayer}
+        declareWinner={props.declareWinner}
+        playerHand={props.cards}
+        dealerHand={props.dealer}
       />
     </div>
   )

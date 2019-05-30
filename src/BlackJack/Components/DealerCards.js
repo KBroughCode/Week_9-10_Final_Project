@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import dealerHand from '../Logic/DealerLogic';
+import './dealerCards.css'
 
 class DealerCards extends Component {
 
   constructor(props) {
     super(props)
-
     this.mapCards = this.mapCards.bind(this)
   }
 
-  componentDidMount() {
-    console.log('cdm runs');
-    this.props.shuffleDealer();
+  componentDidMount(){
+    this.props.shuffleDealer()
+  }
+
+  componentDidUpdate(prevProps){
+    if(this.props.cards !== prevProps.cards) {
+      while (!dealerHand(this.props.cards).stick) {
+        this.props.twistDealer();
+        break;
+      }
+    }
   }
 
   mapCards() {
-    this.props.cards.map((element, index) => {
+    return this.props.cards.map((element, index) => {
       return(
         <Card
           key={index}
@@ -29,12 +38,19 @@ class DealerCards extends Component {
   }
 
   render(){
-    return(
-      <div className='dealer-cards'>
-        {this.mapCards}
-      </div>
-    )
+    if(this.props.cards.length > 0){
+      return(
+          <div className='dealer-cards'>
+            {this.mapCards()}
+          </div>
+      )
+    } else {
+        return(
+        <h1>Dealing...</h1>
+      )
+    }
   }
+
 }
 
 export default DealerCards;

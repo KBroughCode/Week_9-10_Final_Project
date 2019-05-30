@@ -4,7 +4,8 @@ import Player from '../Components/Player';
 const mapStateToProps = (state) => {
   return {
     deck: state.deck,
-    cards: state.player
+    cards: state.player,
+    dealer: state.dealer
   };
 };
 
@@ -17,6 +18,12 @@ const mapDispatchToProps = (dispatch) => ({
   twistPlayer() {
     dispatch({
       type: 'TWIST_PLAYER'
+    })
+  },
+  declareWinner(winner) {
+    dispatch({
+      type:'WINNER_DETERMINED',
+      winner
     })
   }
 })

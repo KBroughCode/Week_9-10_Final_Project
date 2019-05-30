@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route , Switch} from "react-router-dom";
 import { Component } from "react";
 import React from "react";
 import Navbar from "./NavBar";
+import "./navbar.css"
 
 import BlackJack from "./BlackJack/BlackJack";
 import Main from "./main";

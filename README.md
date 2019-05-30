@@ -1,3 +1,25 @@
+Project Specific Information :
+<==============================>
+To form Mongo "casino" database: :
+In 2 separate command terminal sessions :
+
+Terminal 1 : MONGODB
+
+Terminal 2 : MONGO
+
+mongo < database.js at the command line.  This is stored in the src/db directory
+
+2 Collections created :
+scores
+hallOfFame
+
+name and score are the only attributes
+
+End of Project Specific Information :
+<=====================================>
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

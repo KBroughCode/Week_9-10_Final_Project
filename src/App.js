@@ -1,9 +1,24 @@
-import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Component } from "react";
+import React from "react";
+import Navbar from "./NavBar";
 
-function App() {
-  return (
-    <h1>Casino-Royale</h1>
-  );
+import BlackJack from "./BlackJack/BlackJack";
+import Main from "./main";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/BlackJack" component={BlackJack} />
+          </Switch>
+        </React.Fragment>
+      </Router>
+    );
+  }
 }
-
 export default App;

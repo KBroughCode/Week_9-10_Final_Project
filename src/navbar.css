@@ -1,0 +1,19 @@
+#nav {
+  width: 750px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+#navbar li {
+  display: inline;
+  margin: auto 10px auto;
+  float: left;
+}
+
+#navbar li a {
+  text-decoration: none;
+}
+
+#App-link {
+  color: #61dafb;
+}

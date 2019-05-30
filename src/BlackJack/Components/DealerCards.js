@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import dealerHand from '../Logic/DealerLogic';
+import './dealerCards.css'
 
 class DealerCards extends Component {
 
@@ -11,10 +12,14 @@ class DealerCards extends Component {
 
   componentDidMount(){
     this.props.shuffleDealer()
-    console.log(dealerHand(this.props.cards));
-    while (!dealerHand(this.props.cards).stick) {
-      console.log('while loop activated', dealerHand(this.props.cards));
-      this.props.twistDealer()
+  }
+
+  componentDidUpdate(prevProps){
+    if(this.props.cards !== prevProps.cards) {
+      while (!dealerHand(this.props.cards).stick) {
+        this.props.twistDealer();
+        break;
+      }
     }
   }
 

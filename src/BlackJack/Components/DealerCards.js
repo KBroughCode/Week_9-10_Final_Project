@@ -43,12 +43,24 @@ class DealerCards extends Component {
     this.props.resetDefault();
   }
 
+  displayDealerValue() {
+    const dealerValue = dealerHand(this.props.cards).value;
+    if(dealerValue){
+      return `The Dealer's total is ${dealerValue}`
+    } return `The Dealer has gone bust`
+  }
+
   render(){
     if(this.props.cards.length > 0){
       return(
+        <div>
           <div className='dealer-cards'>
             {this.mapCards()}
           </div>
+          <div className='dealer-display-value'>
+            {this.displayDealerValue()}
+          </div>
+        </div>
       )
     } else {
         return(

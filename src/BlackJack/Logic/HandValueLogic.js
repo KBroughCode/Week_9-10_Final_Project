@@ -1,13 +1,13 @@
-const cardValue = require('./cardValueLogic');
+const cardValue = require('./CardValueLogic');
 
  const evaluateCards=(cardArray) => {
    let total=[0];
    cardArray.forEach((card) => {
      total.forEach((element,i) => {
-       if(card ==='ACE'){
+       if(card.value ==='ACE'){
          total[i] = [element+1,element+11];
        }else{
-         total[i] += cardValue[card];
+         total[i] += cardValue[card.value];
        };
      });
      total = total.flat();

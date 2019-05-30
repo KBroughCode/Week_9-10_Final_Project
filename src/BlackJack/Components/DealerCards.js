@@ -11,10 +11,11 @@ class DealerCards extends Component {
 
   componentDidMount(){
     this.props.shuffleDealer()
+    console.log(dealerHand(this.props.cards));
     while (!dealerHand(this.props.cards).stick) {
+      console.log('while loop activated', dealerHand(this.props.cards));
       this.props.twistDealer()
     }
-
   }
 
   mapCards() {

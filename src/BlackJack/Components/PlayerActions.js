@@ -1,6 +1,7 @@
 import React from 'react';
 import TwistButton from './TwistButton';
 import StartButton from './StartButton';
+import StickButton from './StickButton';
 
 const PlayerActions = (props) =>{
 
@@ -11,6 +12,11 @@ const PlayerActions = (props) =>{
       />
       <StartButton
         shufflePlayer={props.shufflePlayer}
+      />
+      <StickButton
+        declareWinner={props.declareWinner}
+        playerHand={props.cards}
+        dealerHand={props.dealer}
       />
     </div>
   )

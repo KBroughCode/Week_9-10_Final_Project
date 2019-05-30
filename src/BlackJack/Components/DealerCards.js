@@ -24,8 +24,10 @@ class DealerCards extends Component {
 
   render(){
     return(
-      <div className='dealer-cards'>
-        {this.mapCards()}
+      <div>
+        <div className='dealer-cards'>
+          {this.mapCards()}
+        </div>
       </div>
     )
   }

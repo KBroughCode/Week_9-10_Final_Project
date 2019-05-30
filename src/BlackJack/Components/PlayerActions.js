@@ -7,11 +7,11 @@ const PlayerActions = (props) =>{
 
   return(
     <div className = "action-buttons">
+      <StartButton
+      shufflePlayer={props.shufflePlayer}
+      />
       <TwistButton
         twistPlayer={props.twistPlayer}
-      />
-      <StartButton
-        shufflePlayer={props.shufflePlayer}
       />
       <StickButton
         declareWinner={props.declareWinner}

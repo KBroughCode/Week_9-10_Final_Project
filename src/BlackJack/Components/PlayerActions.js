@@ -15,8 +15,8 @@ const PlayerActions = (props) =>{
       />
       <StickButton
         declareWinner={props.declareWinner}
-        playerHand={props.cards}
-        dealerHand={props.dealer}
+        playerHand={props.playerHand}
+        dealerHand={props.dealerHand}
       />
     </div>
   )

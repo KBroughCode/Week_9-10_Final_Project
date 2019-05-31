@@ -5,7 +5,8 @@ const mapStateToProps = (state) => {
   return {
     deck: state.deck,
     cards: state.player,
-    dealer: state.dealer
+    dealer: state.dealer,
+    winner: state.winner
   };
 };
 

@@ -8,6 +8,7 @@ class DealerCards extends Component {
   constructor(props) {
     super(props)
     this.mapCards = this.mapCards.bind(this)
+    this.handleErrorClick = this.handleErrorClick.bind(this)
   }
 
   componentDidMount(){
@@ -37,16 +38,32 @@ class DealerCards extends Component {
     })
   }
 
+  handleErrorClick() {
+    this.props.shuffleDealer();
+  }
+
+  displayDealerValue() {
+    const dealerValue = dealerHand(this.props.cards).value;
+    if(dealerValue){
+      return `The Dealer's total is ${dealerValue}`
+    } return `The Dealer has gone bust`
+  }
+
   render(){
     if(this.props.cards.length > 0){
       return(
+        <div>
           <div className='dealer-cards'>
             {this.mapCards()}
           </div>
+          <div className='dealer-display-value'>
+            {this.displayDealerValue()}
+          </div>
+        </div>
       )
     } else {
         return(
-        <h1>Dealing...</h1>
+        <div onClick={this.handleErrorClick}>Whoops! The Dealer dropped his cards! Click here to get him to pick them up</div>
       )
     }
   }

@@ -18,6 +18,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'TWIST_DEALER'
     })
+  },
+  resetDefault() {
+    dispatch({
+      type: 'RETURN_DEFAULT'
+    })
   }
 })
 

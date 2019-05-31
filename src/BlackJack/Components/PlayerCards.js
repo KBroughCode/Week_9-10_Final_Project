@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import './playerCards.css';
-import handValue from '../Logic/WinLogic'
+import evaluateCards from '../Logic/HandValueLogic'
 
 const PlayerCard = (props) =>{
 
@@ -15,17 +15,29 @@ const PlayerCard = (props) =>{
     />
   })
 
-  return(
-    <div>
-    <div className = "players-cards">
+  const playerTotal = (evaluateCards(props.cards))
+
+  const displayValue =() => {
+    switch (playerTotal.length) {
+      case 0:
+        return`You have gone bust`
+      case 1:
+        return `Current total: ${playerTotal[0]}`
+      case 2:
+        return `Current totals: ${playerTotal[0]} or ${playerTotal[1]}`
+      default:
+        return `UH OH SPAGHETTI OHs`
+    }
+  }
+
+    return(
+      <div>
+      <div className = 'players-cards'>
       { playerCards }
-
+      </div>
+      <div className = 'player-total'>{displayValue()} </div>
     </div>
-    <h1> Current Total: {handValue} </h1>
-    </div>
-
-  )
-}
-
+    )
+  }
 
 export default PlayerCard

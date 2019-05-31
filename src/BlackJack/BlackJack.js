@@ -20,19 +20,22 @@ class BlackJack extends Component {
   }
 
   handleGameStart() {
-    this.setState({reveal: true})
+    this.setState({reveal: !this.state.reveal})
   }
 
   render(){
     if(this.state.reveal){
       if(this.props.winner){
-        console.log(this.props.winner);
         return (
           <div className="black-jack">
             <DealerContainer />
-            <PlayerContainer />
+            <PlayerContainer
+            />
             <WinnerDisplay
               winner= {this.props.winner}
+              resetDefault= {this.props.resetDefault}
+              handleGameStart= {this.handleGameStart}
+              getDeck= {this.props.getDeck}
             />
           </div>
         );
@@ -77,6 +80,11 @@ const mapDispatchToProps = (dispatch) => ({
         })
         })
       })
+  },
+  resetDefault() {
+    dispatch({
+      type: 'RETURN_DEFAULT'
+    })
   }
 })
 

@@ -34,7 +34,7 @@ const cardReducer = (state = {deck: [], player: [], dealer: [], winner: null}, a
     case 'WINNER_DETERMINED':
       const winnerState = {...state, winner: action.winner}
       return winnerState
-    case 'RETURN DEFAULT':
+    case 'RETURN_DEFAULT':
       const defaultState = {deck: [], player: [], dealer: [], winner: null}
       return defaultState
     default:

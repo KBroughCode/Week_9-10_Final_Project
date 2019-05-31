@@ -2,8 +2,6 @@ const dealerHand = require('./DealerLogic');
 const evaluateCards = require('./HandValueLogic')
 
 
-
-
 const checkWinner = (playerArray, dealerArray) => {
   const dealerHandValue = dealerHand(dealerArray).value
   let handValue=null;

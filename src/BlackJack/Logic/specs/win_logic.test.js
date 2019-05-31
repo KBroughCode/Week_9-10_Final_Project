@@ -49,5 +49,4 @@ describe('a hand of cards', () => {
   test('dealer wins when both go bust', () => {
     expect(checkWinner([fiveD,eightC,eightC,eightC],[fiveD,eightC,eightC,eightC]).winner).toEqual('Dealer');
   });
-
 })

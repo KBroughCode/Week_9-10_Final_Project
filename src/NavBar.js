@@ -5,10 +5,10 @@ import "./navbar.css";
 const Navbar = () => (
 
   <ul className='navbar'>
-    <div className='link one'>
+    <div className='link'>
       <Link className='link' to="/">Home</Link>
     </div>
-    <div className='link two'>
+    <div className='link'>
       <Link className='link' to="/Blackjack">Blackjack</Link>
     </div>
   </ul>

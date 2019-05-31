@@ -4,7 +4,7 @@ import './leaderboard.css';
 const Leaderboard = (props) => {
   return(
     <div className="leaderboard-container">
-      <div classname="leaderboard-header">Leaderboard</div>
+      <div className="leaderboard-header">Leaderboard</div>
       <div className="leaderboard-item">JR77: 150</div>
       <div className="leaderboard-item">IainHeslop55: 132</div>
       <div className="leaderboard-item">Videl: 131</div>

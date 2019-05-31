@@ -26,7 +26,6 @@ class BlackJack extends Component {
   render(){
     if(this.state.reveal){
       if(this.props.winner){
-        console.log(this.props.winner);
         return (
           <div className="black-jack">
             <DealerContainer />

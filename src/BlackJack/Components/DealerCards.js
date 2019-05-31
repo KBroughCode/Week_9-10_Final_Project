@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import Card from './Card';
 import dealerHand from '../Logic/DealerLogic';
 import './dealerCards.css'

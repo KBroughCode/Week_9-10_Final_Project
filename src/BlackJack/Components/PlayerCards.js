@@ -17,31 +17,27 @@ const PlayerCard = (props) =>{
 
   const playerTotal = (evaluateCards(props.cards))
 
+  const displayValue =() => {
+    switch (playerTotal.length) {
+      case 0:
+        return`You have gone bust`
+      case 1:
+        return `Current total: ${playerTotal[0]}`
+      case 2:
+        return `Current totals: ${playerTotal[0]} or ${playerTotal[1]}`
+      default:
+        return `UH OH SPAGHETTI OHs`
+    }
+  }
 
-  if(playerTotal.length === 0){
-    // console.log('gone bust', playerTotal);
-    return`You have gone bust ${props.cards}`
-  }else{
-    // console.log('not bust', playerTotal);
-    const displayValue = playerTotal.reduce((acc, ele) => {
-      return `${acc} or ${ele}`
-  },'')
-
-
-
-  console.log(displayValue);
     return(
       <div>
-      <div className = "players-cards">
+      <div className = 'players-cards'>
       { playerCards }
       </div>
-      <h2> Current Total: { displayValue } </h2>
+      <div className = 'player-total'>{displayValue()} </div>
     </div>
     )
   }
-}
-
-
-
 
 export default PlayerCard

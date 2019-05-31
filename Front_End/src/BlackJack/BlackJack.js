@@ -26,7 +26,6 @@ class BlackJack extends Component {
   render(){
     if(this.state.reveal){
       if(this.props.winner){
-        console.log(this.props.winner);
         return (
           <div className="black-jack">
             <DealerContainer />
@@ -61,7 +60,7 @@ class BlackJack extends Component {
 
 const mapStateToProps = (state) => {
   return{
-    winner: state.deck.winner
+    winner: state.winner
   }
 }
 

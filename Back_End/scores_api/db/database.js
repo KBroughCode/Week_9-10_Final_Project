@@ -11,9 +11,3 @@ db.scores.insertMany([
     score:18
   }
 ]);
-db.hallOfFame.insertOne(
-  {
-    name: "Janet",
-    score: 12
-  }
-);

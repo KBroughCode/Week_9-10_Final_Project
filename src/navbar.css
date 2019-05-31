@@ -22,9 +22,11 @@
   border-width: thin;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
   color: #A4243B;
+  text-decoration: none;
 }
 .link:visited{
   margin-left: 20px;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
   color: #A4243B;
+  text-decoration: none;
 }

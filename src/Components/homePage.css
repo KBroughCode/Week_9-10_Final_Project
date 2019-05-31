@@ -1,0 +1,25 @@
+.home-page-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.home-page-card{
+  background-color: #A4243B;
+  color: #D8C99B;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px;
+  font-size: 2em;
+}
+
+.home-page-link{
+  color: #D8C99B;
+  text-decoration: none;
+}
+
+.home-page-link:visited{
+  color: #D8C99B;
+  text-decoration: none;
+}

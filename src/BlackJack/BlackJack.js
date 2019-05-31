@@ -20,7 +20,7 @@ class BlackJack extends Component {
   }
 
   handleGameStart() {
-    this.setState({reveal: true})
+    this.setState({reveal: !this.state.reveal})
   }
 
   render(){
@@ -30,10 +30,13 @@ class BlackJack extends Component {
         return (
           <div className="black-jack">
             <DealerContainer />
-            <PlayerContainer />
+            <PlayerContainer
+            />
             <WinnerDisplay
               winner= {this.props.winner}
               resetDefault= {this.props.resetDefault}
+              handleGameStart= {this.handleGameStart}
+              getDeck= {this.props.getDeck}
             />
           </div>
         );

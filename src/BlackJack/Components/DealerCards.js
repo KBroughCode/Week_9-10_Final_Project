@@ -40,7 +40,7 @@ class DealerCards extends Component {
   }
 
   handleErrorClick() {
-    this.props.resetDefault();
+    this.props.shuffleDealer();
   }
 
   displayDealerValue() {
@@ -64,7 +64,7 @@ class DealerCards extends Component {
       )
     } else {
         return(
-        <Link to="/Blackjack" onClick={this.handleErrorClick}>Whoops! The Dealer dropped his cards! Click here to get him to pick them up</Link>
+        <div onClick={this.handleErrorClick}>Whoops! The Dealer dropped his cards! Click here to get him to pick them up</div>
       )
     }
   }

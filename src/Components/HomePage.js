@@ -8,13 +8,20 @@ const HomePage = (props) => {
     <div>
       <div className="home-page-container">
         <div className="home-page-card">
-          <Link className='home-page-link' to="/Blackjack">Blackjack</Link>
+          <div className = "back-of-card"></div>
+          <div className = "front-of-card">
+            <Link className='home-page-link' to="/Blackjack">Blackjack</Link>
+          </div>
         </div>
         <div className="home-page-card">
+        <span>
           <div>Snap</div>
+          </span>
         </div>
         <div className="home-page-card">
+        <span>
           <div>Old Maid</div>
+          </span>
         </div>
       </div>
       <div>

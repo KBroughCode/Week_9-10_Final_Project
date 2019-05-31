@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Components/Card.js';
-import {render, fireEvent, cleanup} from 'react-testing-library';
+import {render, fireEvent, cleanup} from '@testing-library/react';
 
 afterEach(cleanup)
 
@@ -13,5 +13,15 @@ describe('Card render test', () => {
       value= "10"
       />)
       expect(getByLabelText('image')).toBeTruthy();
+  })
+
+  it('should display the card details', () => {
+    const {getByText} = render(<Card
+      code= "0D"
+      image= "https://deckofcardsapi.com/static/img/0D.png"
+      suit= "DIAMONDS"
+      value= "10"
+      />)
+      expect(getByText('10 of DIAMONDS')).toBeTruthy();
   })
 })

@@ -37,6 +37,9 @@ const HomePage = (props) => {
           </div>
         </div>
       <div>
+        <CashIn />
+      </div>
+      <div>
         <Leaderboard
           leaders= {props.leaders}
         />

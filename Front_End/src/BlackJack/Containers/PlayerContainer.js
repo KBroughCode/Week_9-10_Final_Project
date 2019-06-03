@@ -3,10 +3,10 @@ import Player from '../Components/Player';
 
 const mapStateToProps = (state) => {
   return {
-    deck: state.deck.deck,
-    cards: state.deck.player,
-    dealer: state.deck.dealer,
-    winner: state.deck.winner
+    deck: state.blackjack.deck,
+    cards: state.blackjack.player,
+    dealer: state.blackjack.dealer,
+    winner: state.blackjack.winner
   };
 };
 

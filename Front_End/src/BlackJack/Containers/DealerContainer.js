@@ -3,8 +3,9 @@ import DealerCards from '../Components/DealerCards';
 
 const mapStateToProps = (state) => {
   return {
-    deck: state.deck.deck,
-    cards: state.deck.dealer
+
+    deck: state.blackjack.deck,
+    cards: state.blackjack.dealer
   };
 };
 

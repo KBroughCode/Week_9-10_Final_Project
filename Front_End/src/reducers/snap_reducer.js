@@ -1,41 +1,17 @@
-const snapReducer = (state = {deck: [], player: [], dealer: [], winner: null}, action) => {
+const snapReducer = (state = {deck: [], pile: []}, action) => {
   switch (action.type) {
-    case 'GET_DECK':
+    case 'GET_SNAP_DECK':
       const newState = {...state, deck: [...action.deck.cards]}
       return newState
-    case 'SHUFFLE_DEALER':
-      const dealerHand = {
-        ...state,
-        deck: state.deck.slice(0, state.deck.length - 2),
-        dealer: state.deck.slice(-2)
-      }
-      return dealerHand;
-    case 'TWIST_DEALER':
-      const newDealerHand = {
+    case 'ADD_TO_PILE':
+      const moveState = {
         ...state,
         deck: state.deck.slice(0, state.deck.length - 1),
-        dealer: [...state.dealer, ...state.deck.slice(-1)]
+        pile: state.deck.slice(-1)
       }
-      return newDealerHand;
-    case 'SHUFFLE_PLAYER':
-      const playerHand = {
-        ...state,
-        deck: state.deck.slice(0, state.deck.length - 2),
-        player: state.deck.slice(-2)
-      }
-      return playerHand;
-    case 'TWIST_PLAYER':
-      const newPlayerHand = {
-        ...state,
-        deck: state.deck.slice(0, state.deck.length - 1),
-        player: [...state.player, ...state.deck.slice(-1)]
-      }
-      return newPlayerHand;
-    case 'WINNER_DETERMINED':
-      const winnerState = {...state, winner: action.winner}
-      return winnerState
-    case 'RETURN_DEFAULT':
-      const defaultState = {deck: [], player: [], dealer: [], winner: null}
+      return moveState
+    case 'RETURN_SNAP_DEFAULT':
+      const defaultState = {deck: [], pile: []}
       return defaultState
     default:
       return state

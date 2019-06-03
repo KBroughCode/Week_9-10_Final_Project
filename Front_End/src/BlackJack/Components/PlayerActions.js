@@ -30,8 +30,6 @@ const PlayerActions = (props) =>{
           <div className = "action-button">
           <StartButton
           shufflePlayer={props.shufflePlayer}
-          coins={props.coins}
-          payCoins={props.payCoins}
           />
           </div>
         )

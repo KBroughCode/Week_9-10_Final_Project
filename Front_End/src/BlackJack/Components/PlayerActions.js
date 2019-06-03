@@ -11,7 +11,7 @@ const PlayerActions = (props) =>{
   } else
     if(props.playerHand.length){
       return(
-        <div>
+        <div className = "button-container">
           <div className = "action-button">
             <TwistButton
               twistPlayer={props.twistPlayer}

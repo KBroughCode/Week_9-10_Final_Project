@@ -6,13 +6,17 @@
   grid-template-columns: 0.2fr 0.2fr;
   grid-template-rows: 30px;
   grid-template-areas:
-  " button-1 button-2"
+  "coin-display button-1 button-2"
 }
 
 .one{
-  grid-area: button-1;
+  grid-area: coin-display;
 }
 .two{
+  grid-area: button-1;
+}
+
+.three{
   grid-area: button-2;
 }
 

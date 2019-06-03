@@ -25,7 +25,6 @@ class BlackJack extends Component {
       cardFlip.addEventListener("click", function() {
       cardFlip.classList.toggle("flip");
     })
-
   }
 
   handleGameStart() {

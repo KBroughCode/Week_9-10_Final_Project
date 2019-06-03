@@ -4,7 +4,7 @@ const Card = (props) => {
   return(
     <div className="playing-flip-card-inner">
       <div className = "playing-flip-card-back">
-        <img aria-label='image' src={props.image} alt={props.code}></img>
+        <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255'></img>
       </div>
       <div className = "playing-flip-card-front">
         <div className="card-details"></div>
@@ -15,6 +15,3 @@ const Card = (props) => {
 }
 
 export default Card;
-
-// <div className="card">
-//{props.value} of {props.suit}

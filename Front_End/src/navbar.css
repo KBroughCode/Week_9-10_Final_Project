@@ -1,6 +1,7 @@
 .navbar{
   color: #A4243B;
   background-color: #D8C99B;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
 
   display:grid;
   grid-template-columns: 0.2fr 0.2fr;

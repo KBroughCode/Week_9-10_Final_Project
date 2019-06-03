@@ -1,15 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './leaderboard.css';
 
 const Leaderboard = (props) => {
-   const leaders = props.leaders.map((leader) => {
-     return leader.name + " : " + leader.score
-   })
-    return (
-      <div className="leaderboard-item">
-      <p>{leaders}</p>
-      </div>
+  const board = props.leaders.map((element, index) => {
+    while (index < 5) {
+      return <div>{element.name}: {element.score} points</div>
+    }
+  })
+  return (
+    <div className="leaderboard-item">
+    <p>{board}</p>
+    </div>
     )
 }
 

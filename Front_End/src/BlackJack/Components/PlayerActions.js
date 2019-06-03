@@ -8,7 +8,9 @@ const PlayerActions = (props) =>{
   return(
     <div className = "action-buttons">
       <StartButton
-      shufflePlayer={props.shufflePlayer}
+        shufflePlayer={props.shufflePlayer}
+        coins={props.coins}
+        payCoins={props.payCoins}
       />
       <TwistButton
         twistPlayer={props.twistPlayer}
@@ -17,6 +19,7 @@ const PlayerActions = (props) =>{
         declareWinner={props.declareWinner}
         playerHand={props.playerHand}
         dealerHand={props.dealerHand}
+        winCoins={props.winCoins}
       />
     </div>
   )

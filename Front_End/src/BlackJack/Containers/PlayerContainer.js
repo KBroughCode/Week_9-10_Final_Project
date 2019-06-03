@@ -3,10 +3,11 @@ import Player from '../Components/Player';
 
 const mapStateToProps = (state) => {
   return {
-    deck: state.blackack.deck,
+    deck: state.blackjack.deck,
     cards: state.blackjack.player,
     dealer: state.blackjack.dealer,
-    winner: state.blackjack.winner
+    winner: state.blackjack.winner,
+    coins: state.coins
   };
 };
 
@@ -26,7 +27,20 @@ const mapDispatchToProps = (dispatch) => ({
       type:'WINNER_DETERMINED',
       winner
     })
+  },
+  winCoins(amount) {
+    dispatch({
+      type:'ADD_COINS',
+      amount
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
+    })
   }
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

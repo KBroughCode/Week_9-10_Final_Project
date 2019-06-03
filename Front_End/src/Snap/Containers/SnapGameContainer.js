@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'ADD_TO_PILE'
     })
-  }
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
-import SnapGameContainer from './Components/SnapGameContainer';
+import SnapGameContainer from './Containers/SnapGameContainer';
 
 class Snap extends Component {
   constructor(props) {
@@ -35,14 +35,9 @@ class Snap extends Component {
         </div>
       )
     }
-
-}
-
-const mapStateToProps = (state) => {
-  return{
-    winner: state.snap.winner
   }
 }
+
 
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
@@ -58,8 +53,8 @@ const mapDispatchToProps = (dispatch) => ({
             deck
           })
         })
-        })
       })
+    })
   },
   resetDefault() {
     dispatch({
@@ -69,4 +64,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Snap);
+export default connect(null, mapDispatchToProps)(Snap);

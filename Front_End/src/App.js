@@ -5,6 +5,7 @@ import Navbar from "./NavBar";
 import "./navbar.css"
 
 import BlackJack from "./BlackJack/BlackJack";
+import Snap from "./Snap/Snap";
 import Main from "./main";
 
 class App extends Component {

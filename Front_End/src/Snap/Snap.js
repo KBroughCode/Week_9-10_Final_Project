@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import SnapStartButton from './Components/SnapStartButton'
+import SnapStartButton from './Components/SnapStartButton';
+import SnapGameContainer from './Components/SnapGameContainer';
 
 class Snap extends Component {
   constructor(props) {
@@ -22,25 +23,17 @@ class Snap extends Component {
 
   render(){
     if(this.state.reveal){
-      if(this.props.winner){
-        return (
-          <div className="snap">
-          </div>
-        );
-      } else{
-        return(
-          <div className="Snap">
-          </div>
-        )
-      }
+      return(
+        <div className= "snap">
+          <SnapGameContainer />
+        </div>
+      )
     } else{
       return(
-        <div className="start-button">
-        <StartSnapButton handleGameStart={this.handleGameStart} />
+        <div className= "snap">
         </div>
       )
     }
-  }
 
 }
 

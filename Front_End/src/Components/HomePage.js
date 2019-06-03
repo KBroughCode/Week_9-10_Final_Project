@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Leaderboard from './Leaderboard';
+import Leaderboard from '../Components/Leaderboard';
 import './homePage.css'
 
 const HomePage = (props) => {
@@ -23,7 +23,7 @@ const HomePage = (props) => {
             <div className = "flip-card-back">
               <h3>Snap</h3>
               <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
-              <Link className='home-page-link' to="/Snap">Snap</Link>
+              <Link className='home-page-link' to="/Snap">Play</Link>
             </div>
           </div>
           <div className="flip-card-inner">
@@ -37,7 +37,9 @@ const HomePage = (props) => {
           </div>
         </div>
       <div>
-        <Leaderboard />
+        <Leaderboard
+          leaders= {props.leaders}
+        />
       </div>
     </div>
   )

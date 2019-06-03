@@ -16,6 +16,9 @@ const Navbar = (props) => (
       <div className='link'>
         <Link className='link' to="/Snap">Snap</Link>
       </div>
+      <div className='link'>
+        <Link className='link' to="/OldMaid">Old Maid</Link>
+      </div>
     </div>
   </div>
 

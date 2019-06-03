@@ -1,18 +1,29 @@
 .dealer-cards{
   display: flex;
-  margin: 15px;
+  margin: 5px;
   padding:15px;
 }
 
+.players-cards{
+  display: flex;
+  margin: 5px;
+  padding:15px;
+}
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.card-details{
+  color: black;
+  transform: rotateY(180deg);
+}
+
+/* The flip card container */
 .playing-flip-card {
   background-color: transparent;
   width: 180px;
   height: 255px;
   margin: 7px;
   display: inline-block;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
+  transition-property: opacity;
 }
 
 /* This container is needed to position the front and back side */
@@ -23,12 +34,9 @@
   text-align: center;
   margin: 35px;
   display: inline-block;
-  transition: transform 1s;
-  transition-delay: 2s;
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 /* .playing-flip-card:hover .playing-flip-card-inner {
   transform: rotateY(180deg);
 } */
@@ -38,21 +46,16 @@
  .start-game.flip,  .playing-flip-card-inner {
   transition: transform 1s;
   transform: rotateY(180deg);
+  transition-delay: 2s;
 }
 
+.playing-flip-card:hover {
+ opacity: 1;
+ transition: transform 3s;
+ transition-timing-function: ease-in-out;
+ transition-delay: 2s;
 
-.start-button.flip,  .playing-flip-card-inner {
- transition: transform 1s;
- transform: rotateY(180deg);
 }
-
-.twist-button.flip,  .playing-flip-card-inner {
- transition: transform 1s;
- transform: rotateY(180deg);
-}
-
-
-
 
 /* Position the front and back side */
 .playing-flip-card-front, .playing-flip-card-back {
@@ -63,7 +66,7 @@
   border-radius: 9px;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* Style the front side*/
 .playing-flip-card-front {
   background: url('http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-tally-ho-fan-back-1_grande.png?v=1530155076');
   background-size: contain;

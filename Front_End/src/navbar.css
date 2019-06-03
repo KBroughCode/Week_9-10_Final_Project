@@ -13,7 +13,7 @@
   grid-template-rows: 30px;
   grid-template-areas:
 
-  "coin-display button-1 button-2 button-3"
+  "coin-display button-1 button-2 button-3 button-4"
 
 }
 
@@ -30,6 +30,10 @@
 
 .four{
   grid-area: button-3;
+}
+
+.five{
+  grid-area: button-4;
 }
 
 .link{

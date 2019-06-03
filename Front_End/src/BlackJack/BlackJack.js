@@ -29,6 +29,7 @@ class BlackJack extends Component {
 
   handleGameStart() {
     this.setState({reveal: !this.state.reveal});
+    this.dealingCards()
   }
 
   render(){
@@ -67,7 +68,6 @@ class BlackJack extends Component {
       )
     }
   }
-
 }
 
 const mapStateToProps = (state) => {

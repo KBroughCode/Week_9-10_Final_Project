@@ -4,6 +4,11 @@
   padding:15px;
 }
 
+.card-details{
+  color: black;
+  transform: rotateY(180deg);
+
+}
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .playing-flip-card {
@@ -14,7 +19,6 @@
   display: inline-block;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   transition-property: opacity;
-  transition-delay: s;
 }
 
 /* This container is needed to position the front and back side */
@@ -45,27 +49,13 @@
   transition-delay: 2s;
 }
 
-/* .playing-flip-card:hover {
+.playing-flip-card:hover {
  opacity: 1;
- transition: transform 3s; */
- /* transition-timing-function: ease-in-out; */
- /* transform: rotateY(180deg); */
- /* transition-delay: 2s;
-} */
+ transition: transform 3s;
+ transition-timing-function: ease-in-out;
+ transition-delay: 2s;
 
-
-/* .start-button.flip,  .playing-flip-card-inner {
- transition: transform 1s;
- transform: rotateY(180deg);
 }
-
-.twist-button.flip,  .playing-flip-card-inner {
- transition: transform 1s;
- transform: rotateY(180deg);
-} */
-
-
-
 
 /* Position the front and back side */
 .playing-flip-card-front, .playing-flip-card-back {

@@ -7,3 +7,5 @@ const SnapGame = (props) => {
     </div>
   )
 }
+
+export default SnapGame;

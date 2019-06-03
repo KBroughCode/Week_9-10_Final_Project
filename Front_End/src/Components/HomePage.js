@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Leaderboard from './Leaderboard';
+import LeaderboardContainer from './Containers/LeaderBoardContainer';
 import './homePage.css'
 
 const HomePage = (props) => {
@@ -18,7 +18,7 @@ const HomePage = (props) => {
         </div>
       </div>
       <div>
-        <Leaderboard />
+        <LeaderboardContainer />
       </div>
     </div>
   )

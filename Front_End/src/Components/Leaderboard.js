@@ -1,17 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './leaderboard.css';
 
 const Leaderboard = (props) => {
-  return(
-    <div className="leaderboard-container">
-      <div className="leaderboard-header">Leaderboard</div>
-      <div className="leaderboard-item">JR77: 150</div>
-      <div className="leaderboard-item">IainHeslop55: 132</div>
-      <div className="leaderboard-item">Videl: 131</div>
-      <div className="leaderboard-item">IheartMLP42069: 101</div>
-      <div className="leaderboard-item">JaneDoe: 87</div>
-    </div>
-  )
+   const leaders = props.casino.map((casino) => {
+     return {casino.name} {casino.score}
+   })
+    return <div className="leaderboard-item"><ol>{leaders}</ol>
 }
 
-export default Leaderboard;
+const mapStateToProps = (state) => {
+  return{
+  leaderData: state
+}
+}
+
+export default connect(mapStateToProps)(Leaderboard);

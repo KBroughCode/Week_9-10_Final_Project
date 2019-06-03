@@ -1,19 +1,39 @@
 .navbar{
-  color: #A4243B;
-  background-color: #D8C99B;
+
+  color: #D8C99B;
+  background-color:black;
+  opacity: 0.7;
+  border-color:#D8C99B;
+  border-style: solid;
+
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
 
   display:grid;
   grid-template-columns: 0.2fr 0.2fr;
   grid-template-rows: 30px;
   grid-template-areas:
-  " button-1 button-2"
+
+  "coin-display button-1 button-2 button-3 button-4"
+
 }
 
 .one{
-  grid-area: button-1;
+  grid-area: coin-display;
 }
 .two{
+  grid-area: button-1;
+}
+
+.three{
   grid-area: button-2;
+}
+
+.four{
+  grid-area: button-3;
+}
+
+.five{
+  grid-area: button-4;
 }
 
 .link{
@@ -21,12 +41,12 @@
   text-align: center;
   border-width: thin;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #A4243B;
+  color: #D8C99B;
   text-decoration: none;
 }
 .link:visited{
   margin-left: 20px;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #A4243B;
+  color: #D8C99B;
   text-decoration: none;
 }

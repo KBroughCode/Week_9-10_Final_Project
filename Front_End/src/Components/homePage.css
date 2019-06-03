@@ -1,17 +1,18 @@
 .home-page-container{
   display: flex;
-  flex-direction: row;
+  position: relative;
+  left:30%;
+  top:50%;
+  margin: 100px;
+  perspective: 1000px
 }
 
-.home-page-card{
-  background-color: #A4243B;
-  color: #D8C99B;
-  padding: 15px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 8px;
-  font-size: 2em;
+.logo{
+  height:50%;
+  width:40%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.2;
 }
 
 .home-page-link{
@@ -22,4 +23,60 @@
 .home-page-link:visited{
   color: #D8C99B;
   text-decoration: none;
+}
+
+/* The flip card container */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  margin: 35px;
+  display: inline-block;
+  perspective: 1000px;
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 205px;
+  height: 300px;
+  text-align: center;
+  margin: 35px;
+  display: inline-block;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+/* Do flip when you move the mouse over the flip card container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 205px;
+  height: 300px;
+  backface-visibility: hidden;
+  border-radius: 9px;
+}
+
+/* Style the front side*/
+.flip-card-front {
+  background: url('http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-tally-ho-fan-back-1_grande.png?v=1530155076');
+  background-size: cover;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+
+.face{
+
 }

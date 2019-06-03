@@ -27,6 +27,7 @@ class DealerCards extends Component {
   mapCards() {
     return this.props.cards.map((element, index) => {
       return(
+        <div className = "playing-flip-card">
         <Card
           key={index}
           image={element.image}
@@ -34,6 +35,7 @@ class DealerCards extends Component {
           suit={element.suit}
           code={element.code}
         />
+        </div>
       )
     })
   }

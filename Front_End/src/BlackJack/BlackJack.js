@@ -13,14 +13,23 @@ class BlackJack extends Component {
     }
 
     this.handleGameStart = this.handleGameStart.bind(this)
+    this.dealingCards = this.dealingCards.bind(this)
   }
 
   componentDidMount() {
     this.props.getDeck();
   }
 
+  dealingCards(){
+    const cardFlip = document.querySelector(".start-game");
+      cardFlip.addEventListener("click", function() {
+      cardFlip.classList.toggle("flip");
+    })
+  }
+
   handleGameStart() {
-    this.setState({reveal: !this.state.reveal})
+    this.setState({reveal: !this.state.reveal});
+    this.dealingCards()
   }
 
   render(){
@@ -50,17 +59,21 @@ class BlackJack extends Component {
     } else{
       return(
         <div className="start-button">
-        <StartBlackjackButton handleGameStart={this.handleGameStart} />
+          <StartBlackjackButton
+            handleGameStart={this.handleGameStart}
+            payCoins={this.props.payCoins}
+            coins={this.props.coins}
+          />
         </div>
       )
     }
   }
-
 }
 
 const mapStateToProps = (state) => {
   return{
-    winner: state.deck.winner
+    winner: state.blackjack.winner,
+    coins: state.coins
   }
 }
 
@@ -84,6 +97,12 @@ const mapDispatchToProps = (dispatch) => ({
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
     })
   }
 })

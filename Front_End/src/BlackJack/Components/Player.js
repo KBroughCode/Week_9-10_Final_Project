@@ -1,6 +1,7 @@
 import React from 'react'
 import PlayerCards from './PlayerCards'
 import PlayerActions from './PlayerActions'
+import './playerDealerScore.css'
 
 const Player = (props) =>{
 
@@ -16,6 +17,9 @@ const Player = (props) =>{
         playerHand={props.cards}
         dealerHand={props.dealer}
         winner={props.winner}
+        coins={props.coins}
+        winCoins={props.winCoins}
+        payCoins={props.payCoins}
       />
     </div>
   )

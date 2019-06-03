@@ -14,8 +14,8 @@ class Main extends Component {
   render(){
     return (
       <div className="main">
-      <h1>Casino-Royale Codeclan Style</h1>
-      <HomePageContainer />
+        <img className = 'logo' src = 'http://pngimg.com/uploads/roulette/roulette_PNG24.png' alt='logo' />
+        <HomePageContainer />
       </div>
     );
   }

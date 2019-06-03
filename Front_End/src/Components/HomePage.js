@@ -38,7 +38,9 @@ const HomePage = (props) => {
           </div>
         </div>
       <div>
-        <CashIn />
+        <CashIn
+          coins={props.coins}
+        />
       </div>
       <div>
         <Leaderboard

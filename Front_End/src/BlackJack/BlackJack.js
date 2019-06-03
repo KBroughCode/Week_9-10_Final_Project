@@ -60,7 +60,7 @@ class BlackJack extends Component {
 
 const mapStateToProps = (state) => {
   return{
-    winner: state.deck.winner
+    winner: state.blackjack.winner
   }
 }
 

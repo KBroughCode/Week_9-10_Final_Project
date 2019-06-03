@@ -11,7 +11,7 @@ const HomePage = (props) => {
           <Link className='home-page-link' to="/Blackjack">Blackjack</Link>
         </div>
         <div className="home-page-card">
-          <div>Snap</div>
+          <Link className='home-page-link' to="/Snap">Snap</Link>
         </div>
         <div className="home-page-card">
           <div>Old Maid</div>

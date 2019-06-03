@@ -17,6 +17,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/BlackJack" component={BlackJack} />
+              <Route path="/Snap" component={Snap} />
             </Switch>
           </div>
         </React.Fragment>

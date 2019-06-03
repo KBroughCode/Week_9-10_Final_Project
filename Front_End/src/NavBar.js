@@ -6,7 +6,7 @@ import "./navbar.css";
 const Navbar = (props) => (
   <div>
     <div className='navbar'>
-    {props.coins}
+      ₡{props.coins}
       <div className='link'>
         <Link className='link' to="/">Home</Link>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import SnapStartButton from './Components/SnapStartButton'
 
 class Snap extends Component {
   constructor(props) {

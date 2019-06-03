@@ -8,7 +8,7 @@ const Navbar = (props) => (
     <div className='navbar'>
       ₡{props.coins}
       <div className='link'>
-        <Link className='link' to="/">Home</Link>
+        <Link className='link' to="/" onClick= {props.resetDefault}>Home</Link>
       </div>
       <div className='link'>
         <Link className='link' to="/Blackjack">Blackjack</Link>
@@ -30,4 +30,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = (dispatch) => ({
+    resetDefault(){
+      dispatch({
+        type: 'RETURN_DEFAULT'
+      })
+    }
+  })
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

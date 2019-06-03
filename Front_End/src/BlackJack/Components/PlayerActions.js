@@ -2,6 +2,7 @@ import React from 'react';
 import TwistButton from './TwistButton';
 import StartButton from './StartButton';
 import StickButton from './StickButton';
+import '../blackjack.css';
 import './PlayerActions.css'
 
 const PlayerActions = (props) =>{
@@ -11,14 +12,16 @@ const PlayerActions = (props) =>{
   } else
     if(props.playerHand.length){
       return(
-        <div className = "button-container">
-          <div className = "action-button">
+        <div className = "player-buttons">
+          <div>
             <TwistButton
+              className = "action-button"
               twistPlayer={props.twistPlayer}
               />
           </div>
-          <div className = "action-button">
+          <div>
             <StickButton
+              className = "action-button"
               declareWinner={props.declareWinner}
               playerHand={props.playerHand}
               dealerHand={props.dealerHand}
@@ -29,9 +32,10 @@ const PlayerActions = (props) =>{
       )
     } else{
         return(
-          <div className = "action-button">
+          <div className = "player-buttons">>
           <StartButton
-          shufflePlayer={props.shufflePlayer}
+            className = "action-button"
+            shufflePlayer={props.shufflePlayer}
           />
           </div>
         )

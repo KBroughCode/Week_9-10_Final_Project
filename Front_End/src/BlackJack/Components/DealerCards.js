@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import dealerHand from '../Logic/DealerLogic';
-import './dealerCards.css'
+import '../blackjack.css';
+
 
 class DealerCards extends Component {
 
@@ -58,14 +59,19 @@ class DealerCards extends Component {
           <div className='dealer-cards'>
             {this.mapCards()}
           </div>
-          <div className='dealer-display-value'>
+          <div className='dealer-text'>
             {this.displayDealerValue()}
           </div>
         </div>
       )
     } else {
         return(
-        <div onClick={this.handleErrorClick}>Whoops! The Dealer dropped his cards! Click here to get him to pick them up</div>
+        <div
+          className='dealer-container'
+          onClick={this.handleErrorClick}
+        >
+          Whoops! The Dealer dropped his cards! Click here to get him to pick them up
+        </div>
       )
     }
   }

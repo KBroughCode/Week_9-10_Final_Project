@@ -1,0 +1,36 @@
+.blackjack{
+  display: grid;
+  grid-template-rows: 300px 50px 300px 50px 50px;
+  grid-template-areas:
+  "dealer-cards"
+  "dealer-text"
+  "player-cards"
+  "player-text"
+  "player-buttons"
+}
+
+.dealer-cards{
+  grid-area: dealer-cards;
+  display: flex;
+  background-color: #1D7137;
+}
+.dealer-text{
+  grid-area: dealer-text;
+  background-color: #1D7137;
+  line-height: 50px
+}
+.player-cards{
+  grid-area: player-cards;
+  display: flex;
+}
+.player-text{
+  grid-area: player-text;
+  line-height: 50px
+}
+.player-buttons{
+  grid-area: player-buttons;
+  display: flex;
+  background-color: #1D7137;
+  line-height: 50px
+
+}

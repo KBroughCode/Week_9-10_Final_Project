@@ -1,15 +1,14 @@
 .navbar{
 
-  color: #D8C99B;
-  background-color:black;
-  opacity: 0.7;
-  border-color:#D8C99B;
-  border-style: solid;
+  color: #871E31;
+  background-color:#DBCDA4;
+  border-color:#871E31;
+  border: 3px solid;
 
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
 
   display:grid;
-  grid-template-columns: 0.2fr 0.2fr;
+  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-rows: 30px;
   grid-template-areas:
 
@@ -39,14 +38,13 @@
 .link{
   margin-left: 20px;
   text-align: center;
-  border-width: thin;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #D8C99B;
+  color: #871E31;
   text-decoration: none;
 }
 .link:visited{
   margin-left: 20px;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #D8C99B;
+  color: #871E31;
   text-decoration: none;
 }

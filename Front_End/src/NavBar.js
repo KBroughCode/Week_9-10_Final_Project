@@ -6,19 +6,11 @@ import "./navbar.css";
 const Navbar = (props) => (
   <div>
     <div className='navbar'>
-      ₡{props.coins}
-      <div className='link'>
-        <Link className='link' to="/" onClick= {props.resetDefault}>Home</Link>
-      </div>
-      <div className='link'>
-        <Link className='link' to="/Blackjack">Blackjack</Link>
-      </div>
-      <div className='link'>
-        <Link className='link' to="/Snap">Snap</Link>
-      </div>
-      <div className='link'>
-        <Link className='link' to="/OldMaid">Old Maid</Link>
-      </div>
+      <div className= 'link one'>₡{props.coins}</div>
+        <Link className='link two' to="/" onClick= {props.resetDefault}>Home</Link>
+        <Link className='link three' to="/Blackjack">Blackjack</Link>
+        <Link className='link four' to="/Snap">Snap</Link>
+        <Link className='link five' to="/OldMaid">Old Maid</Link>
     </div>
   </div>
 

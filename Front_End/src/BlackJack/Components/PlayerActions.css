@@ -1,23 +1,15 @@
 
 .action-buttons{
-  margin: 10px;
+  margin: 5px;
 }
 
-.start-button, .twist-button, .stick-button, .start-game{
-  color: #D8C99B;
-  background-color:#A4243B;
-  opacity: 0.7;
-  border-color:#D8C99B;
-  border-style: solid;
-  margin: 10px;
-  padding:10px;
-  font-size: 15px;
+.twist-button, .stick-button, .start-game{
+  color: #871E31;
+  background-color:#DBCDA4;
+  border-color:#871E31;
+  border: 3px solid;
+  margin: 5px;
+  padding:5px;
+  font-size: 24px;
   font-weight: bold;
-  border-width: thick;
-}
-
-.button-container{
-  display: flex;
-  flex-direction:row;
-
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
-import './playerCards.css';
 import evaluateCards from '../Logic/HandValueLogic'
+import '../blackjack.css';
 
 const PlayerCard = (props) =>{
 
@@ -36,10 +36,10 @@ const PlayerCard = (props) =>{
 
     return(
       <div>
-      <div className = 'players-cards'>
+      <div className ='player-cards' >
       { playerCards }
       </div>
-      <div className = 'player-total'>{displayValue()} </div>
+      <div className = 'player-text'>{displayValue()} </div>
     </div>
     )
   }

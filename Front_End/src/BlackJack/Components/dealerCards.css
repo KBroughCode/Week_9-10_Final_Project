@@ -1,16 +1,6 @@
-.dealer-cards{
-  display: flex;
-  margin: 5px;
-  padding:15px;
-}
 
-.players-cards{
-  display: flex;
-  margin: 5px;
-  padding:15px;
-}
 
-.card-details{
+#card-details{
   color: black;
   transform: rotateY(180deg);
 }
@@ -27,7 +17,7 @@
 }
 
 /* This container is needed to position the front and back side */
-.playing-flip-card-inner {
+#playing-flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -43,13 +33,13 @@
 
 /* .start-game.flip */
 
- .start-game.flip,  .playing-flip-card-inner {
+ #start-game.flip,  #playing-flip-card-inner {
   transition: transform 1s;
   transform: rotateY(180deg);
   transition-delay: 2s;
 }
 
-.playing-flip-card:hover {
+#playing-flip-card:hover {
  opacity: 1;
  transition: transform 3s;
  transition-timing-function: ease-in-out;
@@ -58,7 +48,7 @@
 }
 
 /* Position the front and back side */
-.playing-flip-card-front, .playing-flip-card-back {
+#playing-flip-card-front, #playing-flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -67,14 +57,14 @@
 }
 
 /* Style the front side*/
-.playing-flip-card-front {
+#playing-flip-card-front {
   background: url('http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-tally-ho-fan-back-1_grande.png?v=1530155076');
   background-size: contain;
   color: black;
 }
 
 /* Style the back side */
-.playing-flip-card-back {
+#playing-flip-card-back {
   background-color: white;
   background-size: cover;
   color: black;

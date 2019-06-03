@@ -5,6 +5,8 @@ import DealerContainer from './Containers/DealerContainer';
 import StartBlackjackButton from './Components/StartBlackjackButton';
 import WinnerDisplay from './Components/WinnerDisplay';
 
+import './blackjack.css';
+
 class BlackJack extends Component {
   constructor(props) {
     super(props)
@@ -27,11 +29,13 @@ class BlackJack extends Component {
     if(this.state.reveal){
       if(this.props.winner){
         return (
-          <div className="black-jack">
-            <DealerContainer />
+          <div className="blackjack">
+            <DealerContainer
+              className="dealer-container"/>
             <PlayerContainer
-            />
+              className="player-container"/>
             <WinnerDisplay
+              className="action-buttons"
               winner= {this.props.winner}
               resetDefault= {this.props.resetDefault}
               handleGameStart= {this.handleGameStart}
@@ -41,16 +45,19 @@ class BlackJack extends Component {
         );
       } else{
         return(
-          <div className="black-jack">
-            <DealerContainer />
-            <PlayerContainer />
+          <div className="blackjack">
+            <DealerContainer
+              className="dealer-container"/>
+            <PlayerContainer
+              className="player-container"/>
           </div>
         )
       }
     } else{
       return(
-        <div className="start-button">
+        <div className="blackjack">
           <StartBlackjackButton
+            className="start-button"
             handleGameStart={this.handleGameStart}
             payCoins={this.props.payCoins}
             coins={this.props.coins}

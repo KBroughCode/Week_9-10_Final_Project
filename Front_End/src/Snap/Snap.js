@@ -31,7 +31,9 @@ class Snap extends Component {
     } else{
       return(
         <div className= "snap">
-          <SnapStartButton />
+          <SnapStartButton
+            handleGameStart={this.handleGameStart}
+          />
         </div>
       )
     }

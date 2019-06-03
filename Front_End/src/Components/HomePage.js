@@ -7,16 +7,35 @@ const HomePage = (props) => {
   return(
     <div>
       <div className="home-page-container">
-        <div className="home-page-card">
-          <Link className='home-page-link' to="/Blackjack">Blackjack</Link>
+        <div className = "flip-card">
+          <div className="flip-card-inner">
+            <div className = "flip-card-front"></div>
+            <div className = "flip-card-back">
+              <div className = "face"></div>
+              <h3>Blackjack</h3>
+              <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
+              <Link className='home-page-link' to="/Blackjack">Play</Link>
+
+            </div>
+          </div>
+          <div className="flip-card-inner">
+            <div className = "flip-card-front"></div>
+            <div className = "flip-card-back">
+              <h3>Snap</h3>
+              <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
+              <Link className='home-page-link' to="/Blackjack">Play</Link>
+            </div>
+          </div>
+          <div className="flip-card-inner">
+            <div className = "flip-card-front"></div>
+            <div className = "flip-card-back">
+              <h3>Old Maid</h3>
+              <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
+              <Link className='home-page-link' to="/Blackjack">Play</Link>
+            </div>
+            </div>
+          </div>
         </div>
-        <div className="home-page-card">
-          <div>Snap</div>
-        </div>
-        <div className="home-page-card">
-          <div>Old Maid</div>
-        </div>
-      </div>
       <div>
         <Leaderboard />
       </div>

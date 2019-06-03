@@ -1,4 +1,6 @@
 body{
-  background-color: #076324;
-  color: #D8C99B
+  color: #D8C99B;
+  background-image: linear-gradient(to bottom right, #076324, #074024);
+  background-repeat: no-repeat;
+  height: 100vh;
 }

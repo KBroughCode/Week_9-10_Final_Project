@@ -4,7 +4,7 @@ import HomePageContainer from './Containers/HomePageContainer';
 function Main() {
   return (
       <div className="main">
-        <h1>Casino-Royale Codeclan Style</h1>
+        <img className = 'logo' src = 'http://pngimg.com/uploads/roulette/roulette_PNG24.png' />
         <HomePageContainer />
       </div>
   );

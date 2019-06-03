@@ -1,12 +1,15 @@
 .navbar{
-  color: #A4243B;
-  background-color: #D8C99B;
+  color: #D8C99B;
+  background-color:black;
+  opacity: 0.7;
+  border-color:#D8C99B;
+  border-style: solid;
 
   display:grid;
   grid-template-columns: 0.2fr 0.2fr;
   grid-template-rows: 30px;
   grid-template-areas:
-  " button-1 button-2"
+  " button-1 button-2";
 }
 
 .one{
@@ -21,12 +24,12 @@
   text-align: center;
   border-width: thin;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #A4243B;
+  color: #D8C99B;
   text-decoration: none;
 }
 .link:visited{
   margin-left: 20px;
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
-  color: #A4243B;
+  color: #D8C99B;
   text-decoration: none;
 }

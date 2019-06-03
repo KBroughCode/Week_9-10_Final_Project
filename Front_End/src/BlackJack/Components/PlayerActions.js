@@ -2,18 +2,19 @@ import React from 'react';
 import TwistButton from './TwistButton';
 import StartButton from './StartButton';
 import StickButton from './StickButton';
+import './PlayerActions.css'
 
 const PlayerActions = (props) =>{
 
   return(
     <div className = "action-buttons">
-      <StartButton
+      <StartButton className = "start-button"
       shufflePlayer={props.shufflePlayer}
       />
-      <TwistButton
+      <TwistButton className = "twist-button"
         twistPlayer={props.twistPlayer}
       />
-      <StickButton
+      <StickButton className = "stick-button"
         declareWinner={props.declareWinner}
         playerHand={props.playerHand}
         dealerHand={props.dealerHand}

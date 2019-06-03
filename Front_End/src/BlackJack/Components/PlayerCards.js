@@ -6,13 +6,17 @@ import evaluateCards from '../Logic/HandValueLogic'
 const PlayerCard = (props) =>{
 
   const playerCards = props.cards.map((playerCard, i)=> {
-    return <Card
+    return(
+    <div className = "playing-flip-card">
+    <Card
       image = {playerCard.image}
       code = {playerCard.code}
       value = {playerCard.value}
       suit = {playerCard.suit}
       key= {i}
     />
+    </div>
+  )
   })
 
   const playerTotal = (evaluateCards(props.cards))

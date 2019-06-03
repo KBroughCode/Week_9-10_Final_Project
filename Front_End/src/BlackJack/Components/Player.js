@@ -1,6 +1,7 @@
 import React from 'react'
 import PlayerCards from './PlayerCards'
 import PlayerActions from './PlayerActions'
+import './playerDealerScore.css'
 
 const Player = (props) =>{
 

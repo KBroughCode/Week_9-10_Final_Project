@@ -8,7 +8,7 @@ const StickButton = (props) => {
   }
 
   return(
-    <button onClick={handleClick}>Stick</button>
+    <button className = "stick-button" onClick={handleClick}>Stick</button>
   )
 }
 

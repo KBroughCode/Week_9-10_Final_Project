@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Leaderboard from '../Components/Leaderboard';
+import CashIn from '../Components/CashIn';
 import './homePage.css'
 
 const HomePage = (props) => {

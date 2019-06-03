@@ -5,6 +5,9 @@ const StickButton = (props) => {
   const handleClick = () => {
     const winnerDetails = checkWinner(props.playerHand, props.dealerHand)
     props.declareWinner(winnerDetails);
+    if (winnerDetails.winner==='Player'){
+      props.winCoins(20);
+    }
   }
 
   return(

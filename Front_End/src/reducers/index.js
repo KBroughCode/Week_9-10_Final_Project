@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 
-import cardReducer from './card_reducer.js';
-
+import cardReducer from './card_reducer';
+import snapReducer from './snap_reducer'
 import coinReducer from './coin_reducer'
 
 export default combineReducers({
   blackjack: cardReducer,
-  coins: coinReducer
+  coins: coinReducer,
+  snap: snapReducer
 });

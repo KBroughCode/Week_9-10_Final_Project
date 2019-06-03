@@ -17,6 +17,9 @@ const Player = (props) =>{
         playerHand={props.cards}
         dealerHand={props.dealer}
         winner={props.winner}
+        coins={props.coins}
+        winCoins={props.winCoins}
+        payCoins={props.payCoins}
       />
     </div>
   )

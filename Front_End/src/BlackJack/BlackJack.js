@@ -62,7 +62,11 @@ class BlackJack extends Component {
     } else{
       return(
         <div className="start-button">
-        <StartBlackjackButton handleGameStart={this.handleGameStart} />
+          <StartBlackjackButton
+            handleGameStart={this.handleGameStart}
+            payCoins={this.props.payCoins}
+            coins={this.props.coins}
+          />
         </div>
       )
     }
@@ -72,7 +76,8 @@ class BlackJack extends Component {
 
 const mapStateToProps = (state) => {
   return{
-    winner: state.blackjack.winner
+    winner: state.blackjack.winner,
+    coins: state.coins
   }
 }
 
@@ -96,6 +101,12 @@ const mapDispatchToProps = (dispatch) => ({
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
     })
   }
 })

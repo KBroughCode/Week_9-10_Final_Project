@@ -22,6 +22,7 @@ const PlayerActions = (props) =>{
               declareWinner={props.declareWinner}
               playerHand={props.playerHand}
               dealerHand={props.dealerHand}
+              winCoins={props.winCoins}
               />
           </div>
         </div>

@@ -23,7 +23,7 @@ const HomePage = (props) => {
             <div className = "flip-card-back">
               <h3>Snap</h3>
               <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
-              <Link className='home-page-link' to="/Blackjack">Play</Link>
+              <Link className='home-page-link' to="/Snap">Snap</Link>
             </div>
           </div>
           <div className="flip-card-inner">

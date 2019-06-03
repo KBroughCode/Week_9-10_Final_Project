@@ -1,9 +1,22 @@
 import React from 'react';
 
 const StartBlackjackButton = (props) => {
-  return(
-    <button className= "start-game" onClick={props.handleGameStart}>Start Game</button>
-  )
+
+
+  const handleClick = () => {
+    props.payCoins(10)
+    props.handleGameStart()
+  }
+
+  if(props.coins<10){
+    return(
+      <div> You do not have enough coins to play</div>
+    );
+  }else{
+    return(
+      <button className= "start-game" onClick={handleClick}>Start Game</button>
+    )
+  }
 }
 
 export default StartBlackjackButton

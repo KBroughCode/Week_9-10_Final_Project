@@ -13,6 +13,9 @@ const Navbar = (props) => (
       <div className='link'>
         <Link className='link' to="/Blackjack">Blackjack</Link>
       </div>
+      <div className='link'>
+        <Link className='link' to="/Snap">Snap</Link>
+      </div>
     </div>
   </div>
 

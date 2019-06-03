@@ -12,7 +12,7 @@
   width:40%;
   position: absolute;
   z-index: 1;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .home-page-link{
@@ -33,7 +33,7 @@
   margin: 35px;
   display: inline-block;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  z-index: 5;
+
 }
 
 /* This container is needed to position the front and back side */

@@ -29,10 +29,10 @@ class BlackJack extends Component {
 
   handleGameStart() {
     this.setState({reveal: !this.state.reveal})
-    const cardFlip = document.querySelector(".start-game");
-      cardFlip.addEventListener("click", function() {
-      cardFlip.classList.toggle("flip");
-    })
+    // const cardFlip = document.querySelector(".start-game");
+    //   cardFlip.addEventListener("click", function() {
+    //   cardFlip.classList.toggle("flip");
+    // })
   }
 
   render(){

@@ -29,7 +29,6 @@ class BlackJack extends Component {
 
   handleGameStart() {
     this.setState({reveal: !this.state.reveal});
-    this.dealingCards()
   }
 
   render(){

@@ -21,3 +21,17 @@
   flex-direction:row;
 
 }
+
+.new-game .exit{
+  color: #D8C99B;
+  background-color:#A4243B;
+  opacity: 0.7;
+  border-color:#D8C99B;
+  border-style: solid;
+  margin: 10px;
+  padding:10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-width: thick;
+
+}

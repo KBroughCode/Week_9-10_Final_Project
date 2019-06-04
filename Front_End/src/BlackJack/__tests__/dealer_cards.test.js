@@ -19,6 +19,6 @@ describe('delear cards test', () => {
     }
   ]} shuffleDealer={jest.fn()}/>)
     expect(getByLabelText('image')).toBeTruthy();
-    expect(getByText('ACE of SPADES')).toBeTruthy();
+    expect(getByLabelText('ACE of SPADES')).toBeTruthy();
   })
 })

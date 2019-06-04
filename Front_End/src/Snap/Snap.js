@@ -18,6 +18,7 @@ class Snap extends Component {
   }
 
   handleGameStart() {
+    setInterval(this.props.addToPile,1000)
     this.setState({reveal: !this.state.reveal})
   }
 
@@ -58,11 +59,17 @@ const mapDispatchToProps = (dispatch) => ({
       })
     })
   },
+  addToPile() {
+    dispatch({
+      type: 'ADD_TO_PILE'
+    })
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
   }
+
 })
 
 

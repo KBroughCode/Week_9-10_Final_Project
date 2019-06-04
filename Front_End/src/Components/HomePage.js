@@ -23,7 +23,7 @@ const HomePage = (props) => {
             <div className = "flip-card-front"></div>
             <div className = "flip-card-back">
               <h3>Snap</h3>
-              <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
+              <p>The dealer will place cards on top of each other one at a time. When the value matches, SNAP! Be careful, though; you don't want to miss a pair or SNAP the wrong card...</p>
               <Link className='home-page-link' to="/Snap">Play</Link>
             </div>
           </div>
@@ -31,7 +31,7 @@ const HomePage = (props) => {
             <div className = "flip-card-front"></div>
             <div className = "flip-card-back">
               <h3>Old Maid</h3>
-              <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
+              <p>Test your skill against our championship Old Maid players; one player has the old maid, make sure it's not you! Trade cards and discard pairs until the loser is left standing.</p>
               <Link className='home-page-link' to="/Blackjack">Play</Link>
             </div>
             </div>
@@ -40,6 +40,7 @@ const HomePage = (props) => {
       <div>
         <CashIn
           coins={props.coins}
+          addHiScore={props.addHiScore}
         />
       </div>
       <div>

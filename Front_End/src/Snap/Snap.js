@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
+// import SnapGame from './Components/SnapGame';
 import SnapGameContainer from './Containers/SnapGameContainer';
 
 class Snap extends Component {
@@ -11,22 +12,38 @@ class Snap extends Component {
     }
 
     this.handleGameStart = this.handleGameStart.bind(this)
+    this.handleGamePause = this.handleGamePause.bind(this)
+    this.startGame=this.startGame.bind(this)
   }
 
   componentDidMount() {
     this.props.getDeck();
   }
 
+  startGame(){
+    this.game = setInterval(this.props.addToPile,1250)
+  }
+
   handleGameStart() {
-    setInterval(this.props.addToPile,1000)
+    this.startGame()
     this.setState({reveal: !this.state.reveal})
+  }
+
+  handleGamePause(){
+    console.log('game should pause');
+    // setInterval(this.props.addToPile,1250)
+    clearInterval(this.game);
   }
 
   render(){
     if(this.state.reveal){
       return(
         <div className= "snap">
-          <SnapGameContainer />
+          <SnapGameContainer
+          startGame={this.startGame}
+          handleGamePause={this.handleGamePause}
+          />
+
         </div>
       )
     } else{

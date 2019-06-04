@@ -4,7 +4,6 @@ import './snapCards.css'
 
 
 const DeckCards = (props) =>{
-
   const deckCards = props.deck.map((card, index)=>{
     return <DeckCard
       key={index}

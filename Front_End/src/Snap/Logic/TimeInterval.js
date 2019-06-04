@@ -3,6 +3,8 @@ timeinterval(){
 }
 
 
+
+
 isMatch(array){
 
   const comparison = array.slice(-2))
@@ -10,5 +12,4 @@ isMatch(array){
   if(comparison[0]===comparison[1]){
 
   }
-
 }

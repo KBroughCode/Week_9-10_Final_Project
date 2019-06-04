@@ -4,6 +4,9 @@ import DeckCards from './DeckCards';
 import PileCards from './PileCards';
 
 const SnapGame = (props) => {
+
+  console.log("PROPS", props);
+
   return(
     <div>
     <SnapStartButton />

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
-import OldMaidHumanPlayerHand from './OldMaidPlayerHand';
+import OldMaidHumanPlayerHand from './OldMaidHumanPlayerHand';
 import './oldMaidGame.css'
 
 class OldMaidGame extends Component{
   constructor(props){
     super(props)
     this.state = {
-      playerSelectOne: {},
+      playerSelectOne: null,
       playerSelectTwo: {}
     }
 

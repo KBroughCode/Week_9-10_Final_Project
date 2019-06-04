@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from './Card';
+import PlayerCard from './PlayerCard';
 
-const OldMaidPlayerHand = (props) => {
+const OldMaidHumanPlayerHand = (props) => {
 
   const mapHand = props.hand.map((element, index) => {
     return(
       <div className = "old-maid-card">
-      <Card
+      <PlayerCard
         key={index}
         image={element.image}
         value={element.value}
@@ -24,4 +24,4 @@ const OldMaidPlayerHand = (props) => {
   )
 }
 
-export default OldMaidPlayerHand;
+export default OldMaidHumanPlayerHand;

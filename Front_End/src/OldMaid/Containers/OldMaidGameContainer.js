@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import OldMaidGame from '../Components/SnapGame';
+import OldMaidGame from '../Components/OldMaidGame';
 
 const mapStateToProps = (state) => {
   return {

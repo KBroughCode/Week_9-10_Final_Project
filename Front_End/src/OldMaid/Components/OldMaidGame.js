@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OldMaidPlayerHand from './OldMaidPlayerHand';
 
 class OldMaidGame extends Component{
 
@@ -8,10 +9,27 @@ class OldMaidGame extends Component{
 
   render(){
     return(
-      <div>
-      <OldMaidPlayerHand 
-        hand= {props.}
-      />
+      <div className='old-maid-game'>
+        <div className='human-hand'
+          <OldMaidPlayerHand
+            hand= {props.one}
+          />
+        </div>
+        <div className='cpu-one'
+          <OldMaidPlayerHand
+            hand= {props.two}
+          />
+        </div>
+        <div className='cpu-two'>
+          <OldMaidPlayerHand
+            hand= {props.three}
+          />
+        </div>
+        <div className='cpu-three'
+          <OldMaidPlayerHand
+            hand= {props.four}
+          />
+        </div>
       </div>
     )
   }

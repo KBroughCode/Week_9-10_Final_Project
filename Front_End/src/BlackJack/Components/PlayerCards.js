@@ -7,15 +7,14 @@ const PlayerCard = (props) =>{
 
   const playerCards = props.cards.map((playerCard, i)=> {
     return(
-    <div className = "playing-flip-card">
     <Card
       image = {playerCard.image}
       code = {playerCard.code}
       value = {playerCard.value}
       suit = {playerCard.suit}
       key= {i}
+      index='0'
     />
-    </div>
   )
   })
 
@@ -35,12 +34,14 @@ const PlayerCard = (props) =>{
   }
 
     return(
-      <div>
-      <div className ='player-cards' >
-      { playerCards }
-      </div>
-      <div className = 'player-text'>{displayValue()} </div>
-    </div>
+      <>
+        <div className ='player-cards' >
+          { playerCards }
+        </div>
+        <div className = 'player-text'>
+          {displayValue()}
+        </div>
+    </>
     )
   }
 

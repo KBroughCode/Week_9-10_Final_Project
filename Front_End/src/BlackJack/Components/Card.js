@@ -1,17 +1,14 @@
 import React from 'react';
+import './cards.css'
 
 const Card = (props) => {
   return(
-    <div className="playing-flip-card-inner">
-    <div className="card-details">{props.value} of {props.suit}</div>
-      <div className = "playing-flip-card-back">
-        <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' key ={props.key} ></img>
-      </div>
-      
-        <div className = "playing-flip-card-front"></div>
+    <img
+      className={`card number${props.index}`}
+      src={props.image}
+      alt={props.code}
 
-    </div>
-
+    />
   )
 }
 

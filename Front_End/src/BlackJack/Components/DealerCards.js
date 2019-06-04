@@ -26,17 +26,16 @@ class DealerCards extends Component {
   }
 
   mapCards() {
-    return this.props.cards.map((element, index) => {
+    return this.props.cards.map((element, i) => {
       return(
-        <div className = "playing-flip-card">
         <Card
-          key={index}
-          image={element.image}
-          value={element.value}
-          suit={element.suit}
-          code={element.code}
+        image = {element.image}
+        code = {element.code}
+        value = {element.value}
+        suit = {element.suit}
+        key= {i}
+       index={i}
         />
-        </div>
       )
     })
   }
@@ -55,19 +54,19 @@ class DealerCards extends Component {
   render(){
     if(this.props.cards.length > 0){
       return(
-        <div>
+        <>
           <div className='dealer-cards'>
             {this.mapCards()}
           </div>
           <div className='dealer-text'>
             {this.displayDealerValue()}
           </div>
-        </div>
+        </>
       )
     } else {
         return(
         <div
-          className='dealer-container'
+          className='dealer-cards'
           onClick={this.handleErrorClick}
         >
           Whoops! The Dealer dropped his cards! Click here to get him to pick them up

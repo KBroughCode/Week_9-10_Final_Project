@@ -35,7 +35,7 @@ class BlackJack extends Component {
             <PlayerContainer
               className="player-container"/>
             <WinnerDisplay
-              className="action-buttons"
+              className="player-buttons"
               winner= {this.props.winner}
               resetDefault= {this.props.resetDefault}
               handleGameStart= {this.handleGameStart}

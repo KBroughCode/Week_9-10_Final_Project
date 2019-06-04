@@ -1,7 +1,6 @@
 import React from 'react'
 import PlayerCards from './PlayerCards'
 import PlayerActions from './PlayerActions'
-import '../blackjack.css';
 
 const Player = (props) =>{
 
@@ -11,7 +10,6 @@ const Player = (props) =>{
         cards={props.cards}
       />
       <PlayerActions
-        className = 'player-buttons'
         twistPlayer={props.twistPlayer}
         shufflePlayer={props.shufflePlayer}
         declareWinner={props.declareWinner}

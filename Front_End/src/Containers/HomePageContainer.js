@@ -20,7 +20,24 @@ const mapDispatchToProps = dispatch => ({
           });
         });
     });
-  }
+  },
+  addHiScore(data) {
+      dispatch(() => {
+        fetch('http://localhost:3000/api/casino/scores', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json'}
+        }
+        )
+        .then(res => res.json())
+        .then(casinoData => {
+          dispatch({
+            type: 'GET_LEADER_DATA',
+            casinoData
+          })
+        })
+      })
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

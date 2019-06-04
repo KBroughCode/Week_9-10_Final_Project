@@ -40,6 +40,7 @@ const HomePage = (props) => {
       <div>
         <CashIn
           coins={props.coins}
+          addHiScore={props.addHiScore}
         />
       </div>
       <div>

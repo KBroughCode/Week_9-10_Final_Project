@@ -25,9 +25,9 @@ const PlayerCard = (props) =>{
       case 0:
         return`You have gone bust`
       case 1:
-        return `Current total: ${playerTotal[0]}`
+        return `Your total is  ${playerTotal[0]}`
       case 2:
-        return `Current totals: ${playerTotal[0]} or ${playerTotal[1]}`
+        return `Your total is either ${playerTotal[0]} or ${playerTotal[1]}`
       default:
         return `UH OH SPAGHETTI OHs`
     }

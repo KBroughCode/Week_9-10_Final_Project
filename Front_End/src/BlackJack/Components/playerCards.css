@@ -12,9 +12,9 @@
 
 .player-cards{
   grid-area: playerCards;
-  background-color: pink;
 }
 .player-text{
   grid-area: playerText;
-  background-color: hotpink;
+  height: 100%;
+  padding-left: 10px;
 }

@@ -18,5 +18,6 @@
 .dealer-text{
   grid-area: dealerText;
   height: 100%;
+  padding-left: 10px;
   /* border: solid blue 1px; */
 }

@@ -13,23 +13,14 @@ class BlackJack extends Component {
     }
 
     this.handleGameStart = this.handleGameStart.bind(this)
-    this.dealingCards = this.dealingCards.bind(this)
   }
 
   componentDidMount() {
     this.props.getDeck();
   }
 
-  dealingCards(){
-    const cardFlip = document.querySelector(".start-game");
-      cardFlip.addEventListener("click", function() {
-      cardFlip.classList.toggle("flip");
-    })
-  }
-
   handleGameStart() {
     this.setState({reveal: !this.state.reveal});
-    this.dealingCards()
   }
 
   render(){

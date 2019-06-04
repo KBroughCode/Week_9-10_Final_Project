@@ -7,7 +7,7 @@ const snapReducer = (state = {deck: [], pile: []}, action) => {
       const moveState = {
         ...state,
         deck: state.deck.slice(0, state.deck.length - 1),
-        pile: state.deck.slice(-1)
+        pile: [state.deck.slice(-1), ...state.pile]
       }
       return moveState
     case 'RETURN_SNAP_DEFAULT':

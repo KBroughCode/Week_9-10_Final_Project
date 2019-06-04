@@ -2,15 +2,14 @@ import React from 'react';
 import './leaderboard.css';
 //Top 10 leaderboard
 const Leaderboard = (props) => {
-  const highboard = props.leaders.map((element, index) => {
-    while (index < 5) {
-      return `${element.name}: ${element.score} points : `
-    }
+  const topTen = props.leaders.slice(0,10)
+  const highboard = topTen.map((element, index) => {
+    return ` ♣ ${index+1}. ${element.name} - ₡${element.score} ♣ `
   })
   return (
 
-    <div className="scroll-left">
-     <p>High Scores ♣{highboard}♣</p>
+    <div className="slideshow">
+     <p>High Scores {highboard} High Scores {highboard} High Scores {highboard}</p>
      </div>
     )
 

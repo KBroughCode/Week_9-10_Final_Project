@@ -36,6 +36,11 @@ const mapDispatchToProps = dispatch => ({
             casinoData
           })
         })
+        .then(casinoData => {
+          dispatch({
+            type: 'SET_COINS'
+          })
+        })
       })
     }
 });

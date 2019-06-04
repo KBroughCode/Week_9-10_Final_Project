@@ -1,6 +1,7 @@
 import React from 'react';
 import PileCard from './PileCard';
 import './snapCards.css'
+import isMatch from '../Logic/TimeInterval'
 
 
 const PileCards = (props) =>{
@@ -16,6 +17,17 @@ const PileCards = (props) =>{
       startGame={props.startGame}
     />
   })
+
+
+const pileCardValues = props.pile.map((card,index)=>{
+  return card.value
+
+})
+
+console.log(pileCardValues);
+  isMatch(pileCardValues)
+
+
 
   return(
     <>

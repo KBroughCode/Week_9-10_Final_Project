@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
-// import SnapGame from './Components/SnapGame';
 import SnapGameContainer from './Containers/SnapGameContainer';
+import isMatch from './Logic/TimeInterval'
 
 class Snap extends Component {
   constructor(props) {
@@ -30,8 +30,6 @@ class Snap extends Component {
   }
 
   handleGamePause(){
-    console.log('game should pause');
-    // setInterval(this.props.addToPile,1250)
     clearInterval(this.game);
   }
 

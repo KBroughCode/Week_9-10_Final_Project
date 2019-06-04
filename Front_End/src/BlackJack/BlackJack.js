@@ -32,10 +32,10 @@ class BlackJack extends Component {
             <PlayerContainer
             />
             <WinnerDisplay
-              winner= {this.props.winner}
-              resetDefault= {this.props.resetDefault}
-              handleGameStart= {this.handleGameStart}
-              getDeck= {this.props.getDeck}
+              winner = {this.props.winner}
+              resetDefault = {this.props.resetDefault}
+              handleGameStart = {this.handleGameStart}
+              getDeck = {this.props.getDeck}
             />
           </div>
         );

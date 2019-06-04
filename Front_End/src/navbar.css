@@ -4,6 +4,7 @@
   background-color:#DBCDA4;
   border-color:#871E31;
   border: 3px solid;
+  border-radius: 5px;
 
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
 
@@ -47,4 +48,11 @@
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
   color: #871E31;
   text-decoration: none;
+}
+
+.text{
+  margin-left: 20px;
+  text-align: center;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+  color: #871E31;
 }

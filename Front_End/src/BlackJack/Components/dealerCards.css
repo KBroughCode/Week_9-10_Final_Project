@@ -13,7 +13,9 @@
 .dealer-cards{
   grid-area: dealerCards;
   height: 100%;
-  /* border: solid blue 1px; */
+  display: flex;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 .dealer-text{
   grid-area: dealerText;

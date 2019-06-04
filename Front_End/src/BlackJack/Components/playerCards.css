@@ -12,6 +12,10 @@
 
 .player-cards{
   grid-area: playerCards;
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 .player-text{
   grid-area: playerText;

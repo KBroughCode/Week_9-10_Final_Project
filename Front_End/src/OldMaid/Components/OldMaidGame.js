@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
+import './oldMaidGame.css'
 
 class OldMaidGame extends Component{
 

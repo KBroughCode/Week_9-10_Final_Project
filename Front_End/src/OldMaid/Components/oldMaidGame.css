@@ -1,0 +1,33 @@
+.old-maid-game{
+  display: flex;
+  flex-direction: column;
+}
+
+.human-hand{
+  display:inline-block;
+  margin: 80px;
+  padding:15px;
+}
+
+.cpu-one{
+  display:inline-block;
+  margin: 80px;
+  padding:15px;
+}
+
+.cpu-two{
+  display:inline-block;
+  margin: 80px;
+  padding:15px;
+}
+
+.cpu-three{
+  display:inline-block;
+  margin: 80px;
+  padding:15px;
+}
+
+.old-maid-card{
+  display:inline;
+  float:left;
+}

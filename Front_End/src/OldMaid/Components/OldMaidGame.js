@@ -10,24 +10,24 @@ class OldMaidGame extends Component{
   render(){
     return(
       <div className='old-maid-game'>
-        <div className='human-hand'
+        <div className='human-hand'>
           <OldMaidPlayerHand
-            hand= {props.one}
+            hand= {this.props.one}
           />
         </div>
-        <div className='cpu-one'
+        <div className='cpu-one'>
           <OldMaidPlayerHand
-            hand= {props.two}
+            hand= {this.props.two}
           />
         </div>
         <div className='cpu-two'>
           <OldMaidPlayerHand
-            hand= {props.three}
+            hand= {this.props.three}
           />
         </div>
-        <div className='cpu-three'
+        <div className='cpu-three'>
           <OldMaidPlayerHand
-            hand= {props.four}
+            hand= {this.props.four}
           />
         </div>
       </div>

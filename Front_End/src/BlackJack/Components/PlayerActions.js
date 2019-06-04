@@ -2,8 +2,9 @@ import React from 'react';
 import TwistButton from './TwistButton';
 import StartButton from './StartButton';
 import StickButton from './StickButton';
-import '../blackjack.css';
-// import './PlayerActions.css'
+
+import '../blackjack.css'
+
 
 const PlayerActions = (props) =>{
 

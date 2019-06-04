@@ -5,37 +5,26 @@
   justify-items: stretch;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 300px 70px 300px 70px 70px;
+  grid-template-rows: 275px 50px 275px;
   grid-template-areas:
-  "dealerCards"
-  "dealerText"
-  "playerCards"
-  "playerText"
-  "playerButtons";
+  "dealerContainer"
+  "playerButtons"
+  "playerContainer";
 }
 
-.dealer-cards{
-  grid-area: dealerCards;
-  display: flex;
-  background-color: #1D7137;
-}
-.dealer-text{
-  grid-area: dealerText;
-  background-color: yellow;
-  background-size: cover;
-}
-.player-cards{
-  grid-area: playerCards;
-  display: flex;
-  background-color: blue;
-}
-.player-text{
-  grid-area: playerText;
-  background-color:red;
-  background-size: cover;
+.dealer-container{
+  grid-area: dealerContainer;
+  /* background-color: Red; */
+  border: solid black 1px;
 }
 .player-buttons{
   grid-area: playerButtons;
-  background-color: #1D7137;
-
+  /* background-color: blue; */
+  height: 50px;
+  background-color: red;
+}
+.player-container{
+  grid-area: playerContainer;
+  /* background-color: green; */
+  border: solid black 1px;
 }

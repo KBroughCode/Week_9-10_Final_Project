@@ -30,38 +30,45 @@ class BlackJack extends Component {
       if(this.props.winner){
         return (
           <div className="blackjack">
-            <DealerContainer
-              className="dealer-container"/>
-            <PlayerContainer
-              className="player-container"/>
-            <WinnerDisplay
-              className="player-buttons"
-              winner= {this.props.winner}
-              resetDefault= {this.props.resetDefault}
-              handleGameStart= {this.handleGameStart}
-              getDeck= {this.props.getDeck}
-            />
+            <div className="dealer-container">
+              <DealerContainer/>
+            </div>
+            <div>
+              <PlayerContainer/>
+            </div>
+            <div className="player-buttons">
+              <WinnerDisplay
+                winner= {this.props.winner}
+                resetDefault= {this.props.resetDefault}
+                handleGameStart= {this.handleGameStart}
+                getDeck= {this.props.getDeck}
+              />
+            </div>
           </div>
         );
       } else{
         return(
           <div className="blackjack">
-            <DealerContainer
-              className="dealer-container"/>
-            <PlayerContainer
-              className="player-container"/>
+            <div className="dealer-container">
+              <DealerContainer/>
+            </div>
+            <div>
+              <PlayerContainer/>
+            </div>
           </div>
         )
       }
     } else{
       return(
         <div className="blackjack">
-          <StartBlackjackButton
-            className="start-button"
-            handleGameStart={this.handleGameStart}
-            payCoins={this.props.payCoins}
-            coins={this.props.coins}
-          />
+          <div className="dealer-container">
+            <StartBlackjackButton
+              className="start-button"
+              handleGameStart={this.handleGameStart}
+              payCoins={this.props.payCoins}
+              coins={this.props.coins}
+            />
+          </div>
         </div>
       )
     }

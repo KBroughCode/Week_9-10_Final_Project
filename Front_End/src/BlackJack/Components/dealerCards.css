@@ -1,72 +1,22 @@
-
-
-#card-details{
-  color: black;
-  transform: rotateY(180deg);
+.dealer-box{
+  align-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 225px 50px;
+  grid-template-areas:
+  "dealerCards"
+  "dealerText";
 }
 
-/* The flip card container */
-.playing-flip-card {
-  background-color: transparent;
-  width: 180px;
-  height: 255px;
-  margin: 7px;
-  display: inline-block;
-  perspective: 1000px;
-  transition-property: opacity;
-}
-
-/* This container is needed to position the front and back side */
-#playing-flip-card-inner {
-  position: relative;
-  width: 100%;
+.dealer-cards{
+  grid-area: dealerCards;
   height: 100%;
-  text-align: center;
-  margin: 35px;
-  display: inline-block;
-  transform-style: preserve-3d;
+  /* border: solid blue 1px; */
 }
-
-/* .playing-flip-card:hover .playing-flip-card-inner {
-  transform: rotateY(180deg);
-} */
-
-/* .start-game.flip */
-
- #start-game.flip,  #playing-flip-card-inner {
-  transition: transform 1s;
-  transform: rotateY(180deg);
-  transition-delay: 2s;
-}
-
-#playing-flip-card:hover {
- opacity: 1;
- transition: transform 3s;
- transition-timing-function: ease-in-out;
- transition-delay: 2s;
-
-}
-
-/* Position the front and back side */
-#playing-flip-card-front, #playing-flip-card-back {
-  position: absolute;
-  width: 100%;
+.dealer-text{
+  grid-area: dealerText;
   height: 100%;
-  backface-visibility: hidden;
-  border-radius: 9px;
-}
-
-/* Style the front side*/
-#playing-flip-card-front {
-  background: url('http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-tally-ho-fan-back-1_grande.png?v=1530155076');
-  background-size: contain;
-  color: black;
-}
-
-/* Style the back side */
-#playing-flip-card-back {
-  background-color: white;
-  background-size: cover;
-  color: black;
-  transform: rotateY(180deg);
+  /* border: solid blue 1px; */
 }

@@ -17,7 +17,7 @@ const WinnerDisplay = (props) => {
   }
 
   return(
-    <div className="player-buttons">
+    <div>
       <div>{props.winner.winner} is the winner with a hand value of {props.winner.value}</div>
       <Link to='/blackjack' onClick={handleClick}>New Game</Link>
       <Link to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>

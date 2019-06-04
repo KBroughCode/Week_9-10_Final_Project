@@ -7,13 +7,23 @@ class OldMaidGame extends Component{
   constructor(props){
     super(props)
     this.state = {
-      playerSelectOne: '',
-      playerSelectTwo: ''
+      playerSelectOne: {},
+      playerSelectTwo: {}
     }
+
+    this.pairing = this.pairing.bind(this)
   }
 
   componentDidMount(){
     this.props.dealHands()
+  }
+
+  pairing(value){
+    if(!this.state.playerSelectOne){
+      this.setState({playerSelectOne: card})
+    } else {
+      this.setState({playerSelectTwo: card})
+    }
   }
 
   render(){
@@ -22,6 +32,7 @@ class OldMaidGame extends Component{
         <div className='human-hand'>
           <OldMaidHumanPlayerHand
             hand= {this.props.one}
+            pairing={this.pairing}
           />
         </div>
         <div className='cpu-one'>

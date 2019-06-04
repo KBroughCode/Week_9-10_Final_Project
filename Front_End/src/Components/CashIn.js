@@ -15,7 +15,6 @@ class CashIn extends Component {
   }
 
   handleClick(){
-    console.log('clicked');
     this.setState({clicked: !this.state.clicked})
   }
 
@@ -40,7 +39,7 @@ class CashIn extends Component {
     if(this.state.clicked){
         return(
         <div className= "cash-in">
-          <form autocomplete= 'off' onSubmit={this.handleSubmit}>
+          <form autoComplete= 'off' onSubmit={this.handleSubmit}>
             <aria-label htmlFor='name'>Name</aria-label>
             <input type='text' id='name' name='name' onChange={this.handleChange} />
             <input type='submit' value='Cash In' />

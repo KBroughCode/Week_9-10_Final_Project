@@ -4,6 +4,7 @@ const Card = (props) => {
 
   const handleImgClick = () => {
     console.log(`${props.value} has been clicked`);
+    props.pairing(props.object)
   }
 
   return(

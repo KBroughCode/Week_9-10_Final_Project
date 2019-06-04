@@ -50,7 +50,6 @@ const mapDispatchToProps = (dispatch) => ({
         fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=49`)
         .then(res => res.json())
         .then(deck => {
-          console.log(deck);
           dispatch({
             type: 'GET_OLD_MAID_DECK',
             deck

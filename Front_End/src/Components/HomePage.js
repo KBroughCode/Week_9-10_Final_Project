@@ -45,7 +45,7 @@ const HomePage = (props) => {
       </div>
       <div>
         <Leaderboard
-          leaders= {props.leaders}
+          leaders = {props.leaders}
         />
       </div>
     </div>

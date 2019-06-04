@@ -4,13 +4,13 @@ import './leaderboard.css';
 const Leaderboard = (props) => {
   const highboard = props.leaders.map((element, index) => {
     while (index < 5) {
-      return `${element.name}: ${element.score} points : `
+      return ` ♣ ${element.name}: 	₡${element.score} ♣ `
     }
   })
   return (
 
     <div className="scroll-left">
-     <p>High Scores ♣{highboard}♣</p>
+     <p>High Scores {highboard}</p>
      </div>
     )
 

@@ -19,12 +19,9 @@ class OldMaidGame extends Component{
   }
 
   pairing(card){
-    console.log('before if', card);
     if(!this.state.playerSelectOne){
-      console.log('if section one', card);
       this.setState({playerSelectOne: card})
     } else {
-      console.log('else', card);
       this.setState({playerSelectTwo: card})
     }
   }

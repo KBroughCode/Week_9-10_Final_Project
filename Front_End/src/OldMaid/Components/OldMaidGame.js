@@ -9,7 +9,9 @@ class OldMaidGame extends Component{
   render(){
     return(
       <div>
-      OLD MAID THE GAME COMING SOON!
+      <OldMaidPlayerHand 
+        hand= {props.}
+      />
       </div>
     )
   }

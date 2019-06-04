@@ -3,8 +3,11 @@ import OldMaidGame from '../Components/OldMaidGame';
 
 const mapStateToProps = (state) => {
   return {
-    deck: state.snap.deck,
-    pile: state.snap.pile
+    deck: state.oldMaid.deck,
+    one: state.oldMaid.one,
+    two: state.oldMaid.two,
+    three: state.oldMaid.three,
+    four: state.oldMaid.four
   };
 };
 

@@ -17,7 +17,7 @@
   margin: 1%
 }
 
-.scroll-left {
+.scroll-right {
  height: 100px;
  overflow: hidden;
  position: relative;
@@ -25,7 +25,7 @@
 }
 /* was 100 above for height */
 
-.scroll-left p {
+.scroll-right p {
  position: absolute;
  width: 100%;
  height: 100%;
@@ -37,15 +37,15 @@
  transform:translateX(100%);
  /* Apply animation to this element  was 10s */
 
- animation: scroll-left 60s linear infinite;
+ animation: scroll-right 60s linear infinite;
 }
 /* Move it (define the animation) */
 
-@keyframes scroll-left {
+@keyframes scroll-right {
  0%   {
- transform: translateX(100%);
+ transform: translateX(-100%);
  }
  100% {
- transform: translateX(-100%);
+ transform: translateX(+100%);
  }
 }

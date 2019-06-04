@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './cashIn.css';
 
 class CashIn extends Component {
   constructor(props){
@@ -24,7 +25,7 @@ class CashIn extends Component {
   render(){
     if(this.state.clicked){
         return(
-        <div>
+        <div className= "cash-in">
           <form autocomplete= 'off'>
             <aria-label htmlFor='name'>Name</aria-label>
             <input type='text' id='name' name='name' onChange={this.handleChange} />
@@ -34,7 +35,7 @@ class CashIn extends Component {
       )
     } else {
       return(
-        <div>
+        <div className= "cash-in">
         <button onClick={this.handleClick}>Cash In</button>
         </div>
       )

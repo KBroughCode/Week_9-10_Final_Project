@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
 import SnapGameContainer from './Containers/SnapGameContainer';
+import isMatch from './Logic/TimeInterval'
 
 class Snap extends Component {
   constructor(props) {
@@ -11,21 +12,36 @@ class Snap extends Component {
     }
 
     this.handleGameStart = this.handleGameStart.bind(this)
+    this.handleGamePause = this.handleGamePause.bind(this)
+    this.startGame=this.startGame.bind(this)
   }
 
   componentDidMount() {
     this.props.getDeck();
   }
 
+  startGame(){
+    this.game = setInterval(this.props.addToPile,1250)
+  }
+
   handleGameStart() {
+    this.startGame()
     this.setState({reveal: !this.state.reveal})
+  }
+
+  handleGamePause(){
+    clearInterval(this.game);
   }
 
   render(){
     if(this.state.reveal){
       return(
         <div className= "snap">
-          <SnapGameContainer />
+          <SnapGameContainer
+          startGame={this.startGame}
+          handleGamePause={this.handleGamePause}
+          />
+
         </div>
       )
     } else{
@@ -58,11 +74,17 @@ const mapDispatchToProps = (dispatch) => ({
       })
     })
   },
+  addToPile() {
+    dispatch({
+      type: 'ADD_TO_PILE'
+    })
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
   }
+
 })
 
 

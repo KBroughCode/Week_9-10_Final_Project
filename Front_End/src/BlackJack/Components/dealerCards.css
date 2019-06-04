@@ -1,0 +1,23 @@
+.dealer-box{
+  align-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 225px 50px;
+  grid-template-areas:
+  "dealerCards"
+  "dealerText";
+}
+
+.dealer-cards{
+  grid-area: dealerCards;
+  height: 100%;
+  /* border: solid blue 1px; */
+}
+.dealer-text{
+  grid-area: dealerText;
+  height: 100%;
+  padding-left: 10px;
+  /* border: solid blue 1px; */
+}

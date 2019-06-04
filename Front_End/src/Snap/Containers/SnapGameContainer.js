@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetDefault() {
     dispatch({
-      type: 'RETURN_DEFAULT'
+      type: 'RETURN_SNAP_DEFAULT'
     })
   }
 })

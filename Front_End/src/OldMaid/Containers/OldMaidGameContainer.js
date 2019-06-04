@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addToPile() {
+  dealHands() {
     dispatch({
       type: 'DEAL_OLD_MAID_HANDS'
     })

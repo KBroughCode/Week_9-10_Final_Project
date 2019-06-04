@@ -3,7 +3,7 @@ import React from 'react';
 const Card = (props) => {
 
   const handleImgClick = () => {
-    console.log(`${props.value} has been clicked`);    
+    console.log(`${props.value} has been clicked`);
   }
 
   return(

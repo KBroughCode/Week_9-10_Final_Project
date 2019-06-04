@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
+import OldMaidHumanPlayerHand from './OldMaidPlayerHand';
 import './oldMaidGame.css'
 
 class OldMaidGame extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      pair
+    }
+  }
 
   componentDidMount(){
     this.props.dealHands()
@@ -12,7 +19,7 @@ class OldMaidGame extends Component{
     return(
       <div className='old-maid-game'>
         <div className='human-hand'>
-          <OldMaidPlayerHand
+          <OldMaidHumanPlayerHand
             hand= {this.props.one}
           />
         </div>

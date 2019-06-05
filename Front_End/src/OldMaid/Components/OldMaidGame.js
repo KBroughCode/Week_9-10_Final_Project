@@ -22,7 +22,11 @@ class OldMaidGame extends Component{
     if(!this.state.playerSelectOne){
       this.setState({playerSelectOne: card})
     } else {
-      this.addingPairs(this.state.playerSelectOne, card, 'one')
+      if(this.state.playerSelectOne.index < card.index){
+        this.addingPairs(this.state.playerSelectOne, card, 'one')
+      } else {
+        this.addingPairs(card, this.state.playerSelectOne, 'one')
+      }
     }
   }
 

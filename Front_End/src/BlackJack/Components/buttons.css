@@ -1,0 +1,28 @@
+.action-button{
+  font: 18px "Trebuchet MS", Helvetica, sans-serif;
+  color: #DBCDA4;
+  background-color:#871E31;
+  border-color:#DBCDA4;
+  border: 3px solid;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 144px;
+  margin-right: 10px;
+
+}
+
+.game-link{
+  padding: 15px;
+  text-align: center;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+  color: #2D0A11;
+  text-decoration: none;
+}
+.game-link:visited{
+  padding: 15px;
+  text-align: center;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+  color: #2D0A11;
+  text-decoration: none;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 const TwistButton = (props) => {
 
   return(
-    <button className = "twist-button" onClick = {props.twistPlayer}>Twist</button>
+    <button className = "action-button" onClick = {props.twistPlayer}>Twist</button>
   )
 }
 

@@ -61,15 +61,16 @@ class BlackJack extends Component {
     } else{
       return(
         <div className="blackjack">
-          <div className="dealer-container">
+          <div className="dealer-container"></div>
+          <div className="player-buttons">
             <StartBlackjackButton
-              className="start-button"
               handleGameStart={this.handleGameStart}
               payCoins={this.props.payCoins}
               coins={this.props.coins}
             />
           </div>
         </div>
+
       )
     }
   }

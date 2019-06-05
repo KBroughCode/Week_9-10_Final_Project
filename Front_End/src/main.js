@@ -12,7 +12,6 @@ class Main extends Component {
   render(){
     return (
       <div className="main">
-        <img className = 'logo' src = 'http://pngimg.com/uploads/roulette/roulette_PNG24.png' alt='logo' />
         <HomePageContainer />
       </div>
     );

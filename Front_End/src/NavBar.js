@@ -6,7 +6,7 @@ import "./navbar.css";
 const Navbar = (props) => (
   <div>
     <div className='navbar'>
-      <div className= 'link one'>₡{props.coins}</div>
+      <div className= 'text one'>₡{props.coins}</div>
         <Link className='link two' to="/" onClick= {props.resetDefault}>Home</Link>
         <Link className='link three' to="/Blackjack">Blackjack</Link>
         <Link className='link four' to="/Snap">Snap</Link>

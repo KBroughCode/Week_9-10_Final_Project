@@ -7,7 +7,7 @@
   color: #DBCDA4;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 275px 50px 275px;
+  grid-template-rows: 275px 55px 275px;
   grid-template-areas:
   "dealerContainer"
   "playerButtons"
@@ -16,17 +16,37 @@
 
 .dealer-container{
   grid-area: dealerContainer;
+  border-radius: 5px 5px 0 0;
   background-color: #1D7137;
 }
 .player-buttons{
   grid-area: playerButtons;
+  display: flex;
+  align-items: center;
   background-color: #BD632F;
   color: #E6DCBF;
-  height: 50px;
+  height: 55px;
   padding-left: 10px;
-  border: solid black 1px;
+  border-top: 3px solid #452412;
+  border-bottom: 3px solid #452412;
+
 }
 .player-container{
   grid-area: playerContainer;
   background-color: #1D7137;
+  border-radius: 0 0 5px 5px;
+}
+
+
+.start-game-button{
+  font: 18px "Trebuchet MS", Helvetica, sans-serif;
+  color: #DBCDA4;
+  background-color:#871E31;
+  border-color:#DBCDA4;
+  border: 3px solid;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 144px;
+  margin-right: 10px;
 }

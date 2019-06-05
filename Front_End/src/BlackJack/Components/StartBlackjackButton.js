@@ -14,7 +14,7 @@ const StartBlackjackButton = (props) => {
     );
   }else{
     return(
-      <button className= "start-game" onClick={handleClick}>Start Game</button>
+      <button className= "start-game-button" onClick={handleClick}>Start Game</button>
     )
   }
 }

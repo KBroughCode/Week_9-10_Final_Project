@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import '../blackjack.css';
+import './buttons.css';
 
 const WinnerDisplay = (props) => {
 
@@ -19,8 +20,8 @@ const WinnerDisplay = (props) => {
   return(
     <div>
       <div>The {props.winner.winner} wins with a total of {props.winner.value}</div>
-      <Link to='/blackjack' onClick={handleClick}>New Game</Link>
-      <Link to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
+      <Link className='game-link' to='/blackjack' onClick={handleClick}>New Game</Link>
+      <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
     </div>
   )
 }

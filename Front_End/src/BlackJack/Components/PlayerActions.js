@@ -3,6 +3,7 @@ import TwistButton from './TwistButton';
 import StartButton from './StartButton';
 import StickButton from './StickButton';
 
+import './buttons.css'
 import '../blackjack.css'
 
 

@@ -9,7 +9,7 @@ class OldMaidGame extends Component{
     super(props)
     this.state = {
       playerSelectOne: null,
-      playerSelectTwo: {}
+      playerSelectTwo: null
     }
 
     this.pairing = this.pairing.bind(this)
@@ -29,7 +29,9 @@ class OldMaidGame extends Component{
 
   addingPairs(cardOne, cardTwo) {
     const logic = new OldMaidLogic()
+    if(logic.checkPair(cardOne, cardTwo)) {
 
+    }
   }
 
   render(){

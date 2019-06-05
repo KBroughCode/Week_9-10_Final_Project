@@ -61,4 +61,8 @@ describe('old maid logic testing', () => {
   test('returns true if two of the same value face cards are picked', () => {
     expect(logic.checkPair(aceH, aceS)).toEqual(true);
   });
+
+  test('returns false if one of the cards is null', () => {
+    expect(logic.checkPair(aceH, null)).toEqual(true);
+  });
 })

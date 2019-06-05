@@ -13,7 +13,7 @@ const OldMaidHumanPlayerHand = (props) => {
         suit={element.suit}
         code={element.code}
         pairing={props.pairing}
-        object={element}
+        object={{...element, index: index}}
       />
       </div>
     )

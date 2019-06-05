@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
       cardTwo,
       player
     })
-  }
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_OLD_MAID_DEFAULT'

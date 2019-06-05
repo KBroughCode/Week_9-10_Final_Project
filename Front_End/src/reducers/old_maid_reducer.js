@@ -32,7 +32,7 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
       const pickDeck = {
         ...state,
         [action.receiver]: [
-          ...state[action.receiver], card
+          ...state[action.receiver], action.card
         ],
         [action.picked]: [
           ...state[action.picked].slice(0, action.card.index),

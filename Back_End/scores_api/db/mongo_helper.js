@@ -39,16 +39,15 @@ class MongoHelper {
   }
 
   static update(coll, id, payload) {
-  // Connect using the connection string
-  return MongoClient.connect(
-    HOST,
-    { useNewUrlParser: true }
-  ).then(client => {
-    const collection = client.db(DB_NAME).collection(coll);
-    return collection.updateOne({ _id: ObjectID(id) }, { $set: payload });
-  });
-}
-
+    // Connect using the connection string
+    return MongoClient.connect(
+      HOST,
+      { useNewUrlParser: true }
+    ).then(client => {
+      const collection = client.db(DB_NAME).collection(coll);
+      return collection.updateOne({ _id: ObjectID(id) }, { $set: payload });
+    });
+  } 
 }
 
 module.exports = MongoHelper;

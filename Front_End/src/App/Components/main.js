@@ -6,8 +6,8 @@ class Main extends Component {
 
 
   componentDidMount(){
-    this.props.getData()
-  }
+    this.props.getData();
+  };
 
   render(){
     return (
@@ -15,8 +15,8 @@ class Main extends Component {
         <HomePageContainer />
       </div>
     );
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   getData() {

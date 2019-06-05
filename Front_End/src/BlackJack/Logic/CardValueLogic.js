@@ -1,4 +1,4 @@
- const cardValue = {
+const cardValue = {
   'ACE':1,
   '2':2,
   '3':3,
@@ -12,6 +12,6 @@
   'JACK':10,
   'QUEEN':10,
   'KING':10
- }
+};
 
 module.exports = cardValue;

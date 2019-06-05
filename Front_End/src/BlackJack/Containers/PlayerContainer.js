@@ -40,7 +40,6 @@ const mapDispatchToProps = (dispatch) => ({
       amount
     })
   }
-
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

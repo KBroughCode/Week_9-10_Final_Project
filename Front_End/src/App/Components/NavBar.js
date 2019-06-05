@@ -13,21 +13,20 @@ const Navbar = (props) => (
         <Link className='link five' to="/OldMaid">Old Maid</Link>
     </div>
   </div>
-
 );
 
 const mapStateToProps = (state) => {
   return {
       coins: state.coins
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch) => ({
-    resetDefault(){
-      dispatch({
-        type: 'RETURN_DEFAULT'
-      })
-    }
-  })
+  resetDefault(){
+    dispatch({
+      type: 'RETURN_DEFAULT'
+    });
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -7,33 +7,33 @@ class CashIn extends Component {
     this.state = {
       clicked: false,
       name: ''
-    }
+    };
 
-    this.handleClick = this.handleClick.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
 
   handleClick(){
-    this.setState({clicked: !this.state.clicked})
-  }
+    this.setState({clicked: !this.state.clicked});
+  };
 
   handleChange(event){
-    this.setState({name: event.target.value})
-  }
+    this.setState({name: event.target.value});
+  };
 
   handleSubmit(event){
-    event.preventDefault()
+    event.preventDefault();
     const newEntry = {
       name: this.state.name,
       score: this.props.coins
-    }
-    this.props.addHiScore(newEntry)
+    };
+    this.props.addHiScore(newEntry);
     this.setState({
       clicked: !this.state.clicked,
       name: ''
-    })
-  }
+    });
+  };
 
   render(){
     if(this.state.clicked){
@@ -73,7 +73,7 @@ class CashIn extends Component {
         </div>
       )
     }
-  }
-}
+  };
+};
 
 export default CashIn;

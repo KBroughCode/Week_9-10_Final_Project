@@ -26,6 +26,7 @@ class App extends Component {
         </React.Fragment>
       </Router>
     );
-  }
-}
+  };
+};
+
 export default App;

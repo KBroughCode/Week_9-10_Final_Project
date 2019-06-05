@@ -14,21 +14,21 @@ const cardValue = require('./CardValueLogic');
    });
    total = removeDuplicates(total);
    total = removeOver21(total);
-   return total
+   return total;
  };
 
  const removeDuplicates=(array) => {
    return [...new Set(array)];
- }
+ };
 
  const removeOver21=(array) => {
-   const newArray = []
+   const newArray = [];
    array.forEach((element) => {
      if(element<22){
-       newArray.push(element)
-     }
-   })
+       newArray.push(element);
+     };
+   });
    return newArray;
- }
+ };
 
 module.exports = evaluateCards;

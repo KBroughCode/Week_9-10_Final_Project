@@ -19,6 +19,7 @@
   border-radius: 5px 5px 0 0;
   background-color: #1D7137;
 }
+
 .player-buttons{
   grid-area: playerButtons;
   display: flex;
@@ -31,12 +32,12 @@
   border-bottom: 3px solid #452412;
 
 }
+
 .player-container{
   grid-area: playerContainer;
   background-color: #1D7137;
   border-radius: 0 0 5px 5px;
 }
-
 
 .start-game-button{
   font: 18px "Trebuchet MS", Helvetica, sans-serif;

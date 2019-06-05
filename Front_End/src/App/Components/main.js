@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import HomePageContainer from './Containers/HomePageContainer';
+import HomePageContainer from '../Containers/HomePageContainer';
 
 class Main extends Component {
 
 
   componentDidMount(){
-    this.props.getData()
-  }
+    this.props.getData();
+  };
 
   render(){
     return (
@@ -15,8 +15,8 @@ class Main extends Component {
         <HomePageContainer />
       </div>
     );
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   getData() {

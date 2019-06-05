@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
 import OldMaidHumanPlayerHand from './OldMaidHumanPlayerHand';
+import NextRoundButton from './NextRoundButton';
 import OldMaidLogic from '../Logic/OldMaidLogic';
 import './oldMaidGame.css';
 
@@ -12,6 +13,7 @@ class OldMaidGame extends Component{
     }
 
     this.pairing = this.pairing.bind(this)
+    this.playRound = this.playRound.bind(this)
   }
 
   componentDidMount(){
@@ -40,9 +42,25 @@ class OldMaidGame extends Component{
     }
   }
 
+  playRound(){
+    this.props.pickCard(this.randCard(this.props.three),'two','three')
+    this.props.pickCard(this.randCard(this.props.four),'three','four')
+    this.props.pickCard(this.randCard(this.props.one),'four','one')
+  }
+
+  randCard(array){
+    const index = Math.floor(Math.random() * array.length)
+    return {...array[index], index: index}
+  }
+
   render(){
     return(
       <div className='old-maid-game'>
+        <div className='next-round'>
+          <NextRoundButton
+            playRound={this.playRound}
+          />
+        </div>
         <div className='human-hand'>
           <OldMaidHumanPlayerHand
             hand= {this.props.one}
@@ -52,16 +70,22 @@ class OldMaidGame extends Component{
         <div className='cpu-one'>
           <OldMaidPlayerHand
             hand= {this.props.two}
+            pickCard= {this.props.pickCard}
+            player= 'two'
           />
         </div>
         <div className='cpu-two'>
           <OldMaidPlayerHand
             hand= {this.props.three}
+            pickCard= {this.props.pickCard}
+            player= 'three'
           />
         </div>
         <div className='cpu-three'>
           <OldMaidPlayerHand
             hand= {this.props.four}
+            pickCard= {this.props.pickCard}
+            player= 'four'
           />
         </div>
       </div>

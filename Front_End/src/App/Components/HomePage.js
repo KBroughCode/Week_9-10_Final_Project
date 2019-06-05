@@ -32,7 +32,7 @@ const HomePage = (props) => {
             <div className = "flip-card-back">
               <h3>Old Maid</h3>
               <p>Test your skill against our championship Old Maid players; one player has the old maid, make sure it's not you! Trade cards and discard pairs until the loser is left standing.</p>
-              <Link className='home-page-link' to="/Blackjack">Play</Link>
+              <Link className='home-page-link' to="OldMaid">Play</Link>
             </div>
             </div>
           </div>

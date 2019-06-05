@@ -1,8 +1,8 @@
 const snapReducer = (state = {deck: [], pile: []}, action) => {
   switch (action.type) {
     case 'GET_SNAP_DECK':
-      const newState = {...state, deck: [...action.deck.cards]}
-      return newState
+      const newState = {...state, deck: [...action.deck.cards]};
+      return newState;
     case 'ADD_TO_PILE':
       const moveState = {
         ...state,
@@ -11,11 +11,11 @@ const snapReducer = (state = {deck: [], pile: []}, action) => {
       }
       return moveState
     case 'RETURN_SNAP_DEFAULT':
-      const defaultState = {deck: [], pile: []}
-      return defaultState
+      const defaultState = {deck: [], pile: []};
+      return defaultState;
     default:
-      return state
-  }
-}
+      return state;
+  };
+};
 
 export default snapReducer;

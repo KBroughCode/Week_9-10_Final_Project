@@ -6,19 +6,21 @@ import './playerCards.css';
 const PlayerCard = (props) =>{
 
   const playerCards = props.cards.map((playerCard, i)=> {
-    return(
-    <Card
-      image = {playerCard.image}
-      code = {playerCard.code}
-      value = {playerCard.value}
-      suit = {playerCard.suit}
-      key= {i}
-      index='0'
-    />
-  )
-  })
 
-  const playerTotal = (evaluateCards(props.cards))
+    return(
+      <Card
+        image = {playerCard.image}
+        code = {playerCard.code}
+        value = {playerCard.value}
+        suit = {playerCard.suit}
+        key= {i}
+        index='0'
+      />
+    );
+
+  });
+
+  const playerTotal = (evaluateCards(props.cards));
 
   const displayValue =() => {
     switch (playerTotal.length) {
@@ -29,20 +31,21 @@ const PlayerCard = (props) =>{
       case 2:
         return `Your total is either ${playerTotal[0]} or ${playerTotal[1]}`
       default:
-        return `UH OH SPAGHETTI OHs`
-    }
-  }
+        return null
+    };
+  };
 
-    return(
-      <div className = 'player-box'>
-        <div className ='player-cards' >
-          <div>{ playerCards }</div>
-        </div>
-        <div className = 'player-text'>
-          <div>{displayValue()}</div>
-        </div>
+  return(
+    <div className = 'player-box'>
+      <div className ='player-cards'>
+        <div>{ playerCards }</div>
+      </div>
+      <div className = 'player-text'>
+        <div>{displayValue()}</div>
+      </div>
     </div>
-    )
-  }
+  );
+  
+};
 
-export default PlayerCard
+export default PlayerCard;

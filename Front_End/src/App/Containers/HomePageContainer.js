@@ -5,8 +5,8 @@ const mapStateToProps = (state) => {
   return {
     leaders: state.leaderboard,
     coins: state.coins
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   getData() {
@@ -27,21 +27,20 @@ const mapDispatchToProps = dispatch => ({
           method: 'POST',
           body: JSON.stringify(data),
           headers: { 'Content-Type': 'application/json'}
-        }
-        )
+        })
         .then(res => res.json())
         .then(casinoData => {
           dispatch({
             type: 'GET_LEADER_DATA',
             casinoData
-          })
+          });
         })
         .then(casinoData => {
           dispatch({
             type: 'SET_COINS'
-          })
-        })
-      })
+          });
+        });
+      });
     }
 });
 

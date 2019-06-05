@@ -26,6 +26,14 @@ const mapDispatchToProps = (dispatch) => ({
       player
     })
   },
+  pickCard(card, receiver, picked){
+    dispatch({
+      type: 'PICK_CARD',
+      card,
+      receiver,
+      picked
+    })
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_OLD_MAID_DEFAULT'

@@ -17,6 +17,7 @@
   white-space: nowrap;
   overflow-x: scroll;
 }
+
 .player-text{
   grid-area: playerText;
   height: 100%;

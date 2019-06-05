@@ -1,38 +1,76 @@
+
+
 import { connect } from 'react-redux';
+// import SnapGame from '../Components/SnapGame';
+import { Link } from "react-router-dom";
 import React from 'react';
 import SnapStartButton from '../Components/SnapStartButton'
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
 import PlayerActions from '../Components/PlayerActions';
 
-import '../snap.css';
-
 const SnapGameContainer = (props) => {
 
-  console.log("PROPS", props);
+const handleClick = () => {
+   props.handleGameStart();
+   props.resetDefault();
+   props.getDeck();
+ }
 
-  return(
-    <div>
-      <div className="snap-cards-container">
-        <div className ="snap-cards">
-        <DeckCards
-          deck = {props.deck}
-          />
-        <PileCards
+ const handleHomeClick = () => {
+   props.resetDefault();
+   props.handleGameStart();
+ }
+
+ if(props.deck.length > 0){
+   return(
+     <div>
+       <div className="snap-cards-container">
+         <div className ="snap-cards">
+         <DeckCards
+           deck = {props.deck}
+           />
+         <PileCards
+           pile = {props.pile}
+           winCoins={props.winCoins}
+           payCoins={props.payCoins}
+           />
+         </div>
+       </div>
+       <div className ="snap-player-buttons">
+         <SnapStartButton />
+         <PlayerActions
+          handleGamePause = {props.handleGamePause}
+          startGame={props.startGame}
           pile = {props.pile}
+          winCoins={props.winCoins}
+          payCoins={props.payCoins}
           />
         </div>
       </div>
-      <div className ="snap-player-buttons">
-        <SnapStartButton />
-        <PlayerActions
-        handleGamePause = {props.handleGamePause}
-        startGame={props.startGame}
-        />
-      </div>
-    </div>
-  )
+    )
+  }else{
+    return(
+      <div>
+        <div>
+          <div>The game is over. Would you like to play again?</div>
+            <Link className='game-link' to='/snap' onClick={handleClick}>New Game</Link>
+            <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
+        </div>
+        <div className ="snap-player-buttons">
+          <SnapStartButton />
+          <PlayerActions
+            handleGamePause = {props.handleGamePause}
+            startGame={props.startGame}
+            winCoins={props.winCoins}
+            payCoins={props.payCoins}
+          />
+        </div>
+        </div>
+   )
+ }
 }
+
 
 const mapStateToProps = (state) => {
   return {
@@ -49,9 +87,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetDefault() {
     dispatch({
-      type: 'RETURN_SNAP_DEFAULT'
+      type: 'RETURN_DEFAULT'
     })
-  }
+  },
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SnapGameContainer);

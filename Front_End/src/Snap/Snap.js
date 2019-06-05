@@ -42,6 +42,8 @@ class Snap extends Component {
           <SnapGameContainer
           startGame={this.startGame}
           handleGamePause={this.handleGamePause}
+          winCoins={this.props.winCoins}
+          payCoins={this.props.payCoins}
           />
 
         </div>
@@ -85,9 +87,24 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
+  },
+  winCoins(amount) {
+    dispatch({
+      type:'ADD_COINS',
+      amount
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
+    })
   }
 
 })
 
 
 export default connect(null, mapDispatchToProps)(Snap);
+
+
+//////////////////////////////////////////////////////////////////////

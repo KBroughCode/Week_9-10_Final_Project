@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Component } from "react";
 import React from "react";
-import Navbar from "./NavBar";
-import "./navbar.css"
+import Navbar from "./App/Components/NavBar";
+import "./App/Components/navbar.css"
 
 import BlackJack from "./BlackJack/BlackJack";
 import Snap from "./Snap/Snap";
 import OldMaid from "./OldMaid/OldMaid";
-import Main from "./main";
+import Main from "./App/Components/main";
 
 class App extends Component {
   render() {

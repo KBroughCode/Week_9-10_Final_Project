@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import HomePageContainer from './Containers/HomePageContainer';
+import HomePageContainer from '../Containers/HomePageContainer';
 
 class Main extends Component {
 

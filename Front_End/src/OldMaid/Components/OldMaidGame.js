@@ -36,10 +36,10 @@ class OldMaidGame extends Component{
     const logic = new OldMaidLogic()
     if(logic.checkPair(cardOne, cardTwo)) {
       this.props.addPairToPile(cardOne, cardTwo, player)
-      this.setState({
+      }
+    this.setState({
         playerSelectOne: null
-      })
-    }
+    })
   }
 
   playRound(){
@@ -72,6 +72,7 @@ class OldMaidGame extends Component{
             hand= {this.props.two}
             pickCard= {this.props.pickCard}
             player= 'two'
+            updateCpuHand={this.props.updateCpuHand}
           />
         </div>
         <div className='cpu-two'>
@@ -79,6 +80,7 @@ class OldMaidGame extends Component{
             hand= {this.props.three}
             pickCard= {this.props.pickCard}
             player= 'three'
+            updateCpuHand={this.props.updateCpuHand}
           />
         </div>
         <div className='cpu-three'>
@@ -86,6 +88,7 @@ class OldMaidGame extends Component{
             hand= {this.props.four}
             pickCard= {this.props.pickCard}
             player= 'four'
+            updateCpuHand={this.props.updateCpuHand}
           />
         </div>
       </div>

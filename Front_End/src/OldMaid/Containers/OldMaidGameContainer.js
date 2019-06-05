@@ -34,6 +34,12 @@ const mapDispatchToProps = (dispatch) => ({
       picked
     })
   },
+  updateCpuHand(hand){
+    dispatch({
+      type: 'UPDATE_CPU',
+      hand
+    })
+  },
   resetDefault() {
     dispatch({
       type: 'RETURN_OLD_MAID_DEFAULT'

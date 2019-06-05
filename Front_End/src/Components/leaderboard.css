@@ -1,0 +1,51 @@
+
+.leaderboard-container{
+  display: flex;
+  color: #D8C99B;
+  background-color:black;
+  opacity: 0.7;
+  border-color:#D8C99B;
+  border-style: solid;
+}
+
+.leaderboard-header{
+  font-size: 1.5em;
+}
+
+.leaderboard-item{
+  font-size: 1em;
+  margin: 1%
+}
+
+.slideshow{
+ height: 100px;
+ overflow: hidden;
+ position: relative;
+ font-size: 1.75em;
+}
+/* was 100 above for height */
+
+.slideshow p {
+ position: absolute;
+ width: 7200px;
+ height: 100%;
+ margin: 0;
+ line-height: 100px;
+ text-align: right;
+ /* Starting position */
+
+
+ /* Apply animation to this element  was 10s */
+
+ animation: slideshow 27s linear infinite;
+}
+/* Move it (define the animation) */
+
+@keyframes slideshow{
+ 0%   {
+   left: -50%;
+ }
+ 100% {
+   left: -285%;
+ }
+}

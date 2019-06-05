@@ -1,4 +1,4 @@
-const OldMaidLogic = require('../Logic/OldMaidLogic.js');
+const OldMaidLogic = require('../OldMaidLogic.js');
 
 describe('old maid logic testing', () => {
   const logic = new OldMaidLogic();
@@ -46,7 +46,7 @@ describe('old maid logic testing', () => {
     code: "5D"
   }
 
-  test('returns false if two of the same face cards are picked', () => {
+  test('returns not pair if two of the same face card are picked', () => {
     expect(logic.checkPair(kingH, kingHTwo)).toEqual(false);
   });
 
@@ -62,4 +62,7 @@ describe('old maid logic testing', () => {
     expect(logic.checkPair(aceH, aceS)).toEqual(true);
   });
 
+  test('returns false if one of the cards is null', () => {
+    expect(logic.checkPair(aceH, null)).toEqual(true);
+  });
 })

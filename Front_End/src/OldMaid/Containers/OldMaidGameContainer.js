@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     one: state.oldMaid.one,
     two: state.oldMaid.two,
     three: state.oldMaid.three,
-    four: state.oldMaid.four
+    four: state.oldMaid.four,
+    pile: state.oldMaid.pile
   };
 };
 
@@ -15,6 +16,14 @@ const mapDispatchToProps = (dispatch) => ({
   dealHands() {
     dispatch({
       type: 'DEAL_OLD_MAID_HANDS'
+    })
+  },
+  addPairToPile(cardOne, cardTwo, player) {
+    dispatch({
+      type: 'ADD_PAIR_TO_PILE',
+      cardOne,
+      cardTwo,
+      player
     })
   },
   resetDefault() {

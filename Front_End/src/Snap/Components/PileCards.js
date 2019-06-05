@@ -19,11 +19,19 @@ const PileCards = (props) =>{
     />
   })
 
-  return(
-    <>
-      <div className = "pile-cards">{pileCards[0]}</div>
-    </>
-  )
+
+const pileCardValues = props.pile.map((card)=>{
+  return card.value
+})
+
+ isMatch(pileCardValues)
+
+ // if(pileCards.length>1){
+    return(
+      <>
+        <div className = "pile-cards">{pileCards[0]}</div>
+      </>
+    )
 }
 
 export default PileCards

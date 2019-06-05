@@ -11,6 +11,7 @@ const PileCard = (props) =>{
         </div>
       </div>
     </div>
+
   )
 }
 

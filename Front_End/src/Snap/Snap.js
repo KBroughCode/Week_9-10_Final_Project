@@ -4,6 +4,8 @@ import SnapStartButton from './Components/SnapStartButton';
 import SnapGameContainer from './Containers/SnapGameContainer';
 import isMatch from './Logic/TimeInterval'
 
+import './snap.css';
+
 class Snap extends Component {
   constructor(props) {
     super(props)
@@ -46,7 +48,7 @@ class Snap extends Component {
       )
     } else{
       return(
-        <div className= "snap">
+        <div className= "snap-player-buttons">
           <SnapStartButton
             handleGameStart={this.handleGameStart}
           />

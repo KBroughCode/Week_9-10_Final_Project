@@ -1,12 +1,12 @@
 
 const isMatch = (array) => {
 
-const comparison = array.slice(-2);
+const comparison = array.splice(0,2);
 
 if (comparison[0] === comparison[1]) {
-   console.log("MATCH!!")
+   console.log("match");
   } else {
-   console.log("No Match PUNK!!")
+   console.log("not a match");
   }
 }
 

@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
-// import SnapGameContainer from '../Components/SnapGameContainer';
 import React from 'react';
 import SnapStartButton from '../Components/SnapStartButton'
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
+import PlayerActions from '../Components/PlayerActions';
+
+import '../snap.css';
 
 const SnapGameContainer = (props) => {
 
@@ -11,16 +13,23 @@ const SnapGameContainer = (props) => {
 
   return(
     <div>
-    <SnapStartButton />
-    <DeckCards
-      deck = {props.deck}
-      />
-    <PileCards
-      pile = {props.pile}
-      handleGamePause = {props.handleGamePause}
-      startGame={props.startGame}
-      />
-      SNAP THE GAME COMING SOON!
+      <div className="snap-cards-container">
+        <div className ="snap-cards">
+        <DeckCards
+          deck = {props.deck}
+          />
+        <PileCards
+          pile = {props.pile}
+          />
+        </div>
+      </div>
+      <div className ="snap-player-buttons">
+        <SnapStartButton />
+        <PlayerActions
+        handleGamePause = {props.handleGamePause}
+        startGame={props.startGame}
+        />
+      </div>
     </div>
   )
 }

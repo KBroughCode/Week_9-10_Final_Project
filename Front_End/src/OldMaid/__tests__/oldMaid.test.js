@@ -46,7 +46,20 @@ describe('old maid logic testing', () => {
     code: "5D"
   }
 
-  test('returns not pair if two of the same face card are picked', () => {
+  test('returns false if two of the same face cards are picked', () => {
     expect(logic.checkPair(kingH, kingHTwo)).toEqual(false);
   });
+
+  test('returns flase if two of the same numbered cards are picked', () => {
+    expect(logic.checkPair(fiveC, fiveCTwo)).toEqual(false);
+  });
+
+  test('returns true if two of the same value numbered cards are picked', () => {
+    expect(logic.checkPair(fiveC, fiveD)).toEqual(true);
+  });
+
+  test('returns true if two of the same value face cards are picked', () => {
+    expect(logic.checkPair(aceH, aceS)).toEqual(true);
+  });
+
 })

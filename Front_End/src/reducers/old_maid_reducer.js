@@ -47,5 +47,4 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
       return state
   }
 }
-
 export default oldMaidReducer;

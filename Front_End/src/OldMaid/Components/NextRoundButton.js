@@ -1,9 +1,14 @@
 import React from 'react';
 
 const NextRoundButton = (props) => {
+
+  const handleClick = () => {
+    props.playRound()
+  }
+
   return(
     <div>
-      <button>Next Round</button>
+      <button onClick={handleClick}>Next Round</button>
     </div>
   )
 }

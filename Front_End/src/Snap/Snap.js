@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
 import SnapGameContainer from './Containers/SnapGameContainer';
-import isMatch from './Logic/TimeInterval'
 
 class Snap extends Component {
   constructor(props) {

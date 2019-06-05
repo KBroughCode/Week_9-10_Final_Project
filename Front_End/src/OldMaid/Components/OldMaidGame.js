@@ -13,6 +13,7 @@ class OldMaidGame extends Component{
     }
 
     this.pairing = this.pairing.bind(this)
+    this.playRound = this.playRound.bind(this)
   }
 
   componentDidMount(){
@@ -41,11 +42,24 @@ class OldMaidGame extends Component{
     }
   }
 
+  playRound(){
+    this.props.pickCard(this.randCard(this.props.three),'two','three')
+    this.props.pickCard(this.randCard(this.props.four),'three','four')
+    this.props.pickCard(this.randCard(this.props.one),'four','one')
+  }
+
+  randCard(array){
+    const index = Math.floor(Math.random() * array.length)
+    return {...array[index], index: index}
+  }
+
   render(){
     return(
       <div className='old-maid-game'>
         <div className='next-round'>
-          <NextRoundButton />
+          <NextRoundButton
+            playRound={this.playRound}
+          />
         </div>
         <div className='human-hand'>
           <OldMaidHumanPlayerHand

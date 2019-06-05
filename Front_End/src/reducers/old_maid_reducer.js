@@ -1,4 +1,4 @@
-const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []}, action) => {
+const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: [], pile: []}, action) => {
   switch (action.type) {
     case 'GET_OLD_MAID_DECK':
       const newState = {...state, deck: [...action.deck.cards]}

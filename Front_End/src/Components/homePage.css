@@ -1,18 +1,24 @@
 .home-page-container{
-  display: flex;
-  position: relative;
+  /* position: relative; */
   left:30%;
   top:50%;
-  margin: 100px;
-  perspective: 1000px
+  perspective: 1000px;
+  height: 600px;
+  background-image:url('http://pngimg.com/uploads/roulette/roulette_PNG24.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+  background-color: rgba(164,198,175,0.7);
+  background-blend-mode:luminosity;
 }
 
 .logo{
+  align-self:right;
   height:50%;
   width:40%;
   position: absolute;
-  z-index: 1;
-  opacity: 0.2;
+  z-index: -1;
+  opacity: 0.6;
 }
 
 .home-page-link{
@@ -27,19 +33,30 @@
 
 /* The flip card container */
 .flip-card {
+  display:grid;
+  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr ;
+  grid-template-rows: 400px;
+  grid-template-areas:
+  ". card-1 card-2 card-3 .";
   background-color: transparent;
-  width: 100%;
-  height: 300px;
-  margin: 35px;
-  display: inline-block;
-  perspective: 1000px;
+  justify-content: center;
+  padding: 30px;
 
+}
+.card1{
+  grid-area: card-1;
+}
+.card2{
+  grid-area: card-2;
+}
+.card3{
+  grid-area: card-3;
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
-  width: 205px;
+  width: 210px;
   height: 300px;
   text-align: center;
   margin: 35px;
@@ -56,16 +73,16 @@
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 205px;
+  width: 210px;
   height: 300px;
   backface-visibility: hidden;
-  border-radius: 9px;
+  border-radius: 10px;
 }
 
 /* Style the front side*/
 .flip-card-front {
   background: url('http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-tally-ho-fan-back-1_grande.png?v=1530155076');
-  background-size: cover;
+  background-size:cover;
   color: black;
 }
 
@@ -77,6 +94,25 @@
 }
 
 
-.face{
+.cash-in{
+  color: #871E31;
+  background-color:#DBCDA4;
+  border-color:#871E31;
+  border: 3px solid;
+  border-radius: 5px;
+  height: 36px;
 
+}
+
+.menu-button{
+  font: 18px "Trebuchet MS", Helvetica, sans-serif;
+  color: #DBCDA4;
+  background-color:#871E31;
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 144px;
+  margin-left: 20px;
+  margin-right: 10px;
+  outline: none;
 }

@@ -9,7 +9,7 @@ const HomePage = (props) => {
     <div>
       <div className="home-page-container">
         <div className = "flip-card">
-          <div className="flip-card-inner">
+          <div className="flip-card-inner card1">
             <div className = "flip-card-front"></div>
             <div className = "flip-card-back">
               <div className = "face"></div>
@@ -19,7 +19,7 @@ const HomePage = (props) => {
 
             </div>
           </div>
-          <div className="flip-card-inner">
+          <div className="flip-card-inner card2">
             <div className = "flip-card-front"></div>
             <div className = "flip-card-back">
               <h3>Snap</h3>
@@ -27,7 +27,7 @@ const HomePage = (props) => {
               <Link className='home-page-link' to="/Snap">Play</Link>
             </div>
           </div>
-          <div className="flip-card-inner">
+          <div className="flip-card-inner card3">
             <div className = "flip-card-front"></div>
             <div className = "flip-card-back">
               <h3>Old Maid</h3>
@@ -37,13 +37,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-      <div>
+      <div className='cash-in'>
         <CashIn
           coins={props.coins}
           addHiScore={props.addHiScore}
         />
       </div>
-      <div>
+      <div className='leaderboard'>
         <Leaderboard
           leaders = {props.leaders}
         />

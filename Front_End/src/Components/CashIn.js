@@ -38,18 +38,38 @@ class CashIn extends Component {
   render(){
     if(this.state.clicked){
         return(
-        <div className= "cash-in">
+        <div>
           <form autoComplete= 'off' onSubmit={this.handleSubmit}>
-            <aria-label htmlFor='name'>Name</aria-label>
-            <input type='text' id='name' name='name' onChange={this.handleChange} />
-            <input type='submit' value='Cash In' />
+            <aria-label
+              htmlFor='name'
+              className='label'
+            >
+              Name
+            </aria-label>
+            <input
+              className='form-input'
+              type='text'
+              id='name'
+              name='name'
+              onChange={this.handleChange}
+            />
+            <input
+              className='menu-button'
+              type='submit'
+              value='Cash In'
+            />
           </form>
         </div>
       )
     } else {
       return(
-        <div className= "cash-in">
-        <button onClick={this.handleClick}>Cash In</button>
+        <div>
+        <button
+          className='menu-button'
+          onClick={this.handleClick}
+        >
+          Cash In
+        </button>
         </div>
       )
     }

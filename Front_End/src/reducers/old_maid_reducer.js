@@ -1,4 +1,4 @@
-const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []}, action) => {
+const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: [], pile: []}, action) => {
   switch (action.type) {
     case 'GET_OLD_MAID_DECK':
       const newState = {...state, deck: [...action.deck.cards]}
@@ -13,6 +13,21 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
         four: [...state.deck.slice(37)]
       }
       return dealState
+    case 'ADD_PAIR_TO_PILE':
+      const pairPile = {
+        ...state,
+        [action.player]: [
+          ...state[action.player].slice(0, action.cardOne.index),
+          ...state[action.player].slice(action.cardOne.index+1, action.cardTwo.index),
+          ...state[action.player].slice(action.cardTwo.index+1)
+        ],
+        pile: [
+          ...state.pile,
+          action.cardOne,
+          action.cardTwo
+        ]
+      }
+      return pairPile
     case 'RETURN_OLD_MAID_DEFAULT':
       const defaultState = {deck: []}
       return defaultState

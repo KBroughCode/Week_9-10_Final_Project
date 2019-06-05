@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
 import OldMaidHumanPlayerHand from './OldMaidHumanPlayerHand';
-import './oldMaidGame.css'
+import OldMaidLogic from '../Logic/OldMaidLogic';
+import './oldMaidGame.css';
 
 class OldMaidGame extends Component{
   constructor(props){
     super(props)
     this.state = {
-      playerSelectOne: null,
-      playerSelectTwo: {}
+      playerSelectOne: null
     }
 
     this.pairing = this.pairing.bind(this)
@@ -19,13 +19,24 @@ class OldMaidGame extends Component{
   }
 
   pairing(card){
-    console.log('before if', card);
     if(!this.state.playerSelectOne){
-      console.log('if section one', card);
       this.setState({playerSelectOne: card})
     } else {
-      console.log('else', card);
-      this.setState({playerSelectTwo: card})
+      if(this.state.playerSelectOne.index < card.index){
+        this.addingPairs(this.state.playerSelectOne, card, 'one')
+      } else {
+        this.addingPairs(card, this.state.playerSelectOne, 'one')
+      }
+    }
+  }
+
+  addingPairs(cardOne, cardTwo, player) {
+    const logic = new OldMaidLogic()
+    if(logic.checkPair(cardOne, cardTwo)) {
+      this.props.addPairToPile(cardOne, cardTwo, player)
+      this.setState({
+        playerSelectOne: null
+      })
     }
   }
 

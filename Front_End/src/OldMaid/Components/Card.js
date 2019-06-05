@@ -3,7 +3,7 @@ import React from 'react';
 const Card = (props) => {
 
   const handleImgClick = () => {
-
+    props.pickCard(props.object, 'one', props.player)
   }
 
   return(

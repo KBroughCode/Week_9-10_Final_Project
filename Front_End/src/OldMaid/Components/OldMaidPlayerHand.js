@@ -15,8 +15,8 @@ const OldMaidPlayerHand = (props) => {
         suit={element.suit}
         code={element.code}
         object={{...element, index: index}}
-        pickCard={element.pickCard}
-        player={element.player}
+        pickCard={props.pickCard}
+        player={props.player}
       />
       </div>
     )

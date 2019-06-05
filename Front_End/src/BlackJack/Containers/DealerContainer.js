@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import DealerCards from '../Components/DealerCards';
 
 const mapStateToProps = (state) => {
-  return {
 
+  return {
     deck: state.blackjack.deck,
     cards: state.blackjack.dealer
   };
+
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -25,6 +26,6 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'RETURN_DEFAULT'
     })
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DealerCards);

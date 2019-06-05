@@ -12,18 +12,18 @@ class BlackJack extends Component {
     super(props)
     this.state = {
       reveal: false
-    }
+    };
 
-    this.handleGameStart = this.handleGameStart.bind(this)
-  }
+    this.handleGameStart = this.handleGameStart.bind(this);
+  };
 
   componentDidMount() {
     this.props.getDeck();
-  }
+  };
 
   handleGameStart() {
     this.setState({reveal: !this.state.reveal});
-  }
+  };
 
   render(){
     if(this.state.reveal){
@@ -46,7 +46,7 @@ class BlackJack extends Component {
             </div>
           </div>
         );
-      } else{
+      }else{
         return(
           <div className="blackjack">
             <div className="dealer-container">
@@ -57,8 +57,8 @@ class BlackJack extends Component {
             </div>
           </div>
         )
-      }
-    } else{
+      };
+    }else{
       return(
         <div className="blackjack">
           <div className="dealer-container"></div>
@@ -70,18 +70,18 @@ class BlackJack extends Component {
             />
           </div>
         </div>
+      );
+    };
+  };
 
-      )
-    }
-  }
-}
+};
 
 const mapStateToProps = (state) => {
   return{
     winner: state.blackjack.winner,
     coins: state.coins
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
@@ -95,23 +95,23 @@ const mapDispatchToProps = (dispatch) => ({
           dispatch({
             type: 'GET_DECK',
             deck
-          })
-        })
-        })
-      })
+          });
+        });
+      });
+    });
   },
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'
-    })
+    });
   },
   payCoins(amount) {
     dispatch({
       type:'REMOVE_COINS',
       amount
-    })
+    });
   }
-})
+});
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlackJack);

@@ -10,12 +10,12 @@ const WinnerDisplay = (props) => {
     props.handleGameStart();
     props.resetDefault();
     props.getDeck();
-  }
+  };
 
   const handleHomeClick = () => {
     props.resetDefault();
     props.handleGameStart();
-  }
+  };
 
   return(
     <div>
@@ -23,9 +23,8 @@ const WinnerDisplay = (props) => {
       <Link className='game-link' to='/blackjack' onClick={handleClick}>New Game</Link>
       <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
     </div>
-  )
-}
+  );
 
-
+};
 
 export default WinnerDisplay;

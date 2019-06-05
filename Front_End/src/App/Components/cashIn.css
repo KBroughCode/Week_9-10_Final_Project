@@ -1,0 +1,13 @@
+.cash-in{
+  z-index: 9999;
+  font: 24px "Trebuchet MS", Helvetica, sans-serif;
+}
+.form-input{
+  margin-left: 10px;
+  height:20px;
+  display: inline-block;
+  transform: translate(0,-3px);
+}
+.label{
+  border-left: 10px;
+}

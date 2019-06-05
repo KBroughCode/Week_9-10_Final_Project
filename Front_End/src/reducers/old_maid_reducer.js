@@ -1,8 +1,8 @@
 const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: [], pile: []}, action) => {
   switch (action.type) {
     case 'GET_OLD_MAID_DECK':
-      const newState = {...state, deck: [...action.deck.cards]}
-      return newState
+      const newState = {...state, deck: [...action.deck.cards]};
+      return newState;
     case 'DEAL_OLD_MAID_HANDS':
       const dealState = {
         ...state,
@@ -41,10 +41,11 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
       }
       return pickDeck
     case 'RETURN_OLD_MAID_DEFAULT':
-      const defaultState = {deck: []}
-      return defaultState
+      const defaultState = {deck: []};
+      return defaultState;
     default:
-      return state
-  }
-}
+      return state;
+  };
+};
+
 export default oldMaidReducer;

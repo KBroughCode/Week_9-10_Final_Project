@@ -3,7 +3,6 @@ import React from 'react';
 const Card = (props) => {
 
   const handleImgClick = () => {
-    console.log(`${props.value} has been clicked player hand`);
     props.pairing(props.object)
   }
 

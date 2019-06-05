@@ -27,6 +27,7 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
           action.cardTwo
         ]
       }
+      return pairPile
     case 'RETURN_OLD_MAID_DEFAULT':
       const defaultState = {deck: []}
       return defaultState

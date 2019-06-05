@@ -10,6 +10,7 @@ const PileCards = (props) =>{
     return <PileCard
       key={index}
       image={card.image}
+      index={card.index}
       value={card.value}
       suit={card.suit}
       code={card.code}
@@ -19,23 +20,18 @@ const PileCards = (props) =>{
   })
 
 
-const pileCardValues = props.pile.map((card,index)=>{
+const pileCardValues = props.pile.map((card)=>{
   return card.value
-
 })
 
-console.log(pileCardValues);
-  isMatch(pileCardValues)
+ isMatch(pileCardValues)
 
-
-
-  return(
-    <>
-      <div className = "pile-cards">{ pileCards}</div>
-      <button onClick = {props.handleGamePause}>pause</button>
-      <button onClick = {props.startGame}>re-start</button>
-    </>
-  )
+ // if(pileCards.length>1){
+    return(
+      <>
+        <div className = "pile-cards">{pileCards[0]}</div>
+      </>
+    )
 }
 
 export default PileCards

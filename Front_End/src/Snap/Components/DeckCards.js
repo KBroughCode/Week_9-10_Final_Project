@@ -13,9 +13,8 @@ const DeckCards = (props) =>{
       code={card.code}
     />
   })
-
   return(
-    <div className = "deck-cards"> { deckCards} </div>
+      <div className = "deck-cards"> { deckCards.slice(-1) } </div>
   )
 }
 

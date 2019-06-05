@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import SnapStartButton from './Components/SnapStartButton';
 import SnapGameContainer from './Containers/SnapGameContainer';
 
+import './snap.css';
+
 class Snap extends Component {
   constructor(props) {
     super(props)
@@ -39,13 +41,15 @@ class Snap extends Component {
           <SnapGameContainer
           startGame={this.startGame}
           handleGamePause={this.handleGamePause}
+          winCoins={this.props.winCoins}
+          payCoins={this.props.payCoins}
           />
 
         </div>
       )
     } else{
       return(
-        <div className= "snap">
+        <div className= "snap-player-buttons">
           <SnapStartButton
             handleGameStart={this.handleGameStart}
           />
@@ -82,9 +86,24 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
+  },
+  winCoins(amount) {
+    dispatch({
+      type:'ADD_COINS',
+      amount
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
+    })
   }
 
 })
 
 
 export default connect(null, mapDispatchToProps)(Snap);
+
+
+//////////////////////////////////////////////////////////////////////

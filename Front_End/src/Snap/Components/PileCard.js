@@ -4,12 +4,12 @@ const PileCard = (props) =>{
 
 
   return(
-    <div>
-      <div>{props.value} of {props.suit}</div>
-        <div onClick = {props.handleGamePause}>
-          <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' key={props.key} ></img>
+    <div className = "pile-container">
+      <div className = "card-container">
+        <div className = "snap-card" onClick = {props.handleGamePause}>
+        <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' key={props.key} ></img>
         </div>
-      <div></div>
+      </div>
     </div>
 
   )

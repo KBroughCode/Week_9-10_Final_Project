@@ -8,8 +8,7 @@ class OldMaidGame extends Component{
   constructor(props){
     super(props)
     this.state = {
-      playerSelectOne: null,
-      playerSelectTwo: null
+      playerSelectOne: null
     }
 
     this.pairing = this.pairing.bind(this)
@@ -23,14 +22,17 @@ class OldMaidGame extends Component{
     if(!this.state.playerSelectOne){
       this.setState({playerSelectOne: card})
     } else {
-      this.setState({playerSelectTwo: card})
+      this.addingPairs(this.state.playerSelectOne, card, 'one')
     }
   }
 
-  addingPairs(cardOne, cardTwo) {
+  addingPairs(cardOne, cardTwo, player) {
     const logic = new OldMaidLogic()
     if(logic.checkPair(cardOne, cardTwo)) {
-
+      this.props.addPairToPile(cardOne, cardTwo, player)
+      this.setState({
+        playerSelectOne: null
+      })
     }
   }
 

@@ -19,6 +19,6 @@ describe('delear cards test', () => {
     }
   ]} shuffleDealer={jest.fn()}/>)
     expect(getByLabelText('image')).toBeTruthy();
-    expect(getByLabelText('ACE of SPADES')).toBeTruthy();
+    expect(getByText(`The Dealer's total is 11`)).toBeTruthy();
   })
 })

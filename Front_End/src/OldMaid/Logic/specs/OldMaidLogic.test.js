@@ -63,6 +63,6 @@ describe('old maid logic testing', () => {
   });
 
   test('returns false if one of the cards is null', () => {
-    expect(logic.checkPair(aceH, null)).toEqual(true);
+    expect(logic.checkPair(aceH, null)).toEqual(false);
   });
 })

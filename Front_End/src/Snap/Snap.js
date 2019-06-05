@@ -10,55 +10,54 @@ class Snap extends Component {
     super(props)
     this.state = {
       reveal: false
-    }
+    };
 
-    this.handleGameStart = this.handleGameStart.bind(this)
-    this.handleGamePause = this.handleGamePause.bind(this)
-    this.startGame=this.startGame.bind(this)
-  }
+    this.handleGameStart = this.handleGameStart.bind(this);
+    this.handleGamePause = this.handleGamePause.bind(this);
+    this.startGame=this.startGame.bind(this);
+  };
 
   componentDidMount() {
     this.props.getDeck();
-  }
+  };
 
   startGame(){
-    this.game = setInterval(this.props.addToPile,1250)
-  }
+    this.game = setInterval(this.props.addToPile,1250);
+  };
 
   handleGameStart() {
-    this.startGame()
-    this.setState({reveal: !this.state.reveal})
-  }
+    this.startGame();
+    this.setState({reveal: !this.state.reveal});
+  };
 
   handleGamePause(){
     clearInterval(this.game);
-  }
+  };
 
   render(){
     if(this.state.reveal){
       return(
         <div className= "snap">
           <SnapGameContainer
-          startGame={this.startGame}
-          handleGamePause={this.handleGamePause}
-          winCoins={this.props.winCoins}
-          payCoins={this.props.payCoins}
+            startGame={this.startGame}
+            handleGamePause={this.handleGamePause}
+            winCoins={this.props.winCoins}
+            payCoins={this.props.payCoins}
           />
-
         </div>
-      )
-    } else{
+      );
+    }else{
       return(
         <div className= "snap-player-buttons">
           <SnapStartButton
             handleGameStart={this.handleGameStart}
           />
         </div>
-      )
-    }
-  }
-}
+      );
+    };
+  };
 
+};
 
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
@@ -72,10 +71,10 @@ const mapDispatchToProps = (dispatch) => ({
           dispatch({
             type: 'GET_SNAP_DECK',
             deck
-          })
-        })
-      })
-    })
+          });
+        });
+      });
+    });
   },
   addToPile() {
     dispatch({
@@ -99,11 +98,7 @@ const mapDispatchToProps = (dispatch) => ({
       amount
     })
   }
-
-})
+});
 
 
 export default connect(null, mapDispatchToProps)(Snap);
-
-
-//////////////////////////////////////////////////////////////////////

@@ -10,48 +10,46 @@ class OldMaidGame extends Component{
     super(props)
     this.state = {
       playerSelectOne: null
-    }
+    };
 
-    this.pairing = this.pairing.bind(this)
-    this.playRound = this.playRound.bind(this)
-  }
+    this.pairing = this.pairing.bind(this);
+    this.playRound = this.playRound.bind(this);
+  };
 
   componentDidMount(){
     this.props.dealHands()
-  }
+  };
 
   pairing(card){
     if(!this.state.playerSelectOne){
-      this.setState({playerSelectOne: card})
+      this.setState({playerSelectOne: card});
     } else {
       if(this.state.playerSelectOne.index < card.index){
-        this.addingPairs(this.state.playerSelectOne, card, 'one')
+        this.addingPairs(this.state.playerSelectOne, card, 'one');
       } else {
-        this.addingPairs(card, this.state.playerSelectOne, 'one')
-      }
-    }
-  }
+        this.addingPairs(card, this.state.playerSelectOne, 'one');
+      };
+    };
+  };
 
   addingPairs(cardOne, cardTwo, player) {
-    const logic = new OldMaidLogic()
+    const logic = new OldMaidLogic();
     if(logic.checkPair(cardOne, cardTwo)) {
-      this.props.addPairToPile(cardOne, cardTwo, player)
-      }
-    this.setState({
-        playerSelectOne: null
-    })
-  }
+      this.props.addPairToPile(cardOne, cardTwo, player);
+    };
+    this.setState({playerSelectOne: null});
+  };
 
   playRound(){
-    this.props.pickCard(this.randCard(this.props.three),'two','three')
-    this.props.pickCard(this.randCard(this.props.four),'three','four')
-    this.props.pickCard(this.randCard(this.props.one),'four','one')
+    this.props.pickCard(this.randCard(this.props.three),'two','three');
+    this.props.pickCard(this.randCard(this.props.four),'three','four');
+    this.props.pickCard(this.randCard(this.props.one),'four','one');
   }
 
   randCard(array){
-    const index = Math.floor(Math.random() * array.length)
-    return {...array[index], index: index}
-  }
+    const index = Math.floor(Math.random() * array.length);
+    return {...array[index], index: index};
+  };
 
   render(){
     return(
@@ -92,9 +90,9 @@ class OldMaidGame extends Component{
           />
         </div>
       </div>
-    )
-  }
+    );
+  };
 
-}
+};
 
 export default OldMaidGame;

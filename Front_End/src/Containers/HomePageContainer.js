@@ -5,8 +5,8 @@ const mapStateToProps = (state) => {
   return {
     leaders: state.leaderboard,
     coins: state.coins
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   getData() {

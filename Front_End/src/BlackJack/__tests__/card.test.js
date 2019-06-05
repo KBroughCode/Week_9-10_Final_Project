@@ -15,13 +15,4 @@ describe('Card render test', () => {
       expect(getByLabelText('image')).toBeTruthy();
   })
 
-  it('should display the card details', () => {
-    const {getByText} = render(<Card
-      code= "0D"
-      image= "https://deckofcardsapi.com/static/img/0D.png"
-      suit= "DIAMONDS"
-      value= "10"
-      />)
-      expect(getByText('10 of DIAMONDS')).toBeTruthy();
-  })
 })

@@ -1,22 +1,14 @@
-
 .snap-dealer-card{
   padding-left: 10px;
   padding-top: 10px;
   animation: slide 0.8s ease forwards;
-  opacity: 0;
-  z-index: 1;
 }
 
 @keyframes slide {
   0% {
-    opacity: 0;
-  }
-  1% {
-    opacity: 1;
     transform: translateX(-500px);
   }
   100%{
-    opacity: 1;
     transform: translateX(90%);
-  }
-}
+  };
+};

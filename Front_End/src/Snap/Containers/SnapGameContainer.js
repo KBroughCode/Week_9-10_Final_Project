@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import React from 'react';
-import SnapStartButton from '../Components/SnapStartButton'
+import SnapStartButton from '../Components/SnapStartButton';
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
 import PlayerActions from '../Components/PlayerActions';
@@ -9,44 +9,44 @@ import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
 
-const handleClick = () => {
-   props.handleGameStart();
-   props.resetDefault();
-   props.getDeck();
- }
+  const handleClick = () => {
+    props.handleGameStart();
+    props.resetDefault();
+    props.getDeck();
+  };
 
- const handleHomeClick = () => {
-   props.resetDefault();
-   props.handleGameStart();
- }
+  const handleHomeClick = () => {
+    props.resetDefault();
+    props.handleGameStart();
+  };
 
- if(props.deck.length > 0){
-   return(
-     <div>
-       <div className="snap-cards-container">
-         <div className ="snap-cards">
-         <DeckCards
-           deck = {props.deck}
-           />
-         <PileCards
-           pile = {props.pile}
-           winCoins={props.winCoins}
-           payCoins={props.payCoins}
-           />
-         </div>
-       </div>
-       <div className ="snap-player-buttons">
-         <SnapStartButton />
-         <PlayerActions
+  if(props.deck.length > 0){
+    return(
+      <div>
+        <div className="snap-cards-container">
+          <div className ="snap-cards">
+            <DeckCards
+              deck = {props.deck}
+            />
+            <PileCards
+              pile = {props.pile}
+              winCoins={props.winCoins}
+              payCoins={props.payCoins}
+            />
+          </div>
+        </div>
+      <div className ="snap-player-buttons">
+        <SnapStartButton />
+        <PlayerActions
           handleGamePause = {props.handleGamePause}
           startGame={props.startGame}
           pile = {props.pile}
           winCoins={props.winCoins}
           payCoins={props.payCoins}
-          />
-        </div>
+        />
       </div>
-    )
+    </div>
+  );
   }else{
     return(
       <div>
@@ -56,10 +56,10 @@ const handleClick = () => {
             <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
         </div>
       </div>
-     )
-   }
-  }
+    );
+  };
 
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -79,8 +79,7 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'RETURN_DEFAULT'
     })
   },
-
-})
+});
 
 SnapGameContainer.propTypes = {
   deck: PropTypes.string,

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
 import OldMaidHumanPlayerHand from './OldMaidHumanPlayerHand';
-import './oldMaidGame.css'
+import OldMaidLogic from '../Logic/OldMaidLogic';
+import './oldMaidGame.css';
 
 class OldMaidGame extends Component{
   constructor(props){
@@ -24,6 +25,11 @@ class OldMaidGame extends Component{
     } else {
       this.setState({playerSelectTwo: card})
     }
+  }
+
+  addingPairs(cardOne, cardTwo) {
+    const logic = new OldMaidLogic()
+
   }
 
   render(){

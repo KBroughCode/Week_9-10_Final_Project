@@ -16,7 +16,16 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
     case 'ADD_PAIR_TO_PILE':
       const pairPile = {
         ...state,
-        pile: {...state.pile, [...action.cards]}
+        [action.player]: [
+          ...state[action.player].slice(0, action.cardOne.index),
+          ...state[action.player].slice(action.cardOne.index+1, action.cardTwo.index),
+          ...state[action.player].slice(action.cardTwo.index+1)
+        ],
+        pile: [
+          ...state.pile,
+          action.cardOne,
+          action.cardTwo
+        ]
       }
     case 'RETURN_OLD_MAID_DEFAULT':
       const defaultState = {deck: []}

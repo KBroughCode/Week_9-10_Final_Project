@@ -1,13 +1,11 @@
-
-
 import { connect } from 'react-redux';
-// import SnapGame from '../Components/SnapGame';
 import { Link } from "react-router-dom";
 import React from 'react';
 import SnapStartButton from '../Components/SnapStartButton'
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
 import PlayerActions from '../Components/PlayerActions';
+import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
 
@@ -83,5 +81,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
 })
+
+SnapGameContainer.propTypes = {
+  deck: PropTypes.string,
+  pile: PropTypes.array
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SnapGameContainer);

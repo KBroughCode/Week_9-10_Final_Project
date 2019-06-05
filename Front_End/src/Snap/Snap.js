@@ -42,6 +42,8 @@ class Snap extends Component {
           <SnapGameContainer
           startGame={this.startGame}
           handleGamePause={this.handleGamePause}
+          winCoins={this.props.winCoins}
+          payCoins={this.props.payCoins}
           />
 
         </div>
@@ -51,6 +53,8 @@ class Snap extends Component {
         <div className= "snap-player-buttons">
           <SnapStartButton
             handleGameStart={this.handleGameStart}
+            winCoins={this.props.winCoins}
+            payCoins={this.props.payCoins}
           />
         </div>
       )
@@ -85,8 +89,19 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
+  },
+  winCoins(amount) {
+    dispatch({
+      type:'ADD_COINS',
+      amount
+    })
+  },
+  payCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
+    })
   }
-
 })
 
 

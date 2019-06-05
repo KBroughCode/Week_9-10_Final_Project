@@ -26,7 +26,6 @@
 .snap-cards {
   display: flex;
   margin-left: 35%;
-  /* grid-area: playerCards; */
   height: 100%;
   display: flex;
   white-space: nowrap;

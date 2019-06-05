@@ -29,12 +29,12 @@ class DealerCards extends Component {
     return this.props.cards.map((element, i) => {
       return(
         <Card
-        image = {element.image}
-        code = {element.code}
-        value = {element.value}
-        suit = {element.suit}
-        key= {i}
-       index={i}
+          image = {element.image}
+          code = {element.code}
+          value = {element.value}
+          suit = {element.suit}
+          key= {i}
+          index={i}
         />
       )
     })

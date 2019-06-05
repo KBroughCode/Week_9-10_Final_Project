@@ -8,9 +8,10 @@ const Card = (props) => {
       className={`card number${props.index}`}
       src={props.image}
       alt={props.code}
+      aria-label='image'
     />
   );
-  
+
 };
 
 export default Card;

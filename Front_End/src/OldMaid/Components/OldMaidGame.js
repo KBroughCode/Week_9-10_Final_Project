@@ -52,16 +52,22 @@ class OldMaidGame extends Component{
         <div className='cpu-one'>
           <OldMaidPlayerHand
             hand= {this.props.two}
+            pickCard= {this.props.pickCard}
+            player= 'two'
           />
         </div>
         <div className='cpu-two'>
           <OldMaidPlayerHand
             hand= {this.props.three}
+            pickCard= {this.props.pickCard}
+            player= 'three'
           />
         </div>
         <div className='cpu-three'>
           <OldMaidPlayerHand
             hand= {this.props.four}
+            pickCard= {this.props.pickCard}
+            player= 'four'
           />
         </div>
       </div>

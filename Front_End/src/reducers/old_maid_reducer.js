@@ -28,7 +28,7 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
         ]
       }
       return pairPile
-    case: 'PICK_CARD':
+    case 'PICK_CARD':
       const pickDeck = {
         ...state,
         [action.receiver]: [

@@ -7,37 +7,37 @@ class CashIn extends Component {
     this.state = {
       clicked: false,
       name: ''
-    }
+    };
 
-    this.handleClick = this.handleClick.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(){
-    this.setState({clicked: !this.state.clicked})
-  }
+    this.setState({clicked: !this.state.clicked});
+  };
 
   handleChange(event){
-    this.setState({name: event.target.value})
-  }
+    this.setState({name: event.target.value});
+  };
 
   handleSubmit(event){
-    event.preventDefault()
+    event.preventDefault();
     const newEntry = {
       name: this.state.name,
       score: this.props.coins
-    }
-    this.props.addHiScore(newEntry)
+    };
+    this.props.addHiScore(newEntry);
     this.setState({
       clicked: !this.state.clicked,
       name: ''
-    })
-  }
+    });
+  };
 
   render(){
     if(this.state.clicked){
-        return(
+      return(
         <div>
           <form autoComplete= 'off' onSubmit={this.handleSubmit}>
             <aria-label
@@ -61,19 +61,20 @@ class CashIn extends Component {
           </form>
         </div>
       )
-    } else {
+    }else{
       return(
         <div>
-        <button
-          className='menu-button'
-          onClick={this.handleClick}
-        >
-          Cash In
-        </button>
+          <button
+            className='menu-button'
+            onClick={this.handleClick}
+          >
+            Cash In
+          </button>
         </div>
       )
-    }
-  }
-}
+    };
+  };
+
+};
 
 export default CashIn;

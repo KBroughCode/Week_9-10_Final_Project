@@ -8,18 +8,18 @@ class OldMaid extends Component {
     super(props)
     this.state = {
       reveal: false
-    }
+    };
 
-    this.handleGameStart = this.handleGameStart.bind(this)
-  }
+    this.handleGameStart = this.handleGameStart.bind(this);
+  };
 
   componentDidMount() {
     this.props.getDeck();
-  }
+  };
 
   handleGameStart() {
-    this.setState({reveal: !this.state.reveal})
-  }
+    this.setState({reveal: !this.state.reveal});
+  };
 
   render(){
     if(this.state.reveal){
@@ -27,18 +27,19 @@ class OldMaid extends Component {
         <div className= "snap">
           <OldMaidGameContainer />
         </div>
-      )
-    } else{
+      );
+    }else{
       return(
         <div className= "snap">
           <OldMaidStartButton
             handleGameStart={this.handleGameStart}
           />
         </div>
-      )
-    }
-  }
-}
+      );
+    };
+  };
+
+};
 
 
 const mapDispatchToProps = (dispatch) => ({
@@ -53,17 +54,17 @@ const mapDispatchToProps = (dispatch) => ({
           dispatch({
             type: 'GET_OLD_MAID_DECK',
             deck
-          })
-        })
-      })
-    })
+          });
+        });
+      });
+    });
   },
   resetDefault() {
     dispatch({
       type: 'RETURN_OLD_MAID_DEFAULT'
     })
   }
-})
+});
 
 
 export default connect(null, mapDispatchToProps)(OldMaid);

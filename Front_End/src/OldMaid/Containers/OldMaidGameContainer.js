@@ -45,6 +45,6 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'RETURN_OLD_MAID_DEFAULT'
     })
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(OldMaidGame);

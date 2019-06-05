@@ -16,7 +16,6 @@ const HomePage = (props) => {
               <h3>Blackjack</h3>
               <p>The dealer will deal you 2 cards. You can keep your cards or ask for another but be careful - if your cards equate to more than 21 the dealer wins!</p>
               <Link className='home-page-link' to="/Blackjack">Play</Link>
-
             </div>
           </div>
           <div className="flip-card-inner card2">
@@ -49,7 +48,7 @@ const HomePage = (props) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;

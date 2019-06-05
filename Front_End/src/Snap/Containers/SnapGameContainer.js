@@ -57,19 +57,10 @@ const handleClick = () => {
             <Link className='game-link' to='/snap' onClick={handleClick}>New Game</Link>
             <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
         </div>
-        <div className ="snap-player-buttons">
-          <SnapStartButton />
-          <PlayerActions
-            handleGamePause = {props.handleGamePause}
-            startGame={props.startGame}
-            winCoins={props.winCoins}
-            payCoins={props.payCoins}
-          />
-        </div>
-        </div>
-   )
- }
-}
+      </div>
+     )
+   }
+  }
 
 
 const mapStateToProps = (state) => {
@@ -90,7 +81,7 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'RETURN_DEFAULT'
     })
   },
-  
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SnapGameContainer);

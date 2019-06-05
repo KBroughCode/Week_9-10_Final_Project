@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OldMaidPlayerHand from './OldMaidPlayerHand';
 import OldMaidHumanPlayerHand from './OldMaidHumanPlayerHand';
+import NextRoundButton from './NextRoundButton';
 import OldMaidLogic from '../Logic/OldMaidLogic';
 import './oldMaidGame.css';
 
@@ -43,6 +44,9 @@ class OldMaidGame extends Component{
   render(){
     return(
       <div className='old-maid-game'>
+        <div className='next-round'>
+          <NextRoundButton />
+        </div>
         <div className='human-hand'>
           <OldMaidHumanPlayerHand
             hand= {this.props.one}

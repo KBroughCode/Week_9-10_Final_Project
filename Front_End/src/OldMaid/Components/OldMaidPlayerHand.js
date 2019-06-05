@@ -2,8 +2,10 @@ import React from 'react';
 import Card from './Card';
 
 const OldMaidPlayerHand = (props) => {
-
-  const mapHand = props.hand.map((element, index) => {
+  const reducedHand = props.hand.filter((element, index, array) => {
+    return array.findIndex(i => i.value === element.value) === index
+  })
+  const mapHand = reducedHand.map((element, index) => {
     return(
       <div className = "old-maid-card">
       <Card

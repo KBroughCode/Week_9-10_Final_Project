@@ -18,6 +18,12 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'DEAL_OLD_MAID_HANDS'
     })
   },
+  addPairToPile(cards) {
+    dispatch({
+      type: 'ADD_PAIR_TO_PILE',
+      cards
+    })
+  }
   resetDefault() {
     dispatch({
       type: 'RETURN_OLD_MAID_DEFAULT'

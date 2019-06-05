@@ -28,6 +28,18 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
         ]
       }
       return pairPile
+    case: 'PICK_CARD':
+      const pickDeck = {
+        ...state,
+        [action.receiver]: [
+          ...state[action.receiver], card
+        ],
+        [action.picked]: [
+          ...state[action.picked].slice(0, action.card.index),
+          ...state[action.picked].slice(action.card.index+1)
+        ]
+      }
+      return pickDeck
     case 'RETURN_OLD_MAID_DEFAULT':
       const defaultState = {deck: []}
       return defaultState

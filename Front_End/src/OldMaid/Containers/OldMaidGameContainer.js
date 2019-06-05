@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     one: state.oldMaid.one,
     two: state.oldMaid.two,
     three: state.oldMaid.three,
-    four: state.oldMaid.four
+    four: state.oldMaid.four,
+    pile: state.oldMaid.pile
   };
 };
 

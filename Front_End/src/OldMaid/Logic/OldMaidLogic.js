@@ -1,4 +1,4 @@
-class oldMaidLogic {
+class OldMaidLogic {
 
   checkPair(cardOne, cardTwo){
     if(cardOne.suit !== cardTwo.suit && cardOne.value === cardTwo.value) {
@@ -6,3 +6,4 @@ class oldMaidLogic {
     } return false
   }
 }
+module.exports = OldMaidLogic;

@@ -1,6 +1,6 @@
 const OldMaidLogic = require('../OldMaidLogic.js');
 
-describe('a hand of cards', () => {
+describe('old maid logic testing', () => {
   const logic = new OldMaidLogic();
 
   const kingH = {
@@ -49,6 +49,4 @@ describe('a hand of cards', () => {
   test('returns not pair if two of the same face card are picked', () => {
     expect(logic.checkPair(kingH, kingHTwo)).toEqual(false);
   });
-
-
 })

@@ -8,9 +8,6 @@ const cardsReadyReducer = (state = true, action) => {
       const newState = true;
       return newState;
     }
-    case 'CHECK_CARDS_READY':{
-      return state;
-    }
     default:
       return state;
   };

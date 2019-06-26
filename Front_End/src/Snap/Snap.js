@@ -9,12 +9,14 @@ class Snap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      reveal: false
+      reveal: false,
+      snap: 0
     };
 
     this.handleGameStart = this.handleGameStart.bind(this);
     this.handleGamePause = this.handleGamePause.bind(this);
     this.startGame=this.startGame.bind(this);
+    this.toggleSnap = this.toggleSnap.bind(this);
   };
 
   componentDidMount() {
@@ -23,6 +25,7 @@ class Snap extends Component {
 
   startGame(){
     this.game = setInterval(this.props.addToPile,1250);
+    this.setState({snap: 0})
   };
 
   handleGameStart() {
@@ -34,6 +37,10 @@ class Snap extends Component {
     clearInterval(this.game);
   };
 
+  toggleSnap(value) {
+    this.setState({snap: value});
+  }
+
   render(){
     if(this.state.reveal){
       return(
@@ -43,6 +50,8 @@ class Snap extends Component {
             handleGamePause={this.handleGamePause}
             winCoins={this.props.winCoins}
             payCoins={this.props.payCoins}
+            snapWin={this.state.snap}
+            toggleSnap={this.toggleSnap}
           />
         </div>
       );

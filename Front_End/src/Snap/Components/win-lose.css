@@ -1,0 +1,16 @@
+.snap-image {
+  position: absolute;
+  left: 42vw;
+  height: 269px;
+  animation: grow 0.5s ease-in forwards;
+  z-index: 3;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  },
+  100% {
+    transform: scale(1);
+  }
+}

@@ -25,7 +25,7 @@ const handleClick = () => {
    return(
      <div>
        <div className="snap-cards-container">
-       <WinnerDisplay snapWin={props.snapWin}/>
+         <WinnerDisplay snapWin={props.snapWin}/>
          <div className ="snap-cards">
          <DeckCards
            deck = {props.deck}

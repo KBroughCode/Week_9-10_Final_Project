@@ -57,10 +57,13 @@ class Snap extends Component {
       );
     }else{
       return(
-        <div className= "snap-player-buttons">
-          <SnapStartButton
-            handleGameStart={this.handleGameStart}
-          />
+        <div className="snap-before-game">
+          <div className="snap-cards-container"></div>
+          <div className= "snap-player-buttons">
+            <SnapStartButton
+              handleGameStart={this.handleGameStart}
+            />
+          </div>
         </div>
       );
     };

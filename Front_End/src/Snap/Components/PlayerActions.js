@@ -11,8 +11,10 @@ const PlayerActions = (props) =>{
     props.handleGamePause();
     const matching = isMatch(pileCardValues);
     if(matching === true){
+      props.toggleSnap(1);
       props.winCoins(10);
     }else{
+      props.toggleSnap(2);
       props.payCoins(10);
     };
   };

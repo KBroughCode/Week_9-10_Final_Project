@@ -5,6 +5,7 @@ import SnapStartButton from '../Components/SnapStartButton'
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
 import PlayerActions from '../Components/PlayerActions';
+import WinnerDisplay from '../Components/WinnerDisplay';
 import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
@@ -24,6 +25,7 @@ const handleClick = () => {
    return(
      <div>
        <div className="snap-cards-container">
+       <WinnerDisplay snapWin={props.snapWin}/>
          <div className ="snap-cards">
          <DeckCards
            deck = {props.deck}
@@ -43,6 +45,7 @@ const handleClick = () => {
           pile = {props.pile}
           winCoins={props.winCoins}
           payCoins={props.payCoins}
+          toggleSnap={props.toggleSnap}
           />
         </div>
       </div>

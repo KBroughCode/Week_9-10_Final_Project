@@ -22,6 +22,7 @@ class BlackJack extends Component {
   };
 
   handleGameStart() {
+    this.props.setCardsNotReady();
     this.setState({reveal: !this.state.reveal});
   };
 
@@ -63,11 +64,16 @@ class BlackJack extends Component {
         <div className="blackjack">
           <div className="dealer-container"></div>
           <div className="player-buttons">
+          {
+            this.props.cardsReady && <span>
             <StartBlackjackButton
-              handleGameStart={this.handleGameStart}
-              payCoins={this.props.payCoins}
-              coins={this.props.coins}
+            handleGameStart={this.handleGameStart}
+            payCoins={this.props.payCoins}
+            coins={this.props.coins}
+            cardsReady={this.props.cardsReady}
             />
+            </span>
+          }
           </div>
         </div>
       );
@@ -79,7 +85,8 @@ class BlackJack extends Component {
 const mapStateToProps = (state) => {
   return{
     winner: state.blackjack.winner,
-    coins: state.coins
+    coins: state.coins,
+    cardsReady: state.cardsReady
   };
 };
 
@@ -96,6 +103,9 @@ const mapDispatchToProps = (dispatch) => ({
             type: 'GET_DECK',
             deck
           });
+          dispatch({
+            type: 'CARDS_READY',
+          });
         });
       });
     });
@@ -103,6 +113,11 @@ const mapDispatchToProps = (dispatch) => ({
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'
+    });
+  },
+  setCardsNotReady() {
+    dispatch({
+      type: 'CARDS_NOT_READY'
     });
   },
   payCoins(amount) {

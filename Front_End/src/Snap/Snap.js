@@ -10,13 +10,15 @@ class Snap extends Component {
     super(props)
     this.state = {
       reveal: false,
-      snap: 0
+      snap: 0,
+      pause: false
     };
 
     this.handleGameStart = this.handleGameStart.bind(this);
     this.handleGamePause = this.handleGamePause.bind(this);
     this.startGame=this.startGame.bind(this);
     this.toggleSnap = this.toggleSnap.bind(this);
+    this.togglePause = this.togglePause.bind(this);
   };
 
   componentDidMount() {
@@ -41,6 +43,10 @@ class Snap extends Component {
     this.setState({snap: value});
   }
 
+  togglePause() {
+    this.setState({pause: !this.state.pause})
+  }
+
   render(){
     if(this.state.reveal){
       return(
@@ -52,6 +58,8 @@ class Snap extends Component {
             payCoins={this.props.payCoins}
             snapWin={this.state.snap}
             toggleSnap={this.toggleSnap}
+            togglePause={this.togglePause}
+            pause={this.state.pause}
           />
         </div>
       );

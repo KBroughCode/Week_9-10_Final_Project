@@ -22,6 +22,7 @@ const handleClick = () => {
  }
 
  if(props.deck.length > 0){
+   console.log(props);
    return(
      <div>
        <div className="snap-cards-container">
@@ -40,12 +41,7 @@ const handleClick = () => {
        <div className ="snap-player-buttons">
          <SnapStartButton />
          <PlayerActions
-          handleGamePause = {props.handleGamePause}
-          startGame={props.startGame}
-          pile = {props.pile}
-          winCoins={props.winCoins}
-          payCoins={props.payCoins}
-          toggleSnap={props.toggleSnap}
+          {...props}
           />
         </div>
       </div>

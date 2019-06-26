@@ -22,6 +22,7 @@ class BlackJack extends Component {
   };
 
   handleGameStart() {
+    this.props.setCardsNotReady();
     this.setState({reveal: !this.state.reveal});
   };
 
@@ -96,6 +97,9 @@ const mapDispatchToProps = (dispatch) => ({
             type: 'GET_DECK',
             deck
           });
+          dispatch({
+            type: 'CARDS_READY',
+          });
         });
       });
     });
@@ -103,6 +107,11 @@ const mapDispatchToProps = (dispatch) => ({
   resetDefault() {
     dispatch({
       type: 'RETURN_DEFAULT'
+    });
+  },
+  setCardsNotReady() {
+    dispatch({
+      type: 'CARDS_NOT_READY'
     });
   },
   payCoins(amount) {

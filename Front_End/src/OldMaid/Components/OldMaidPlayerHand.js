@@ -1,16 +1,17 @@
 import React from 'react';
 import Card from './Card';
+import PairsLogic from '../Logic/PairsLogic';
 
 const OldMaidPlayerHand = (props) => {
-  
-  const reducedHand = props.hand.filter((element, index, array) => {
-    return array.findIndex(i => i.value === element.value) === index
-  });
+
+  let logic = new PairsLogic()
+  let reducedHand = logic.removePairs(props.hand)
 
   props.updateCpuHand(reducedHand);
+  // change back to reducedHand
   const mapHand = reducedHand.map((element, index) => {
     return(
-      <div className = "old-maid-card">
+      <div className = {props.handSize}>
         <Card
           key={index}
           image={element.image}
@@ -18,8 +19,7 @@ const OldMaidPlayerHand = (props) => {
           suit={element.suit}
           code={element.code}
           object={{...element, index: index}}
-          pickCard={props.pickCard}
-          player={props.player}
+          {...props}
           />
       </div>
     );

@@ -4,6 +4,7 @@
   height: 269px;
   animation: grow 0.5s ease-in forwards;
   z-index: 3;
+  transform: rotate(-10deg);
 }
 
 @keyframes grow {

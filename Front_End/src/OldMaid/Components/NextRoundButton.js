@@ -3,7 +3,28 @@ import React from 'react';
 const NextRoundButton = (props) => {
 
   const handleClick = () => {
-    props.playRound()
+    if (props.drawCard === true) {
+      props.playRound()
+      props.toggleDraw()
+      if (props.two.length > 12 && props.handSize2 === 'small') {
+        props.setHandSizes('two')
+      }
+      if (props.one.length < 12 && props.handSize1 === 'large') {
+        props.setHandSizes('one')
+      }
+      if (props.three.length > 12 && props.handSize3 === 'small') {
+        props.setHandSizes('three')
+      }
+      if (props.two.length < 12 && props.handSize2 === 'large') {
+        props.setHandSizes('two')
+      }
+      if (props.four.length > 12 && props.handSize4 === 'small') {
+        props.setHandSizes('four')
+      }
+      if (props.three.length < 12 && props.handSize3 === 'large') {
+        props.setHandSizes('three')
+      }
+    }
   };
 
   return(
@@ -11,7 +32,7 @@ const NextRoundButton = (props) => {
       <button onClick={handleClick}>Next Round</button>
     </div>
   );
-  
+
 };
 
 export default NextRoundButton;

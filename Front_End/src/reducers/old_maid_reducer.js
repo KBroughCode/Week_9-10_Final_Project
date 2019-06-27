@@ -29,15 +29,22 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
       }
       return pairPile
     case 'PICK_CARD':
+      let removeIndex;
+      for (var i = 0; i < state[action.picked].length; i++) {
+        if (state[action.picked][i] === action.card) {
+          removeIndex = i
+        }
+      }
+      let removedCard = [...state[action.picked]]
+      console.dir(removedCard);
+      removedCard.splice(removeIndex, 1)
+      console.log(removedCard);
       const pickDeck = {
         ...state,
         [action.receiver]: [
           ...state[action.receiver], action.card
         ],
-        [action.picked]: [
-          ...state[action.picked].slice(0, action.card.index),
-          ...state[action.picked].slice(action.card.index+1)
-        ]
+        [action.picked]: removedCard
       }
       return pickDeck
     case 'RETURN_OLD_MAID_DEFAULT':

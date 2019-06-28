@@ -9,15 +9,19 @@ import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
 
-const handleClick = () => {
+console.log(this);
+console.log(props);
+
+const handleClick = (props) => {
    props.handleGameStart();
    props.resetDefault();
-   props.getDeck();
+   props.getDeck(); // this function is not on props
  }
 
  const handleHomeClick = () => {
    props.resetDefault();
-   props.handleGameStart();
+   props.handleExitClick(); //  this DOES log out
+   // props.handleGameStart();
  }
 
  if(props.deck.length > 0){
@@ -36,7 +40,9 @@ const handleClick = () => {
          </div>
        </div>
        <div className ="snap-player-buttons">
-         <SnapStartButton />
+         <SnapStartButton
+          handleGameStart={props.handleGameStart} // ADDED
+         />
          <PlayerActions
           handleGamePause = {props.handleGamePause}
           startGame={props.startGame}
@@ -60,7 +66,6 @@ const handleClick = () => {
    }
   }
 
-
 const mapStateToProps = (state) => {
   return {
     deck: state.snap.deck,
@@ -74,11 +79,12 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'ADD_TO_PILE'
     })
   },
-  resetDefault() {
-    dispatch({
-      type: 'RETURN_DEFAULT'
-    })
-  },
+  // resetDefault() {
+  //   console.log('resetDefault call');
+  //   dispatch({
+  //     type: 'RETURN_SNAP_DEFAULT'
+  //   })
+  // },
 
 })
 

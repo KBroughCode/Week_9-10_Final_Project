@@ -18,6 +18,7 @@ class BlackJack extends Component {
   };
 
   componentDidMount() {
+    console.log('componentDidMount call');
     this.props.getDeck();
   };
 

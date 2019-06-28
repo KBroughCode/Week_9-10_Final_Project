@@ -16,16 +16,7 @@ const Card = (props) => {
     }
   };
 
-  if (props.player === 'one') {
-    return(
-      <div className="playing-flip-card-inner">
-        <div className = "playing-flip-card-back">
-          <img onClick={handleImgClick} aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' key ={props.key} ></img>
-        </div>
-        <div className = "playing-flip-card-front"></div>
-      </div>
-    );
-  } else {
+
     return(
       <div className="playing-flip-card-inner">
         <div className = "playing-flip-card-back">
@@ -34,7 +25,6 @@ const Card = (props) => {
         <div className = "playing-flip-card-front"></div>
       </div>
     );
-  }
 
 };
 

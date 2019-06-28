@@ -27,11 +27,16 @@ const NextRoundButton = (props) => {
     }
   };
 
-  return(
-    <div>
-      <button onClick={handleClick}>Next Round</button>
-    </div>
-  );
+  if (props.drawCard === true) {
+    return(
+      <div>
+        <button className="action-button" onClick={handleClick}>Next Round</button>
+      </div>
+    );
+  } else {
+    return null
+  }
+
 
 };
 

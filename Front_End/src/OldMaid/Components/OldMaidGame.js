@@ -71,25 +71,25 @@ class OldMaidGame extends Component{
   }
 
   setHandSizes(player) {
-    if (player == "one") {
+    if (player === "one") {
       if (this.state.handSize1 === 'small') {
         this.setState({handSize1: "large"})
       } else {
         this.setState({handSize1: "small"})
       }
-    } else if (player == "two") {
+    } else if (player === "two") {
       if (this.state.handSize2 === 'small') {
         this.setState({handSize2: "large"})
       } else {
         this.setState({handSize2: "small"})
       }
-    } else if (player == "three") {
+    } else if (player === "three") {
       if (this.state.handSize3 === 'small') {
         this.setState({handSize3: "large"})
       } else {
         this.setState({handSize3: "small"})
       }
-    } else if (player == "four") {
+    } else if (player === "four") {
       if (this.state.handSize4 === 'small') {
         this.setState({handSize4: "large"})
       } else {
@@ -101,59 +101,77 @@ class OldMaidGame extends Component{
   render(){
     return(
       <div className='old-maid-game'>
-        <div className='next-round'>
-          <NextRoundButton
-            playRound={this.playRound}
-            toggleDraw={this.toggleDraw}
-            drawCard={this.state.drawCard}
-            setHandSizes={this.setHandSizes}
-            handSize2={this.state.handSize2}
-            handSize3={this.state.handSize3}
-            handSize4={this.state.handSize4}
-            {...this.props}
-          />
+        <div className='center-grid'>
+          <div className='absolute-pos'>
+            <div className='next-round'>
+              <NextRoundButton
+                playRound={this.playRound}
+                toggleDraw={this.toggleDraw}
+                drawCard={this.state.drawCard}
+                setHandSizes={this.setHandSizes}
+                handSize2={this.state.handSize2}
+                handSize3={this.state.handSize3}
+                handSize4={this.state.handSize4}
+                {...this.props}
+              />
+            </div>
+          </div>
         </div>
-        <div className='human-hand'>
-          <OldMaidHumanPlayerHand
-            hand= {this.props.one}
-            pairing={this.pairing}
-            handleCardNumber={this.handleCardNumber}
-            handSize={this.state.handSize1}
-          />
+        <div className='bottom-grid'>
+          <div className='absolute-pos player-pos'>
+            <div className='human-hand'>
+              <OldMaidHumanPlayerHand
+                hand= {this.props.one}
+                pairing={this.pairing}
+                handleCardNumber={this.handleCardNumber}
+                handSize={this.state.handSize1}
+              />
+            </div>
+          </div>
         </div>
-        <div className='cpu-one'>
-          <OldMaidPlayerHand
-            hand= {this.props.two}
-            pickCard= {this.props.pickCard}
-            player= 'two'
-            updateCpuHand={this.props.updateCpuHand}
-            handSize={this.state.handSize2}
-            handSize1={this.state.handSize1}
-            drawCard={this.state.drawCard}
-            toggleDraw={this.toggleDraw}
-            humanHand={this.props.one}
-            setHandSizes={this.setHandSizes}
-          />
+        <div className='left-grid'>
+          <div className='absolute-pos cpu1-pos'>
+            <div className='cpu-one'>
+              <OldMaidPlayerHand
+                hand= {this.props.two}
+                pickCard= {this.props.pickCard}
+                player= 'two'
+                updateCpuHand={this.props.updateCpuHand}
+                handSize={this.state.handSize2}
+                handSize1={this.state.handSize1}
+                drawCard={this.state.drawCard}
+                toggleDraw={this.toggleDraw}
+                humanHand={this.props.one}
+                setHandSizes={this.setHandSizes}
+              />
+            </div>
+          </div>
         </div>
-        <div className='cpu-two'>
-          <OldMaidPlayerHand
-            hand= {this.props.three}
-            pickCard= {this.props.pickCard}
-            player= 'three'
-            updateCpuHand={this.props.updateCpuHand}
-            handSize={this.state.handSize3}
-
-          />
+        <div className='top-grid'>
+          <div className='absolute-pos cpu2-pos'>
+            <div className='cpu-two'>
+              <OldMaidPlayerHand
+                hand= {this.props.three}
+                pickCard= {this.props.pickCard}
+                player= 'three'
+                updateCpuHand={this.props.updateCpuHand}
+                handSize={this.state.handSize3}
+              />
+            </div>
+          </div>
         </div>
-        <div className='cpu-three'>
-          <OldMaidPlayerHand
-            hand= {this.props.four}
-            pickCard= {this.props.pickCard}
-            player= 'four'
-            updateCpuHand={this.props.updateCpuHand}
-            handSize={this.state.handSize4}
-
-          />
+        <div className='right-grid'>
+          <div className='absolute-pos cpu3-pos'>
+            <div className='cpu-three'>
+              <OldMaidPlayerHand
+                hand= {this.props.four}
+                pickCard= {this.props.pickCard}
+                player= 'four'
+                updateCpuHand={this.props.updateCpuHand}
+                handSize={this.state.handSize4}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

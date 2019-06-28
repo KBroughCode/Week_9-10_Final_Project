@@ -7,8 +7,10 @@ const OldMaidPlayerHand = (props) => {
   let logic = new PairsLogic()
   let reducedHand = logic.removePairs(props.hand)
 
-  props.updateCpuHand(reducedHand);
-  // change back to reducedHand
+  if (reducedHand.length !== props.hand.length) {
+    props.updateCpuHand(reducedHand, props.player);
+  }
+
   const mapHand = reducedHand.map((element, index) => {
     return(
       <div className = {props.handSize}>

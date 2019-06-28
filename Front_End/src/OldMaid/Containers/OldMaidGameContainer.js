@@ -34,10 +34,11 @@ const mapDispatchToProps = (dispatch) => ({
       picked
     })
   },
-  updateCpuHand(hand){
+  updateCpuHand(hand, player){
     dispatch({
       type: 'UPDATE_CPU',
-      hand
+      hand,
+      player
     })
   },
   resetDefault() {

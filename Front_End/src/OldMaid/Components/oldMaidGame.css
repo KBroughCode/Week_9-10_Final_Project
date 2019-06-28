@@ -1,33 +1,106 @@
 .old-maid-game{
-  display: flex;
-  flex-direction: column;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px 1fr 10px;
+  grid-template-rows: 10px 1fr 10px 1fr 10px;
 }
 
 .human-hand{
+  position: relative;
   display:inline-block;
-  margin: 80px;
-  padding:15px;
+  padding: 5px;
+  bottom: 310px;
+  right: 200px;
 }
 
 .cpu-one{
+  position: relative;
   display:inline-block;
-  margin: 80px;
-  padding:15px;
+  transform: rotate(90deg);
+  padding: 5px;
+  left: 310px;
+  bottom: 200px;
 }
 
 .cpu-two{
+  position: relative;
   display:inline-block;
-  margin: 80px;
-  padding:15px;
+  transform: rotate(180deg);
+  padding: 5px;
+  top: 310px;
+  left: 200px
 }
 
 .cpu-three{
+  position: relative;
   display:inline-block;
-  margin: 80px;
-  padding:15px;
+  transform: rotate(-90deg);
+  padding: 5px;
+  right: 310px;
+  top: 200px;
+
 }
 
 .old-maid-card{
-  display:inline;
-  float:left;
+  position: absolute;
+}
+.oldmaid-player-buttons{
+  grid-area: playerButtons;
+  display: flex;
+  align-items: center;
+  background-color: #BD632F;
+  color: #E6DCBF;
+  height: 55px;
+  padding-left: 10px;
+  border-top: 3px solid #452412;
+  border-bottom: 3px solid #452412;
+}
+
+.next-round {
+  position: relative;
+  right: 67px;
+  bottom: 10px;
+}
+
+.center-grid {
+  grid-row: 3/4;
+  grid-column: 3/4;
+}
+.top-grid {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+.bottom-grid {
+  grid-row: 5/6;
+  grid-column: 3/4;
+}
+.left-grid {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+.right-grid {
+  grid-row: 3/4;
+  grid-column: 5/6;
+}
+.absolute-pos {
+  position: absolute;
+}
+.player-pos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.cpu1-pos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cpu2-pos {
+  display: flex;
+  justify-content: center;
+}
+.cpu3-pos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

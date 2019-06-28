@@ -10,15 +10,19 @@ class Snap extends Component {
     super(props)
     this.state = {
       reveal: false,
-      counter: 0
+      counter: 0,
+      snap: 0,
+      pause: false
     };
 
     this.handleGameStart = this.handleGameStart.bind(this);
     this.handleExitClick = this.handleExitClick.bind(this);
     this.handleGamePause = this.handleGamePause.bind(this);
-    this.startGame = this.startGame.bind(this);
+    this.startGame=this.startGame.bind(this);
     this.dealCard = this.dealCard.bind(this);
     this.checkCardCount = this.checkCardCount.bind(this);
+    this.toggleSnap = this.toggleSnap.bind(this);
+    this.togglePause = this.togglePause.bind(this);
   };
 
   componentDidMount() {
@@ -39,8 +43,9 @@ class Snap extends Component {
   };
 
   startGame(){
-    const waitTime = 250;
+    const waitTime = 1250;
     this.game = setInterval(this.dealCard, waitTime);
+    this.setState({snap: 0})
   };
 
   handleGameStart() {
@@ -57,6 +62,14 @@ class Snap extends Component {
     clearInterval(this.game);
   };
 
+  toggleSnap(value) {
+    this.setState({snap: value});
+  }
+
+  togglePause() {
+    this.setState({pause: !this.state.pause})
+  }
+
   render(){
     if(this.state.reveal){
       return(
@@ -70,15 +83,22 @@ class Snap extends Component {
             handleGamePause={this.handleGamePause}
             winCoins={this.props.winCoins}
             payCoins={this.props.payCoins}
+            snapWin={this.state.snap}
+            toggleSnap={this.toggleSnap}
+            togglePause={this.togglePause}
+            pause={this.state.pause}
           />
         </div>
       );
     }else{
       return(
-        <div className= "snap-player-buttons">
-          <SnapStartButton
-            handleGameStart={this.handleGameStart}
-          />
+        <div className="snap-before-game">
+          <div className="snap-cards-container"></div>
+          <div className= "snap-player-buttons">
+            <SnapStartButton
+              handleGameStart={this.handleGameStart}
+            />
+          </div>
         </div>
       );
     };

@@ -7,7 +7,7 @@ class OldMaid extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      reveal: false
+      reveal: false,
     };
 
     this.handleGameStart = this.handleGameStart.bind(this);
@@ -31,9 +31,11 @@ class OldMaid extends Component {
     }else{
       return(
         <div className= "snap">
-          <OldMaidStartButton
-            handleGameStart={this.handleGameStart}
-          />
+          <div className= "oldmaid-player-buttons">
+            <OldMaidStartButton
+              handleGameStart={this.handleGameStart}
+            />
+          </div>
         </div>
       );
     };

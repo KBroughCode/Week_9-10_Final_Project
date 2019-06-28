@@ -9,6 +9,14 @@ const OldMaidPlayerHand = (props) => {
 
   if (reducedHand.length !== props.hand.length) {
     props.updateCpuHand(reducedHand, props.player);
+    console.log(props);
+    if (props.player === 'two') {
+      props.checkWin('two', 2)
+    } else if (props.player === 'three') {
+      props.checkWin('three', 3)
+    } else if (props.player === 'four') {
+      props.checkWin('four', 4)
+    }
   }
 
   const mapHand = reducedHand.map((element, index) => {

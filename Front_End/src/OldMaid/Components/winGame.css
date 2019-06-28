@@ -1,0 +1,24 @@
+.win-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.win-text {
+  font-weight: 600;
+  color: #871E31
+}
+
+.win-button {
+  font: 18px "Trebuchet MS", Helvetica, sans-serif;
+  color: #DBCDA4;
+  background-color:#871E31;
+  border-color:#DBCDA4;
+  border: 3px solid;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 144px;
+  height: 40px;
+  margin-right: 10px;
+}

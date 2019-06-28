@@ -72,42 +72,41 @@
 .large:nth-child(51) { top: 1.1em; left: 26.4em; }
 .large:nth-child(52) { top: 1.1em; left: 27.5em; }
 
-.small:nth-child(1){
-   transform: translate(1.9em, .9em) rotate(-42deg);
+.large.hoverable:hover {
+  top: -1.7em;
 }
-.small:nth-child(2) {
-    transform: translate(1.5em, .5em) rotate(-33deg);
-}
-.small:nth-child(3) {
-    transform: translate(1.1em, .3em) rotate(-24deg);
-}
-.small:nth-child(4) {
-    transform: translate(.7em, .2em) rotate(-15deg);
-}
-.small:nth-child(5) {
-    transform: translate(.3em, .1em) rotate(-6deg);
-}
-.small:nth-child(6) {
-    transform: translate(-.1em, .1em) rotate(3deg);
-}
-.small:nth-child(7) {
-    transform: translate(-.5em, .2em) rotate(12deg);
-}
-.small:nth-child(8) {
-    transform: translate(-.9em, .3em) rotate(21deg);
-}
-.small:nth-child(9) {
-    transform: translate(-1.3em, .6em) rotate(30deg);
-}
-.small:nth-child(10) {
-    transform: translate(-1.7em, 1em) rotate(39deg);
-}
-.small:nth-child(11) {
-    transform: translate(-2.2em, 1.5em) rotate(48deg);
-}
-.small:nth-child(12) {
-    transform: translate(-2.8em, 2.1em) rotate(57deg);
-}
-.small:nth-child(13) {
-    transform: translate(-3.5em, 2.8em) rotate(66deg);
+
+
+.small:nth-child(1){transform: translate(1.9em, .9em) rotate(-42deg);}
+.small:nth-child(2) {transform: translate(1.5em, .5em) rotate(-33deg);}
+.small:nth-child(3) {transform: translate(1.1em, .3em) rotate(-24deg);}
+.small:nth-child(4) {transform: translate(.7em, .2em) rotate(-15deg);}
+.small:nth-child(5) {transform: translate(.3em, .1em) rotate(-6deg);}
+.small:nth-child(6) {transform: translate(-.1em, .1em) rotate(3deg);}
+.small:nth-child(7) {transform: translate(-.5em, .2em) rotate(12deg);}
+.small:nth-child(8) {transform: translate(-.9em, .3em) rotate(21deg);}
+.small:nth-child(9) {transform: translate(-1.3em, .6em) rotate(30deg);}
+.small:nth-child(10) {transform: translate(-1.7em, 1em) rotate(39deg);}
+.small:nth-child(11) {transform: translate(-2.2em, 1.5em) rotate(48deg);}
+.small:nth-child(12) {transform: translate(-2.8em, 2.1em) rotate(57deg);}
+.small:nth-child(13) {transform: translate(-3.5em, 2.8em) rotate(66deg);}
+
+.small.hoverable:hover:nth-child(1) {top: -1.7em; left: -1.6em;}
+.small.hoverable:hover:nth-child(2) {top: -1.8em; left: -0.2em;}
+.small.hoverable:hover:nth-child(3) {top: -1.85em; left: 1.35em;}
+.small.hoverable:hover:nth-child(4) {top: -1.9em; left: 2.75em;}
+.small.hoverable:hover:nth-child(5) {top: -1.9em; left: 4.15em;}
+.small.hoverable:hover:nth-child(6) {top: -1.9em; left: 5.6em;}
+.small.hoverable:hover:nth-child(7) {top: -1.9em; left: 7em;}
+.small.hoverable:hover:nth-child(8) {top: -1.9em; left: 8.5em;}
+.small.hoverable:hover:nth-child(9) {top: -1.8em; left: 9.95em;}
+.small.hoverable:hover:nth-child(10) {top: -1.2em; left: 11em;}
+.small.hoverable:hover:nth-child(11) {top: -1em; left: 12.2em;}
+.small.hoverable:hover:nth-child(12) {top: -1em; left: 14em;}
+.small.hoverable:hover:nth-child(13) {top: -0.55em; left: 15em;}
+
+.selected {
+  border: 2px solid red;
+  border-radius: 15px;
+  background-color: red;
 }

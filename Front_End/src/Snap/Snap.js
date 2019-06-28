@@ -10,13 +10,17 @@ class Snap extends Component {
     super(props)
     this.state = {
       reveal: false,
+      counter: 0,
       snap: 0,
       pause: false
     };
 
     this.handleGameStart = this.handleGameStart.bind(this);
+    this.handleExitClick = this.handleExitClick.bind(this);
     this.handleGamePause = this.handleGamePause.bind(this);
     this.startGame=this.startGame.bind(this);
+    this.dealCard = this.dealCard.bind(this);
+    this.checkCardCount = this.checkCardCount.bind(this);
     this.toggleSnap = this.toggleSnap.bind(this);
     this.togglePause = this.togglePause.bind(this);
   };
@@ -25,13 +29,32 @@ class Snap extends Component {
     this.props.getDeck();
   };
 
+  componentWillUnmount() {
+    clearInterval(this.game)
+  }
+
+  checkCardCount(){
+    this.state.counter <= 26 ? this.props.addToPile() : clearInterval(this.game);
+  }
+
+  dealCard(){
+    const newCounter = this.state.counter + 1;
+    this.setState({ counter: newCounter }, () => { this.checkCardCount() });
+  };
+
   startGame(){
-    this.game = setInterval(this.props.addToPile,1250);
+    const waitTime = 1250;
+    this.game = setInterval(this.dealCard, waitTime);
     this.setState({snap: 0})
   };
 
   handleGameStart() {
     this.startGame();
+    this.setState({counter: 0});
+    this.setState({reveal: true});
+  };
+
+  handleExitClick() {
     this.setState({reveal: !this.state.reveal});
   };
 
@@ -53,6 +76,10 @@ class Snap extends Component {
         <div className= "snap">
           <SnapGameContainer
             startGame={this.startGame}
+            handleGameStart={this.handleGameStart}
+            handleExitClick={this.handleExitClick}
+            resetDefault={this.props.resetDefault}
+            getDeck={this.props.getDeck}
             handleGamePause={this.handleGamePause}
             winCoins={this.props.winCoins}
             payCoins={this.props.payCoins}
@@ -82,10 +109,7 @@ class Snap extends Component {
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
     dispatch(() => {
-      fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`)
-      .then(res => res.json())
-      .then(deck => {
-        fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=52`)
+        fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=26`)
         .then(res => res.json())
         .then(deck => {
           dispatch({
@@ -93,7 +117,6 @@ const mapDispatchToProps = (dispatch) => ({
             deck
           });
         });
-      });
     });
   },
   addToPile() {
@@ -119,6 +142,5 @@ const mapDispatchToProps = (dispatch) => ({
     })
   }
 });
-
 
 export default connect(null, mapDispatchToProps)(Snap);

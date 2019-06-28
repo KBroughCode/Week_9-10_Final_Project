@@ -17,26 +17,27 @@
   margin: 1%
 }
 
+/*
 .slideshow{
  height: 100px;
  overflow: hidden;
  position: relative;
  font-size: 1.75em;
 }
-
-.slideshow p {
- position: absolute;
- width: 7200px;
- height: 100%;
- margin: 0;
- line-height: 100px;
- text-align: right;
- /* Starting position */
- /* Apply animation to this element  was 10s */
- animation: slideshow 27s linear infinite;
-}
-
-/* Move it (define the animation) */
+*/
+/* .marquee p { */
+ /* position: absolute; */
+ /* width: 7200px; */
+ /* height: 100%; */
+ /* margin: 0; */
+ /* line-height: 100px; */
+ /* text-align: right; */
+ /* Comment: Starting position */
+ /* Comment: Apply animation to this element  was 10s */
+ /* animation: slideshow 27s linear infinite; */
+/* } */
+/*
+Comment:  Move it (define the animation)
 @keyframes slideshow{
  0%   {
    left: -50%;
@@ -44,4 +45,37 @@
  100% {
    left: -285%;
  }
+}
+
+body { margin: 20px; }
+*/
+
+.marquee {
+  height: 100px;
+  width: 100%;
+
+  overflow: hidden;
+  position: absolute;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 300px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: marquee 10s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: 50%;
+  font-size: 1.5em;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
 }

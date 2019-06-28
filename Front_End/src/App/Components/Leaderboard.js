@@ -8,10 +8,17 @@ const Leaderboard = (props) => {
   });
 
   return (
-    <div className="slideshow">
-     <p>High Scores {highboard} High Scores {highboard} High Scores {highboard}</p>
-     </div>
+    <div className="marquee">
+    <div>
+    <span><p>High Scores... {highboard}</p></span>
+    <span><p>High Scores... {highboard}</p></span>
+    </div>
+    </div>
    );
 }
 
 export default Leaderboard;
+
+// <div className="slideshow">
+// <p>High Scores {highboard} High Scores {highboard} High Scores {highboard}</p>
+// </div>

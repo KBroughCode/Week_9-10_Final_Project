@@ -34,7 +34,7 @@ class Snap extends Component {
   }
 
   checkCardCount(){
-    this.state.counter <= 26 ? this.props.addToPile() : clearInterval(this.game);
+    this.state.counter <= 52 ? this.props.addToPile() : clearInterval(this.game);
   }
 
   dealCard(){

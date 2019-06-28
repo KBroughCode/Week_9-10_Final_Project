@@ -38,7 +38,7 @@ const SnapGameContainer = (props) => {
        </div>
        <div className ="snap-player-buttons">
          <SnapStartButton
-          handleGameStart={props.handleGameStart} // ADDED
+          handleGameStart={props.handleGameStart}
          />
          <PlayerActions
           handleGamePause = {props.handleGamePause}
@@ -75,14 +75,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'ADD_TO_PILE'
     })
-  },
-  // resetDefault() {
-  //   console.log('resetDefault call');
-  //   dispatch({
-  //     type: 'RETURN_SNAP_DEFAULT'
-  //   })
-  // },
-
+  }
 })
 
 SnapGameContainer.propTypes = {

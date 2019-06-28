@@ -22,27 +22,21 @@ class Snap extends Component {
   };
 
   componentDidMount() {
-    console.log('componentDidMount call');
     this.props.getDeck();
   };
 
-  // adding componentWillUnmount
   componentWillUnmount() {
-    console.log('UNMOUNTING');
     clearInterval(this.game)
   }
 
-  // adding code here
   checkCardCount(){
     this.state.counter <= 26 ? this.props.addToPile() : clearInterval(this.game);
   }
 
   dealCard(){
-    console.log('dealCard call');
     const newCounter = this.state.counter + 1;
     this.setState({ counter: newCounter }, () => { this.checkCardCount() });
   };
-  // to here
 
   startGame(){
     const waitTime = 250;
@@ -51,11 +45,11 @@ class Snap extends Component {
 
   handleGameStart() {
     this.startGame();
-    this.setState({reveal: !this.state.reveal});
+    this.setState({counter: 0});
+    this.setState({reveal: true});
   };
 
   handleExitClick() {
-    console.log('handleExitClick call');
     this.setState({reveal: !this.state.reveal});
   };
 
@@ -69,10 +63,10 @@ class Snap extends Component {
         <div className= "snap">
           <SnapGameContainer
             startGame={this.startGame}
-            handleGameStart={this.handleGameStart} // ADDED
-            handleExitClick={this.handleExitClick} // ADDED
-            resetDefault={this.props.resetDefault} // ADDED
-            getDeck={this.props.getDeck} // ADDED
+            handleGameStart={this.handleGameStart}
+            handleExitClick={this.handleExitClick}
+            resetDefault={this.props.resetDefault}
+            getDeck={this.props.getDeck}
             handleGamePause={this.handleGamePause}
             winCoins={this.props.winCoins}
             payCoins={this.props.payCoins}
@@ -94,7 +88,6 @@ class Snap extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
-    console.log('getDeck call');
     dispatch(() => {
         fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=26`)
         .then(res => res.json())
@@ -104,31 +97,14 @@ const mapDispatchToProps = (dispatch) => ({
             deck
           });
         });
-    // CONFIRM WITH STAKEHOLDERS MAKING ONE API CALL ONLY
-    // dispatch(() => {
-    //   fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`)
-    //   .then(res => res.json())
-    //   .then(deck => {
-    //     fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=52`)
-    //     .then(res => res.json())
-    //     .then(deck => {
-    //       console.log(deck);
-    //       dispatch({
-    //         type: 'GET_SNAP_DECK',
-    //         deck
-    //       });
-    //     });
-    //   });
     });
   },
   addToPile() {
-    console.log('ADD_TO_PILE');
     dispatch({
       type: 'ADD_TO_PILE'
     })
   },
   resetDefault() {
-    console.log('resetDefault call');
     dispatch({
       type: 'RETURN_SNAP_DEFAULT'
     })
@@ -146,6 +122,5 @@ const mapDispatchToProps = (dispatch) => ({
     })
   }
 });
-
 
 export default connect(null, mapDispatchToProps)(Snap);

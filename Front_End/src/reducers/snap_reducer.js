@@ -11,7 +11,6 @@ const snapReducer = (state = {deck: [], pile: []}, action) => {
       }
       return moveState
     case 'RETURN_SNAP_DEFAULT':
-    console.log('RETURN_SNAP_DEFAULT');
       const defaultState = {/*...state, */deck: [], pile: []};
       return defaultState;
     default:

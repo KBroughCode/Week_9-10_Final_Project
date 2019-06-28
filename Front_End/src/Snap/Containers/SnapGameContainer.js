@@ -23,7 +23,6 @@ const SnapGameContainer = (props) => {
  }
 
  if(props.deck.length > 0){
-   console.log(props);
    return(
      <div>
        <div className="snap-cards-container">

@@ -14,7 +14,7 @@ const StickButton = (props) => {
   return(
     <button className = "action-button" onClick={handleClick}>Stick</button>
   );
-  
+
 };
 
 export default StickButton;

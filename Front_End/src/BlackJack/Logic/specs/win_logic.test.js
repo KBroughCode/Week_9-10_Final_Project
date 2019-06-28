@@ -49,4 +49,42 @@ describe('a hand of cards', () => {
   test('dealer wins when both go bust', () => {
     expect(checkWinner([fiveD,eightC,eightC,eightC],[fiveD,eightC,eightC,eightC]).winner).toEqual('Dealer');
   });
+
+  // new tests
+  test('dealer wins when dealer has 5 card trick', () => {
+    expect(checkWinner([eightC,eightC],[aceS,aceS,aceS,fiveD,fiveD]).winner).toEqual('Dealer');
+  });
+
+  test('player wins when dealer has 5 cards but is bust', () => {
+    expect(checkWinner([eightC,eightC],[fiveD,fiveD,fiveD,fiveD,fiveD]).winner).toEqual('Player');
+  });
+
+  test('dealer wins when dealer has Blackjack', () => {
+    expect(checkWinner([kingH,aceS],[kingH,aceS]).winner).toEqual('Dealer');
+  });
+
+  test('dealer wins when dealer has Blackjack even when player has 5 card trick', () => {
+    expect(checkWinner([aceS,aceS,aceS,fiveD,fiveD],[kingH,aceS]).winner).toEqual('Dealer');
+  });
+
+  test('player wins when player has 5 card trick and dealer does not have 5 cards or Blackjack', () => {
+    expect(checkWinner([aceS,aceS,aceS,fiveD,fiveD],[eightC,eightC]).winner).toEqual('Player');
+  });
+
+  test('dealer wins when player has 5 cards but is bust', () => {
+    expect(checkWinner([fiveD,fiveD,fiveD,fiveD,fiveD],[eightC,eightC]).winner).toEqual('Player');
+  });
+
+  test('player wins when player has Blackjack and dealer does not have 5 cards or Blackjack', () => {
+    expect(checkWinner([kingH,aceS],[eightC,eightC]).winner).toEqual('Player');
+  });
+
+  xtest('dealer wins when both go bust', () => {
+    expect(checkWinner([fiveD,eightC,eightC,eightC],[fiveD,eightC,eightC,eightC]).winner).toEqual('Dealer');
+  });
+
+  xtest('dealer wins when both go bust', () => {
+    expect(checkWinner([fiveD,eightC,eightC,eightC],[fiveD,eightC,eightC,eightC]).winner).toEqual('Dealer');
+  });
+
 })

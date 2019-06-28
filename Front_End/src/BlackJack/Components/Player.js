@@ -6,6 +6,13 @@ import '../blackjack.css';
 
 const Player = (props) =>{
 
+
+  // experiment
+  let playerBust = false;
+  const togglePlayerBust = () => {
+
+  };
+
   return(
     <>
       <div>
@@ -19,6 +26,7 @@ const Player = (props) =>{
           coins={props.coins}
           winCoins={props.winCoins}
           payCoins={props.payCoins}
+          cards={props.cards}
         />
       </div>
       <div className = 'player-container'>
@@ -28,7 +36,7 @@ const Player = (props) =>{
       </div>
     </>
   )
-  
+
 };
 
 export default Player;

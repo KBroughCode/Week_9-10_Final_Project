@@ -72,6 +72,7 @@ class Snap extends Component {
             handleGameStart={this.handleGameStart} // ADDED
             handleExitClick={this.handleExitClick} // ADDED
             resetDefault={this.props.resetDefault} // ADDED
+            getDeck={this.props.getDeck} // ADDED
             handleGamePause={this.handleGamePause}
             winCoins={this.props.winCoins}
             payCoins={this.props.payCoins}

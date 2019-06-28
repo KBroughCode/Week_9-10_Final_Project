@@ -9,19 +9,16 @@ import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
 
-console.log(this);
-console.log(props);
-
-const handleClick = (props) => {
-   props.handleGameStart();
-   props.resetDefault();
-   props.getDeck(); // this function is not on props
- }
+  const handleClick = () => {
+    props.handleGameStart();
+    props.resetDefault();
+    props.getDeck();
+  }
 
  const handleHomeClick = () => {
    props.resetDefault();
-   props.handleExitClick(); //  this DOES log out
-   // props.handleGameStart();
+   props.handleExitClick();
+   props.handleGameStart();
  }
 
  if(props.deck.length > 0){

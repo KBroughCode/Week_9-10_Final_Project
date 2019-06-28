@@ -1,12 +1,14 @@
 import React from 'react';
 import PlayerCard from './PlayerCard';
+import './fanCards.css'
 
 const OldMaidHumanPlayerHand = (props) => {
 
   const mapHand = props.hand.map((element, index) => {
     return(
-      <div className = "old-maid-card">
+      <div className = {props.handSize}>
         <PlayerCard
+          handSize={props.hand.length}
           key={index}
           image={element.image}
           value={element.value}

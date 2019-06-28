@@ -1,0 +1,11 @@
+.oldmaid-player-buttons{
+  grid-area: playerButtons;
+  display: flex;
+  align-items: center;
+  background-color: #BD632F;
+  color: #E6DCBF;
+  height: 55px;
+  padding-left: 10px;
+  border-top: 3px solid #452412;
+  border-bottom: 3px solid #452412;
+}

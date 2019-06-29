@@ -27,6 +27,8 @@ const PlayerActions = (props) =>{
           dealerHand={props.dealerHand}
           winCoins={props.winCoins}
           payCoins={props.payCoins}
+          playerBust={props.playerBust}
+          dealerBust={props.dealerBust}
         />
       </div>
     )

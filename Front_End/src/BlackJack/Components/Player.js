@@ -5,7 +5,6 @@ import PlayerActions from './PlayerActions'
 import '../blackjack.css';
 
 const Player = (props) =>{
-  // remove cards from props for playerActions? and twist button
 
   return(
     <>
@@ -22,6 +21,7 @@ const Player = (props) =>{
           payCoins={props.payCoins}
           cards={props.cards}
           playerBust={props.playerBust}
+          dealerBust={props.dealerBust}
         />
       </div>
       <div className = 'player-container'>

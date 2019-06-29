@@ -43,6 +43,12 @@ const cardReducer = (state = {deck: [], player: [], dealer: [], winner: null, pl
         playerBust: true
       };
       return playerBust;
+    case 'DEALER_BUST':
+      const dealerBust = {
+        ...state,
+        dealerBust: true
+      };
+      return dealerBust;
     default:
       return state;
   };

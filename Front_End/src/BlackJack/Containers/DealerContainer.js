@@ -25,6 +25,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'RETURN_DEFAULT'
     })
+  },
+  setDealerBust() {
+    dispatch({
+      type: 'DEALER_BUST'
+    })
   }
 });
 

@@ -5,13 +5,7 @@ import PlayerActions from './PlayerActions'
 import '../blackjack.css';
 
 const Player = (props) =>{
-
-
-  // experiment
-  let playerBust = false;
-  const togglePlayerBust = () => {
-
-  };
+  // remove cards from props for playerActions? and twist button
 
   return(
     <>
@@ -27,11 +21,13 @@ const Player = (props) =>{
           winCoins={props.winCoins}
           payCoins={props.payCoins}
           cards={props.cards}
+          playerBust={props.playerBust}
         />
       </div>
       <div className = 'player-container'>
         <PlayerCards
           cards={props.cards}
+          setPlayerBust={props.setPlayerBust}
         />
       </div>
     </>

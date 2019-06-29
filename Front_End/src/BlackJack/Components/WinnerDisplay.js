@@ -22,10 +22,6 @@ const WinnerDisplay = (props) => {
     <div>The dealer wins</div> :
     <div>The {props.winner.winner} wins with a total of {props.winner.value}</div>;
 
-  console.log(props.playerBust);
-  console.log(props.dealerBust);
-  console.log(winnerText);
-
   return(
     <div>
       {winnerText}

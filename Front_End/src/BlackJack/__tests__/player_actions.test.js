@@ -25,6 +25,7 @@ describe('PlayerActions render test', () => {
       }
     ]}
       winner={null}
+      cards={new Array(3, null)}
       />)
       expect(getByText('Draw Hand')).toBeTruthy();
   })
@@ -61,6 +62,7 @@ describe('PlayerActions render test', () => {
       }
     ]}
       winner={null}
+      cards={new Array(3, null)}
       />)
       expect(getByText('Twist')).toBeTruthy();
       expect(getByText('Stick')).toBeTruthy();

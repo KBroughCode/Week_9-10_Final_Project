@@ -83,8 +83,4 @@ describe('a hand of cards', () => {
     expect(checkWinner([kingH,aceS],[eightC,eightC],playerBustFalse,dealerBustFalse).winner).toEqual('Player');
   });
 
-  xtest('dealer wins when both go bust', () => {
-    expect(checkWinner([fiveD,eightC,eightC,eightC],[fiveD,eightC,eightC,eightC],playerBustTrue,dealerBustTrue).winner).toEqual('Dealer');
-  });
-
 })

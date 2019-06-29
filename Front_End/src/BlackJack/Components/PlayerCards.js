@@ -3,7 +3,8 @@ import Card from './Card';
 import evaluateCards from '../Logic/HandValueLogic'
 import './playerCards.css';
 
-const PlayerCard = (props) =>{
+// changed function name here and in export statement from PlayerCard
+const PlayerCards = (props) =>{
 
   const playerCards = props.cards.map((playerCard, i)=> {
 
@@ -25,6 +26,8 @@ const PlayerCard = (props) =>{
   const displayValue =() => {
     switch (playerTotal.length) {
       case 0:
+        // inserting dispatch here:
+        props.setPlayerBust();
         return`You have gone bust`
       case 1:
         return `Your total is  ${playerTotal[0]}`
@@ -45,7 +48,7 @@ const PlayerCard = (props) =>{
       </div>
     </div>
   );
-  
+
 };
 
-export default PlayerCard;
+export default PlayerCards;

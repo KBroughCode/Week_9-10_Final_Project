@@ -7,7 +7,9 @@ const mapStateToProps = (state) => {
     cards: state.blackjack.player,
     dealer: state.blackjack.dealer,
     winner: state.blackjack.winner,
-    coins: state.coins
+    coins: state.coins,
+    playerBust: state.blackjack.playerBust,
+    dealerBust: state.blackjack.dealerBust
   };
 };
 
@@ -38,6 +40,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type:'REMOVE_COINS',
       amount
+    })
+  },
+  setPlayerBust() {
+    dispatch({
+      type:'PLAYER_BUST'
     })
   }
 });

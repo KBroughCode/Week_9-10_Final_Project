@@ -49,6 +49,7 @@ class DealerCards extends Component {
     if(dealerValue){
       return `The Dealer's total is ${dealerValue}`
     }else{
+      this.props.setDealerBust();
       return `The Dealer has gone bust`
     };
   };
@@ -76,7 +77,7 @@ class DealerCards extends Component {
       )
     };
   };
-  
+
 };
 
 export default DealerCards;

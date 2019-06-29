@@ -109,7 +109,7 @@ class Snap extends Component {
 const mapDispatchToProps = (dispatch) => ({
   getDeck() {
     dispatch(() => {
-        fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=26`)
+        fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=52`)
         .then(res => res.json())
         .then(deck => {
           dispatch({

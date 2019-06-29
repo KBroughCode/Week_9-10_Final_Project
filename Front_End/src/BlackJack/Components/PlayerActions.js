@@ -17,6 +17,8 @@ const PlayerActions = (props) =>{
         <TwistButton
           className = "action-button"
           twistPlayer={props.twistPlayer}
+          playerBust={props.playerBust}
+          cards={props.cards}
         />
         <StickButton
           className = "action-button"
@@ -24,6 +26,9 @@ const PlayerActions = (props) =>{
           playerHand={props.playerHand}
           dealerHand={props.dealerHand}
           winCoins={props.winCoins}
+          payCoins={props.payCoins}
+          playerBust={props.playerBust}
+          dealerBust={props.dealerBust}
         />
       </div>
     )
@@ -37,7 +42,7 @@ const PlayerActions = (props) =>{
       </div>
     )
   };
-  
+
 };
 
 export default PlayerActions;

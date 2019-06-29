@@ -43,6 +43,8 @@ class BlackJack extends Component {
                 resetDefault= {this.props.resetDefault}
                 handleGameStart= {this.handleGameStart}
                 getDeck= {this.props.getDeck}
+                playerBust= {this.props.playerBust}
+                dealerBust= {this.props.dealerBust}
               />
             </div>
           </div>
@@ -86,7 +88,9 @@ const mapStateToProps = (state) => {
   return{
     winner: state.blackjack.winner,
     coins: state.coins,
-    cardsReady: state.cardsReady
+    cardsReady: state.cardsReady,
+    playerBust: state.blackjack.playerBust,
+    dealerBust: state.blackjack.dealerBust
   };
 };
 

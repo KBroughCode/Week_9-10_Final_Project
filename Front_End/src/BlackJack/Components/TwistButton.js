@@ -2,8 +2,12 @@ import React from 'react';
 
 const TwistButton = (props) => {
 
-  return(
-    <button className = "action-button" onClick = {props.twistPlayer}>Twist</button>
+  const checkButtonRender = (props.cards.length < 5 && !props.playerBust) ? true : false;
+
+  return (
+    <div>
+      { checkButtonRender && <button className = "action-button" onClick = {props.twistPlayer}>Twist</button> }
+    </div>
   );
 
 };

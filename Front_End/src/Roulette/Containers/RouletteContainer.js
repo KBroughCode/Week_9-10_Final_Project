@@ -1,4 +1,3 @@
-
 import { connect } from 'react-redux';
 import RouletteGame from '../Components/RouletteGame';
 
@@ -8,8 +7,13 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => ({
+  winCoins(amount) {
+    dispatch({
+      type:'ADD_COINS',
+      amount
+    })
+  }
+})
 
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Player);
+export default connect(mapStateToProps, mapDispatchToProps)(RouletteGame);

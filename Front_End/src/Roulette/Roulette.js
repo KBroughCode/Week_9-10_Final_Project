@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import RouletteStartButton from './Components/RouletteStartButton';
 import RouletteContainer from './Containers/RouletteContainer';
 
 class Roulette extends Component {

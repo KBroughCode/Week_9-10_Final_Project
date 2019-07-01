@@ -117,7 +117,6 @@ class OldMaidGame extends Component{
 
   toggleClass() {
     if (this.state.selectedCard === 'playing-card-flip-front') {
-      console.log('hello');
       this.setState({selectedCard: 'playing-card-flip-front selected'})
     } else {
       this.setState({selectedCard: 'playing-card-flip-front'})

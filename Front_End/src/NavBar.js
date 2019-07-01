@@ -11,6 +11,7 @@ const Navbar = (props) => (
         <Link className='link three' to="/Blackjack">Blackjack</Link>
         <Link className='link four' to="/Snap">Snap</Link>
         <Link className='link five' to="/OldMaid">Old Maid</Link>
+        <Link className='link six' to="/Roulette">Roulette</Link>
     </div>
   </div>
 );

@@ -9,7 +9,6 @@ const OldMaidPlayerHand = (props) => {
 
   if (reducedHand.length !== props.hand.length) {
     props.updateCpuHand(reducedHand, props.player);
-    console.log(props);
     if (props.player === 'two') {
       props.checkWin('two', 2)
     } else if (props.player === 'three') {

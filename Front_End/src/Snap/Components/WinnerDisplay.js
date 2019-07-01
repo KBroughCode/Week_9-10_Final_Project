@@ -4,7 +4,6 @@ import "./win-lose.css"
 const WinnerDisplay = (props) =>{
 
   if (props.snapWin === 1) {
-    console.log(props.snapWin);
     return (
       <div><img src="./SNAP.png" alt="SNAP!" className='snap-image'></img></div>
     )

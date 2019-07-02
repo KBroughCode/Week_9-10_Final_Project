@@ -1,0 +1,9 @@
+.gameboard {
+  height: 50vh;
+  width: 99.4%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #1D7137;
+}

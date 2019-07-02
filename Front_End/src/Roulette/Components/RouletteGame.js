@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Wheel from './Wheel'
-import Board from './Board'
+// import Board from './Board'
 import WinnerDisplay from './WinnerDisplay'
 
 class RouletteGame extends Component {
@@ -15,17 +15,17 @@ class RouletteGame extends Component {
     return(
       <>
         <div>
-          <WinnerDisplay />
-        </div>
-        <div>
           <Wheel />
-        </div>
-        <div>
-          <Board />
         </div>
       </>
     )
   }
 }
+// <div>
+// <WinnerDisplay />
+// </div>
+// <div>
+// <Board />
+// </div>
 
-export default RouletteGame
+export default RouletteGame;

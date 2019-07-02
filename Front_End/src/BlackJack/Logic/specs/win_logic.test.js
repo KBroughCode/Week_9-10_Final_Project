@@ -79,8 +79,8 @@ describe('a hand of cards', () => {
     expect(checkWinner([fiveD,fiveD,fiveD,fiveD,fiveD],[eightC,eightC],playerBustTrue,dealerBustFalse).winner).toEqual('Dealer');
   });
 
-  test('player wins when player has Blackjack and dealer does not have 5 cards or Blackjack', () => {
-    expect(checkWinner([kingH,aceS],[eightC,eightC],playerBustFalse,dealerBustFalse).winner).toEqual('Player');
+  test('player wins when player has Blackjack and dealer has 21 without 5 cards or Blackjack', () => {
+    expect(checkWinner([kingH,aceS],[kingH,fiveD,fiveD,aceS],playerBustFalse,dealerBustFalse).winner).toEqual('Player');
   });
 
 })

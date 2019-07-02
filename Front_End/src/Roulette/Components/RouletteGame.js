@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Wheel from './Wheel'
 import Board from './Board'
 import WinnerDisplay from './WinnerDisplay'
+import PlayerView from './PlayerView'
 import './roulette.css'
 
 class RouletteGame extends Component {
@@ -26,10 +27,16 @@ class RouletteGame extends Component {
       <>
         <div>
         </div>
-        <div>
+        <div className='board-and-wheel'>
+          <div>
+            <Wheel />
+          </div>
+          <div className='gameboard'>
+            <Board numbers={this.state.numbers}/>
+          </div>
         </div>
-        <div className='gameboard'>
-          <Board numbers={this.state.numbers}/>
+        <div>
+          <PlayerView />
         </div>
       </>
     )

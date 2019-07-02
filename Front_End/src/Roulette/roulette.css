@@ -1,11 +1,7 @@
-.roulette-player-buttons{
-  grid-area: playerButtons;
+.roulette {
   display: flex;
-  align-items: center;
-  background-color: #BD632F;
-  color: #E6DCBF;
-  height: 55px;
-  padding-left: 10px;
-  border-top: 3px solid #452412;
-  border-bottom: 3px solid #452412;
+  flex-direction: column;
+  width: 100%;
+  height: 95vh;
+  background-color: black;
 }

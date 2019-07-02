@@ -1,9 +1,18 @@
 .gameboard {
   height: 50vh;
-  width: 99.4%;
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   background-color: #1D7137;
+  padding: 30px;
+  border: 10px solid white;
+  border-radius: 50px;
+}
+.board-and-wheel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98.95%;
+  height: 65vh;
+  border: 10px solid rgb(128, 84, 43);
 }

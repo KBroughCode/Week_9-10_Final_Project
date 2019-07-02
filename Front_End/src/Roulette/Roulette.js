@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import RouletteContainer from './Containers/RouletteContainer';
+import './roulette.css'
 
 class Roulette extends Component {
   constructor(props) {

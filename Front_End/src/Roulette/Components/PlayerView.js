@@ -5,7 +5,7 @@ const PlayerView = () => {
 
   return (
     <>
-      <div>Wheel</div>
+      <div>PlayerView</div>
     </>
   );
 };

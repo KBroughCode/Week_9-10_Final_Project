@@ -1,14 +1,13 @@
 import React from 'react';
 
 const WheelItem = (props) => {
-
   return (
     <li
       className='wheel-item'
       style={{
         transform: `rotate(${props.angle*props.angleMultiplier}deg)`,
         backgroundColor: `${props.backgroundColor}`,
-        zIndex: 0
+        zIndex: -1
         }}
     >
       <span className="icon">{props.wheelNumber}</span>

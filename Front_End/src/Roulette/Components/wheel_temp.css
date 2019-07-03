@@ -1,13 +1,19 @@
 /* https://css-tricks.com/building-a-circular-navigation-with-css-clip-paths/ */
 
+.wheel-container {
+  width: 25vw;
+  font-size: 0.7em;
+}
+
 .menu-box {
   position: relative;
-  margin: 30px auto;
+  margin: 0;
+  border: 1px solid;
   /* padding trick for maintaining aspect ratio */
   height: 0;
   padding: 0;
-  padding-top: 70%;
-  width: 70%;
+  padding-top: 100%;
+  width: 100%;
 }
 
 .menu {
@@ -19,6 +25,12 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
 }
 
 .menu li {
@@ -34,10 +46,19 @@
 .icon {
   position: absolute;
   /* exact values here depend on what you are placing inside the items (icon, image, text, etc.) */
-  right: 10%;
+  right: 4%;
   top: 45%;
   /* angle of rotation = angle of the sector itself */
-  transform: rotate(80deg);
+  transform: rotate(85deg);
 
   /* style further as needed */
+}
+
+.middle-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }

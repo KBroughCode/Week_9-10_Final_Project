@@ -2,14 +2,15 @@
   position: relative;
   background-color: white;
   border: 5px solid white;
-  bottom: 55px;
+  bottom: 2vw;
   color: white;
   text-align: center;
   font-size: 2vw;
+  font-weight: 700;
   grid-gap: 5px;
   display: grid;
-  grid-template-columns: 4vw;
-  grid-template-rows: 4vw 4vw;
+  grid-template-columns: 3.8vw;
+  grid-template-rows: 5.8vw 5.85vw;
 }
 
 .zero {background-color: #1D7137; grid-row: 1/2}
@@ -18,11 +19,12 @@
 .board-grid {
   position: relative;
   left: -5px;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
+  font-weight: 700;
   text-align: center;
   display: grid;
-  grid-template-columns: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
-  grid-template-rows: 4vw 4vw 4vw 4vw 4vw 4vw;
+  grid-template-columns: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
+  grid-template-rows: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
   grid-gap: 5px;
   color: white;
   background-color: white;
@@ -33,8 +35,8 @@
   grid-row: 2/5;
   grid-column: 1/13;
   display: grid;
-  grid-template-columns: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
-  grid-template-rows: 4vw 4vw 4vw;
+  grid-template-columns: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
+  grid-template-rows: 3.8vw 3.8vw 3.8vw;
   grid-gap: 5px;
 }
 
@@ -50,7 +52,7 @@
   background-color: red;
 }
 
-.even {background-color: black;}
+.black-numbers {background-color: black;}
 
 .numbers-background:nth-child(3n-2) {grid-row: 3/4}
 .numbers-background:nth-child(3n-1) {grid-row: 2/3}
@@ -106,9 +108,9 @@
 .red {background-color: red; grid-row: 6/7; grid-column: 4/7}
 .black {background-color: black; grid-row: 6/7; grid-column: 7/10}
 
-.row1 {background-color: #1D7137; grid-row: 2/3; grid-column: 13/14}
-.row2 {background-color: #1D7137; grid-row: 3/4; grid-column: 13/14}
-.row3 {background-color: #1D7137; grid-row: 4/5; grid-column: 13/14}
+.row1 {background-color: #1D7137; grid-row: 2/3; grid-column: 13/14; font-size: 1vw}
+.row2 {background-color: #1D7137; grid-row: 3/4; grid-column: 13/14; font-size: 1vw}
+.row3 {background-color: #1D7137; grid-row: 4/5; grid-column: 13/14; font-size: 1vw}
 
 .empty1 {background-color: #1D7137; grid-row: 1/2; grid-column: 13/14}
 .empty2 {background-color: #1D7137; grid-row: 5/7; grid-column: 13/14}

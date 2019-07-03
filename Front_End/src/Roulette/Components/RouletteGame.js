@@ -7,15 +7,23 @@ class RouletteGame extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      winningNumber: 0
+      winningNumber: 0,
+      betsPlaced: true
     }
   }
+
+  updateWinningNumber(number) {
+    this.setState({ winningNumber: number });
+  };
 
   render() {
     return(
       <>
         <div>
-          <Wheel />
+          <Wheel
+            betsPlaced={this.state.betsPlaced}
+            updateWinningNumber={this.updateWinningNumber}
+          />
         </div>
       </>
     )

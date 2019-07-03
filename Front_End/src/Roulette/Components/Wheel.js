@@ -7,12 +7,20 @@ import './wheel_temp.css';
 class Wheel extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      rotationCounter: 0
+    };
     this.setBackgroundColor = this.setBackgroundColor.bind(this);
     this.rouletteWheel = this.rouletteWheel.bind(this);
     this.startSpin = this.startSpin.bind(this);
+    this.rotateBoard = this.rotateBoard.bind(this);
     this.game = null;
     this.rouletteNumbers = ['0','28','9','26','30','11','7','20','32','17','5','22','34','15','3','24','36','13','1','00','27','10','25','29','12','8','19','31','18','6','21','33','16','4','23','35','14','2'];
     this.segmentAngle = -9.4763684;
+  }
+
+  componentDidMount() {
+    this.startSpin();
   }
 
   setBackgroundColor(number, index) {
@@ -22,9 +30,15 @@ class Wheel extends Component {
     return (parseInt(index) % 2 === 0) ? 'red' : 'black';
   };
 
+  rotateBoard() {
+    this.setState({rotationCounter: (this.state.rotationCounter+=1)})
+  };
+
   startSpin() {
-    const spin = setInterval(rotateBoard, waitTime);
-    this.setState({snap: 0})
+    if (this.props.betsPlaced) {
+      const waitTime = 5;
+      const spin = setInterval(this.rotateBoard, waitTime);
+    }
   }
 
 
@@ -55,7 +69,7 @@ class Wheel extends Component {
             </clipPath>
           </defs>
         </svg>
-        <div className="wheel-container">
+        <div className="wheel-container" style={{transform: `rotate(${this.state.rotationCounter}deg)`}}>
           <div className="menu-box">
             <ul className="menu wheel">
               {this.rouletteWheel()}

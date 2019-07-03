@@ -7,7 +7,6 @@ const PlayerView = (props) => {
   const calculateCoins = () => {
     let logic = new CalculateCoins()
     let coins = logic.calculateCoins(props.coins)
-    console.log(coins);
   }
 
   const showGrid = () => {
@@ -20,9 +19,9 @@ const PlayerView = (props) => {
         <div>
 
           <div className='coin-container'>
-            <div><img onClick={()=>{props.selectCoin('bronze')}} className='coin-front' src='./images/BronzeFront.png' alt='BronzeCoin'/></div>
-            <div><img onClick={()=>{props.selectCoin('silver')}} className='coin-front' src='./images/SilverFront.png' alt='SilverCoin'/></div>
-            <div><img onClick={()=>{props.selectCoin('gold')}} className='coin-front' src='./images/GoldFront.png' alt='GoldCoin'/></div>
+            <div><img onClick={()=>{props.selectCoin('bronze', 1)}} className='coin-front' src='./images/BronzeFront.png' alt='BronzeCoin'/></div>
+            <div><img onClick={()=>{props.selectCoin('silver', 5)}} className='coin-front' src='./images/SilverFront.png' alt='SilverCoin'/></div>
+            <div><img onClick={()=>{props.selectCoin('gold', 10)}} className='coin-front' src='./images/GoldFront.png' alt='GoldCoin'/></div>
           </div>
         </div>
       </div>

@@ -20,11 +20,12 @@ class RouletteGame extends Component {
         [{name: '1to12', value: 0}, {name: '13to24', value: 0}, {name: '25to36', value: 0}],
         [{name: 'even', value: 0}, {name: 'red', value: 0}, {name: 'black', value: 0}, {name: 'odd', value: 0}]
       ],
-      selectedCoin: 'bronze',
+      selectedCoin: {coin: 'bronze', value: 1},
       cursor: 'gameboard'
     }
 
     this.changeSelectedCoin = this.changeSelectedCoin.bind(this)
+    this.clickBox = this.clickBox.bind(this)
   }
 
   componentDidMount() {
@@ -35,16 +36,30 @@ class RouletteGame extends Component {
     this.setState({numbers: numbers})
   }
 
-  changeSelectedCoin(coin) {
-    this.setState({selected: coin})
+  changeSelectedCoin(coin, value) {
+    this.setState({selectedCoin: {coin: coin, value: value}})
     this.changeCursor(coin)
-    console.log(coin);
   }
 
   changeCursor(coin) {
     let cursor = `gameboard ${coin}`
-    console.log(cursor);
     this.setState({cursor: cursor})
+  }
+
+  clickBox(name) {
+    let board = this.state.board
+    board.map((row, i) => {
+      row.map((column, index) => {
+        if (name == column.name) {
+          console.log(board);
+          console.log(board[i]);
+          console.log(board[i][index]);
+          board[i][index].value += this.state.selectedCoin.value
+        }
+      })
+    })
+    this.setState({board: board})
+    console.log(this.state.board);
   }
 
   render() {
@@ -57,7 +72,8 @@ class RouletteGame extends Component {
             <Wheel />
           </div>
           <div className={this.state.cursor}>
-            <Board numbers={this.state.numbers}/>
+            <Board numbers={this.state.numbers} selectedCoin={this.state.selectedCoin}
+            clickBox={this.clickBox}/>
           </div>
         </div>
         <div>

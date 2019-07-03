@@ -4,21 +4,20 @@ import './board.css'
 const Board = (props) => {
 
   const numbers = props.numbers.map((number, index) => {
-      if ((index+1)===2||(index+1)===4||(index+1)===6||(index+1)===8||(index+1)===10||(index+1)===11||(index+1)===13||(index+1)===15||(index+1)===17||(index+1)===20||(index+1)===22||(index+1)===24||(index+1)===26||(index+1)===28||(index+1)===29||(index+1)===31||(index+1)===33||(index+1)===35) {
-        return (
-          <div className='numbers-background'>
-            <div className='black-numbers numbers' onClick={()=>{props.clickBox(index+1)}}>{number}</div>
-          </div>
-        )
-      } else {
-        return (
-          <div className='numbers-background'>
-            <div className='numbers' onClick={()=>{props.clickBox(index+1)}}>{number}</div>
-          </div>
-        )
-      }
-
-    })
+    if ((index+1)===2||(index+1)===4||(index+1)===6||(index+1)===8||(index+1)===10||(index+1)===11||(index+1)===13||(index+1)===15||(index+1)===17||(index+1)===20||(index+1)===22||(index+1)===24||(index+1)===26||(index+1)===28||(index+1)===29||(index+1)===31||(index+1)===33||(index+1)===35) {
+      return (
+        <div className='numbers-background'>
+          <div className='black-numbers numbers' onClick={()=>{props.clickBox(index+1)}}>{number}</div>
+        </div>
+      )
+    } else {
+      return (
+        <div className='numbers-background'>
+          <div className='numbers' onClick={()=>{props.clickBox(index+1)}}>{number}</div>
+        </div>
+      )
+    }
+  })
 
 
 

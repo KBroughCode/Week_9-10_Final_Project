@@ -7,7 +7,8 @@ const WheelItem = (props) => {
       className='wheel-item'
       style={{
         transform: `rotate(${props.angle*props.angleMultiplier}deg)`,
-        backgroundColor: `${props.backgroundColor}`
+        backgroundColor: `${props.backgroundColor}`,
+        zIndex: 0
         }}
     >
       <span className="icon">{props.wheelNumber}</span>

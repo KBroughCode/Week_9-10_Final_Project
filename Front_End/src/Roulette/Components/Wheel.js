@@ -37,9 +37,14 @@ const Wheel = (props) => {
           </clipPath>
         </defs>
       </svg>
-      <ul className="menu wheel">
-        {rouletteWheel}
-      </ul>
+      <div className="menu-box">
+        <ul className="menu wheel">
+          {rouletteWheel}
+        </ul>
+      </div>
+      <svg height="100%" width="100%" id="TEMP-CIRCLE" >
+        <circle cx="50%" cy="50%" r="50" fill="black" zIndex='1' />
+      </svg>
     </>
   )
 

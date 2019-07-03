@@ -1,30 +1,28 @@
-class CalculateCoins {
+const calculateCoins = (money) => {
 
-  calculateCoins(money) {
-    let coins= {g: 0, s: 0, b: 0}
-    if (money >= 5) {
-      money -= 5;
-      coins.b +=5;
-      if (money >= 25) {
-        money -= 25
-        coins.s +=5
-        if (money >= 10) {
-          coins.g += (Math.floor(money/10))
-          coins.s += (Math.floor((money%10)/5))
-          coins.b += (money%10)%5
-        }
-      } else {
-        coins.s += (Math.floor(money/5))
-        coins.b += (money%5)
-        money = 0
+  let coins= {g: 0, s: 0, b: 0}
+  if (money >= 5) {
+    money -= 5;
+    coins.b +=5;
+    if (money >= 25) {
+      money -= 25
+      coins.s +=5
+      if (money >= 10) {
+        coins.g += (Math.floor(money/10))
+        coins.s += (Math.floor((money%10)/5))
+        coins.b += (money%10)%5
       }
     } else {
-      coins.b = money
+      coins.s += (Math.floor(money/5))
+      coins.b += (money%5)
       money = 0
     }
-    return coins
+  } else {
+    coins.b = money
+    money = 0
   }
-
+  return coins
 
 }
-module.exports = CalculateCoins;
+
+module.exports = calculateCoins;

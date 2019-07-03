@@ -1,12 +1,11 @@
 /* https://css-tricks.com/building-a-circular-navigation-with-css-clip-paths/ */
 
-clip-path: url(#clipPathID);
-
 .menu {
   position: relative;
 
   list-style: none;
   margin: 30px auto;
+  color: #FFFFFF;
 
   /* padding trick for maintaining aspect ratio */
   height: 0;
@@ -19,54 +18,56 @@ clip-path: url(#clipPathID);
   position: absolute;
   top: 100;
   left: 0;
-  width: 300px; /*replace with percentage*/
-  height: 300px; /*replace with percentage*/
+  width: 100%;
+  height: 100%;
 
   clip-path: url(#sector)
 }
-
-.menu li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
+/* DELETE: */
 .menu li:hover {
   background-color: gold;
 }
 
+.wheel:nth-child(odd) {
+  background-color: red;
+}
+
+.wheel:nth-child(even) {
+  background-color: black;
+}
+
 .wheel-one {
   background-color: $base;
-  transform: rotate(0deg);
+  /* transform: rotate(0deg); */
 }
 .wheel-two {
   background-color: darken($base, 7%);
-  transform: rotate(-60deg);
+  /* transform: rotate(-9.4763684deg); */
 }
 .wheel-three {
   background-color: darken($base, 14%);
-  transform: rotate(-120deg);
+  /* transform: rotate(-18.947368deg); */
 }
 .wheel-four {
   background-color: darken($base, 21%);
-  transform: rotate(-180deg);
+  /* transform: rotate(-28.412053deg); */
 }
 .wheel-five {
   background-color: darken($base, 28%);
-  transform: rotate(-240deg);
+  /* transform: rotate(-37.894736deg); */
 }
 .wheel-six {
   background-color: darken($base, 35%);
-  transform: rotate(-300deg);
+  /* transform: rotate(-47.368421deg); */
 }
 
 .icon {
   position: absolute;
   /* exact values here depend on what you are placing inside the items (icon, image, text, etc.) */
-  right: 15%;
-  top: 30%;
+  right: 10%;
+  top: 45%;
   /* angle of rotation = angle of the sector itself */
-  transform: rotate(60deg);
+  transform: rotate(80deg);
 
   /* style further as needed */
 }

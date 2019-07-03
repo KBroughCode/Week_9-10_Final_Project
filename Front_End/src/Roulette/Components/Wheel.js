@@ -1,59 +1,46 @@
 import React from 'react';
+import WheelItem from './WheelItem.js'
 import './wheel_temp.css';
+
+const setBackgroundColor = (number, index) => { // what is the scope of this function?
+  if (number === '0' || number === '00') {
+    return 'green';
+  };
+  return (parseInt(index) % 2 === 0) ? 'red' : 'black';
+};
 
 const Wheel = (props) => {
 
-  return (
+  const rouletteNumbers = ['0','28','9','26','30','11','7','20','32','17','5','22','34','15','3','24','36','13','1','00','27','10','25','29','12','8','19','31','18','6','21','33','16','4','23','35','14','2'];
 
+  const segmentAngle = -9.4763684;
+
+  const rouletteWheel = rouletteNumbers.map((number, index) => {
+    return <WheelItem
+      wheelNumber={number}
+      id={number}
+      angle={segmentAngle}
+      angleMultiplier={index}
+      backgroundColor={setBackgroundColor(number, index)}
+      key={index}
+    />
+  });
+
+  return (
+// A rx ry x-axis-rotation large-arc-flag sweep-flag x y
+// y coordinate is estimated
     <>
-      <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10 10 H 90 V 90 H 30 L 10 10"/>
-        <circle cx="10" cy="10" r="2" fill="red"/>
-        <circle cx="90" cy="90" r="2" fill="red"/>
-        <circle cx="90" cy="10" r="2" fill="red"/>
-        <circle cx="10" cy="90" r="2" fill="red"/>
-      </svg>
       <svg height="0" width="0">
         <defs>
           <clipPath clipPathUnits="objectBoundingBox" id="sector">
-            <path fill="lime" stroke="#111" strokeWidth="1" className="sector" d="M0.5,0.5 l0.5,0 A0.5,0.5 0 0,0 0.75,.066987298 z"></path>
+            <path fill="none" stroke="#111" strokeWidth="1" className="sector" d="M0.5,0.5 l0.5,0 A0.5 0.5 0 0 0 0.9938 0.418 z"></path>
           </clipPath>
         </defs>
       </svg>
-      <ul className="menu">
-        <li className="wheel-one">
-          <a href="#">
-            <span className="icon">icon-1</span>
-          </a>
-        </li>
-        <li className="wheel-two">
-          <a href="#">
-            <span className="icon">icon-2</span>
-          </a>
-        </li>
-        <li className="wheel-three">
-          <a href="#">
-            <span className="icon">icon-3</span>
-          </a>
-        </li>
-        <li className="wheel-four">
-          <a href="#">
-            <span className="icon">icon-4</span>
-          </a>
-        </li>
-        <li className="wheel-five">
-          <a href="#">
-            <span className="icon">icon-5</span>
-          </a>
-        </li>
-        <li className="wheel-six">
-          <a href="#">
-            <span className="icon">icon-6</span>
-          </a>
-        </li>
+      <ul className="menu wheel">
+        {rouletteWheel}
       </ul>
     </>
-
   )
 
 };

@@ -11,9 +11,10 @@ class RouletteGame extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      winningNumber: 0,
+      winningNumber: null,
       playerCoins: {g: 0, s: 0, b: 0},
       numbers: [],
+      wheelSpinning: false,
       board: [
         [{name: '1to18', value: 0}, {name: '19to36', value: 0}],
         [{name: '0', value: 0}, {name: '3', value: 0}, {name: '6', value: 0}, {name: '9', value: 0}, {name: '12', value: 0}, {name: '15', value: 0}, {name: '18', value: 0}, {name: '21', value: 0}, {name: '24', value: 0}, {name: '27', value: 0}, {name: '30', value: 0}, {name: '33', value: 0}, {name: '36', value: 0}, {name: 'row1', value: 0}],
@@ -30,6 +31,7 @@ class RouletteGame extends Component {
     this.clickBox = this.clickBox.bind(this)
     this.calculateCoins = this.calculateCoins.bind(this)
     this.updateWinningNumber = this.updateWinningNumber.bind(this)
+    this.updateWheelSpinning = this.updateWheelSpinning.bind(this)
   }
 
   componentDidMount() {
@@ -52,23 +54,26 @@ class RouletteGame extends Component {
   }
 
   clickBox(name) {
-    if (this.props.coins >= this.state.selectedCoin.value) {
-      this.props.loseCoins(this.state.selectedCoin.value)
-      let board = this.state.board
-      board.map((row, i) => {
-        row.map((column, index) => {
-          if (name == column.name) {
-            board[i][index].value += this.state.selectedCoin.value
-          }
+    if (!this.state.wheelSpinning) {
+      if (this.props.coins >= this.state.selectedCoin.value) {
+        this.props.loseCoins(this.state.selectedCoin.value)
+        let board = this.state.board
+        board.map((row, i) => {
+          row.map((column, index) => {
+            if (name == column.name) {
+              board[i][index].value += this.state.selectedCoin.value
+            }
+          })
         })
-      })
-      this.setState({board: board})
-      this.calculateCoins(-this.state.selectedCoin.value)
+        this.setState({board: board})
+        this.calculateCoins(-this.state.selectedCoin.value)
+      }
+      this.updateWinningNumber = this.updateWinningNumber.bind(this);
     }
-    this.updateWinningNumber = this.updateWinningNumber.bind(this);
   }
 
   updateWinningNumber(number) {
+    console.log('updateWinningNumber call');
     this.setState({ winningNumber: number });
   };
 
@@ -85,6 +90,10 @@ class RouletteGame extends Component {
     this.calculateCoins(1000)
   }
 
+  updateWheelSpinning() {
+    this.setState({ wheelSpinning: !this.state.wheelSpinning });
+  };
+
   render() {
     return(
       <>
@@ -95,6 +104,7 @@ class RouletteGame extends Component {
           <div className='wheel'>
             <Wheel
               updateWinningNumber={this.updateWinningNumber}
+              updateWheelSpinning={this.updateWheelSpinning}
             />
           </div>
           <div className={this.state.cursor}>
@@ -105,6 +115,12 @@ class RouletteGame extends Component {
         <div>
           <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
+        <div className="player-buttons">
+          <WinnerDisplay
+            winningNumber={this.state.winningNumber}
+          />
+        </div>
+
       </>
     )
   }

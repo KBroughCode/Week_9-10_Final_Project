@@ -1,6 +1,7 @@
 /* https://css-tricks.com/building-a-circular-navigation-with-css-clip-paths/ */
 
 .wheel-flex {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,6 +72,8 @@
   height: 100%;
 }
 
-/* .centered-button {
-  margin: 0 50px 0 50px;
-} */
+.right {
+  position: absolute;
+  right: -10px;
+  bottom: -25px;
+}

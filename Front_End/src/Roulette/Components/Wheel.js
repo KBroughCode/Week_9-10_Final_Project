@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import WheelItem from './WheelItem.js'
+import WheelItem from './WheelItem';
 import './wheel.css';
-
+import SpinButton from './SpinButton';
 
 class Wheel extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class Wheel extends Component {
   delayResultOutput() {
     this.props.updateWinningNumber(this.state.spinResult)
     this.selectWinningNumber();
-    this.props.updateWheelSpinning();
+    // this.props.updateWheelSpinning();
   }
 
   startSpin() {
@@ -82,7 +82,7 @@ class Wheel extends Component {
               </svg>
             </div>
           </div>
-          <button className="action-button centered-button" onClick={this.startSpin}>Spin</button>
+          <SpinButton startSpin={this.startSpin} wheelSpinning={this.props.wheelSpinning} />
         </div>
       </>
     )

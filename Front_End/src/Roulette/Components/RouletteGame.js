@@ -105,6 +105,7 @@ class RouletteGame extends Component {
             <Wheel
               updateWinningNumber={this.updateWinningNumber}
               updateWheelSpinning={this.updateWheelSpinning}
+              wheelSpinning={this.state.wheelSpinning}
             />
           </div>
           <div className={this.state.cursor}>

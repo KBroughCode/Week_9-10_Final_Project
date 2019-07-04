@@ -388,4 +388,47 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
+  test('many bets, all lose: low, even, red, 1st doz, 1st row, single12', () => {
+    winningNumber = '29';
+    board[0][0].value = 1;
+    board[5][0].value = 1;
+    board[5][1].value = 1;
+    board[4][0].value = 1;
+    board[1][13].value = 1;
+    board[1][4].value = 1;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('many bets, all win: low, even, red, 1st doz, 1st row, single12', () => {
+    winningNumber = '12';
+    board[0][0].value = 1;
+    board[5][0].value = 1;
+    board[5][1].value = 1;
+    board[4][0].value = 1;
+    board[1][13].value = 1;
+    board[1][4].value = 1;
+    expect(checkResult(winningNumber, board)).toEqual(48);
+  });
+
+// ************************** BOUNDARIES ETC. **********************************
+  test('no bets: winning number is low, even, red, 1st doz, 1st row', () => {
+    winningNumber = '12';
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('no bets: winning number is high, odd, black, 3rd doz, 2nd row', () => {
+    winningNumber = '29';
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('no bets: winning number is zero', () => {
+    winningNumber = '0';
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('no bets: winning number is double zero', () => {
+    winningNumber = '00';
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
 })

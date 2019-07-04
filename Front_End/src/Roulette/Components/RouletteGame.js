@@ -3,6 +3,8 @@ import Wheel from './Wheel'
 import Board from './Board'
 import WinnerDisplay from './WinnerDisplay'
 import PlayerView from './PlayerView'
+import CalculateCoins from '../Logic/CalculateCoins'
+
 import './roulette.css'
 
 class RouletteGame extends Component {
@@ -26,6 +28,7 @@ class RouletteGame extends Component {
 
     this.changeSelectedCoin = this.changeSelectedCoin.bind(this)
     this.clickBox = this.clickBox.bind(this)
+    this.calculateCoins = this.calculateCoins.bind(this)
   }
 
   componentDidMount() {
@@ -34,6 +37,7 @@ class RouletteGame extends Component {
       numbers.push(i+1)
     }
     this.setState({numbers: numbers})
+    this.calculateCoins()
   }
 
   changeSelectedCoin(coin, value) {
@@ -47,25 +51,37 @@ class RouletteGame extends Component {
   }
 
   clickBox(name) {
-    let board = this.state.board
-    board.map((row, i) => {
-      row.map((column, index) => {
-        if (name == column.name) {
-          console.log(board);
-          console.log(board[i]);
-          console.log(board[i][index]);
-          board[i][index].value += this.state.selectedCoin.value
-        }
+    if (this.props.coins >= this.state.selectedCoin.value) {
+      let board = this.state.board
+      board.map((row, i) => {
+        row.map((column, index) => {
+          if (name == column.name) {
+            board[i][index].value += this.state.selectedCoin.value
+          }
+        })
       })
-    })
-    this.setState({board: board})
-    console.log(this.state.board);
+      this.setState({board: board})
+      this.calculateCoins()
+      this.props.winCoins(-this.state.selectedCoin.value)
+    }
+  }
+
+  calculateCoins() {
+    let logic = new CalculateCoins()
+    let coins = logic.calculatePlayerCoins(this.props.coins)
+    this.setState({playerCoins: coins})
+  }
+
+  addCoins() {
+    this.props.winCoins(100)
+    this.calculateCoins()
   }
 
   render() {
     return(
       <>
         <div>
+        <button onClick={() => {this.addCoins()}}></button>
         </div>
         <div className='board-and-wheel'>
           <div className='wheel'>
@@ -73,11 +89,11 @@ class RouletteGame extends Component {
           </div>
           <div className={this.state.cursor}>
             <Board numbers={this.state.numbers} selectedCoin={this.state.selectedCoin}
-            clickBox={this.clickBox}/>
+            clickBox={this.clickBox} board={this.state.board}/>
           </div>
         </div>
         <div>
-          <PlayerView coins={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
+          <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
       </>
     )

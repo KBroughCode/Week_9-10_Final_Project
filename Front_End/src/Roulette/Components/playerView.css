@@ -1,0 +1,153 @@
+.player-tray {
+  display: flex;
+  z-index: 0;
+  position: relative;
+  background-color: rgb(182, 125, 72);
+  height: 7vw;
+  width: 55vw;
+  left: 15.1vw;
+  margin-top: 1.1vw;
+  border: 1vw solid rgb(56, 36, 18);
+  box-shadow: 0 -1vw 0 1vw rgb(128, 84, 43);
+  border-bottom: 0;
+}
+.coin-container {
+  display: flex;
+}
+.coin-front {
+ width: 5vw;
+ margin: .5vw;
+}
+.coin-stack-cont {
+  display: flex;
+  position: absolute;
+  bottom: 3.5vw;
+  left: 31.5vw;
+}
+.box-coin-stack-cont {
+  display: flex;
+  position: absolute;
+  margin-top: .95vw;
+}
+.outer-coin-stack-cont {
+  position: relative;
+  width: 0.6vw;
+  height: 0.6vw;
+  display: flex;
+  top: -1vw;
+  left: 1.8vw;
+  margin-top: 0.6vw;
+}
+.box-coin-stack-cont .silver-stack .silver-coin-stack {
+  z-index: 0;
+}
+.outer-coin-stack-cont .silver-stack .silver-coin-stack {
+  z-index: 0;
+}
+.zero-coins {
+  top: -0.95vw;
+  left: -2vw;
+}
+.double-zero-coins {
+  left: -0.6vw;
+}
+
+.row-coins {
+  left: 0 ;
+}
+
+.bottom-row-coins {
+  left: 0;
+}
+
+.bronze-coin-stack, .silver-coin-stack, .gold-coin-stack{
+  position: relative;
+  height: 0px;
+}
+.single-coin {
+  width: 1.9vw;
+}
+.silver-coin-stack {
+  left: 0.95vw;
+  z-index: 2;
+}
+.gold-coin-stack {
+  z-index: 1;
+}
+.gold-coin-stack {
+  z-index: 1;
+  left: 1.9vw;
+}
+.bronze-stack {
+  position: absolute;
+}
+.silver-stack {
+  position: absolute;
+}
+.gold-stack {
+  position: absolute;
+}
+
+.bronze-coin-stack:nth-child(2) {top:-.32vw;}
+.bronze-coin-stack:nth-child(3) {top:-.64vw;}
+.bronze-coin-stack:nth-child(4) {top:-.96vw;}
+.bronze-coin-stack:nth-child(5) {top:-1.28vw;}
+.bronze-coin-stack:nth-child(6) {top:-1.60vw;}
+.bronze-coin-stack:nth-child(7) {top:-1.92vw;}
+.bronze-coin-stack:nth-child(8) {top:-2.24vw;}
+.bronze-coin-stack:nth-child(9) {top:-2.56vw;}
+.bronze-coin-stack:nth-child(10) {top:-2.88vw;}
+
+.silver-coin-stack:nth-child(1) {top:.96vw;}
+.silver-coin-stack:nth-child(2) {top:.64vw;}
+.silver-coin-stack:nth-child(3) {top:.32vw;}
+.silver-coin-stack:nth-child(5) {top:-.32vw;}
+.silver-coin-stack:nth-child(6) {top:-.64vw;}
+.silver-coin-stack:nth-child(7) {top:-.96vw;}
+.silver-coin-stack:nth-child(8) {top:-1.28vw;}
+.silver-coin-stack:nth-child(9) {top:-1.60vw;}
+.silver-coin-stack:nth-child(10) {top:-1.92vw;}
+
+.gold-coin-stack:nth-child(n+10):nth-child(-n+19) {z-index: 2; left: 2.85vw;}
+.gold-coin-stack:nth-child(n+20):nth-child(-n+29) {left: 3.8vw;}
+.gold-coin-stack:nth-child(n+30):nth-child(-n+39) {z-index: 2; left: 4.75vw;}
+.gold-coin-stack:nth-child(n+40):nth-child(-n+49) {left: 5.7vw;}
+.gold-coin-stack:nth-child(n+50):nth-child(-n+59) {z-index: 2; left: 6.65vw;}
+.gold-coin-stack:nth-child(n+60):nth-child(-n+69) {left: 7.6vw;}
+.gold-coin-stack:nth-child(n+70):nth-child(-n+79) {z-index: 2; left: 8.55vw;}
+.gold-coin-stack:nth-child(n+80):nth-child(-n+89) {left: 9.5vw;}
+.gold-coin-stack:nth-child(n+90):nth-child(-n+99) {z-index: 2; left: 10.45vw;}
+.gold-coin-stack:nth-child(n+100):nth-child(-n+109) {left: 11.4vw;}
+.gold-coin-stack:nth-child(n+110):nth-child(-n+119) {z-index: 2; left: 12.35vw;}
+.gold-coin-stack:nth-child(n+120):nth-child(-n+129) {left: 13.3vw;}
+.gold-coin-stack:nth-child(n+130):nth-child(-n+139) {z-index: 2; left: 14.25vw;}
+.gold-coin-stack:nth-child(n+140):nth-child(-n+149) {left: 15.2vw;}
+.gold-coin-stack:nth-child(n+150):nth-child(-n+159) {z-index: 2; left: 16.15vw;}
+.gold-coin-stack:nth-child(n+160):nth-child(-n+169) {left: 17.1vw;}
+.gold-coin-stack:nth-child(n+170):nth-child(-n+179) {z-index: 2; left: 18.05vw;}
+.gold-coin-stack:nth-child(n+180):nth-child(-n+189) {left: 19vw;}
+.gold-coin-stack:nth-child(n+190):nth-child(-n+199) {z-index: 2; left: 19.95vw;}
+.gold-coin-stack:nth-child(n+200):nth-child(-n+209) {left: 20.9vw;}
+.gold-coin-stack:nth-child(n+210):nth-child(-n+1000000) {display: none}
+
+
+.gold-coin-stack:nth-child(20n-20) {top:0px;}
+.gold-coin-stack:nth-child(20n-19) {top:-.32vw;}
+.gold-coin-stack:nth-child(20n-18) {top:-.64vw;}
+.gold-coin-stack:nth-child(20n-17) {top:-.96vw;}
+.gold-coin-stack:nth-child(20n-16) {top:-1.28vw;}
+.gold-coin-stack:nth-child(20n-15) {top:-1.6vw;}
+.gold-coin-stack:nth-child(20n-14) {top:-1.92vw;}
+.gold-coin-stack:nth-child(20n-13) {top:-2.24vw;}
+.gold-coin-stack:nth-child(20n-12) {top:-2.56vw;}
+.gold-coin-stack:nth-child(20n-11) {top:-2.88vw;}
+.gold-coin-stack:nth-child(20n-10) {top:.96vw;}
+.gold-coin-stack:nth-child(20n-9) {top:.64vw;}
+.gold-coin-stack:nth-child(20n-8) {top:.32vw;}
+.gold-coin-stack:nth-child(20n-7) {top:0px;}
+.gold-coin-stack:nth-child(20n-6) {top:-.32vw;}
+.gold-coin-stack:nth-child(20n-5) {top:-.64vw;}
+.gold-coin-stack:nth-child(20n-4) {top:-.96vw;}
+.gold-coin-stack:nth-child(20n-3) {top:-1.28vw;}
+.gold-coin-stack:nth-child(20n-2) {top:-1.6vw;}
+.gold-coin-stack:nth-child(20n-1) {top:-1.92vw;}

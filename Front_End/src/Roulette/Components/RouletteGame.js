@@ -37,7 +37,7 @@ class RouletteGame extends Component {
       numbers.push(i+1)
     }
     this.setState({numbers: numbers})
-    this.calculateCoins()
+    this.calculateCoins(0)
   }
 
   changeSelectedCoin(coin, value) {
@@ -52,6 +52,7 @@ class RouletteGame extends Component {
 
   clickBox(name) {
     if (this.props.coins >= this.state.selectedCoin.value) {
+      this.props.loseCoins(this.state.selectedCoin.value)
       let board = this.state.board
       board.map((row, i) => {
         row.map((column, index) => {
@@ -61,31 +62,39 @@ class RouletteGame extends Component {
         })
       })
       this.setState({board: board})
-      this.calculateCoins()
-      this.props.winCoins(-this.state.selectedCoin.value)
+      this.calculateCoins(-this.state.selectedCoin.value)
     }
+    this.updateWinningNumber = this.updateWinningNumber.bind(this);
   }
 
-  calculateCoins() {
+  updateWinningNumber(number) {
+    this.setState({ winningNumber: number });
+  };
+
+  calculateCoins(amount) {
     let logic = new CalculateCoins()
-    let coins = logic.calculatePlayerCoins(this.props.coins)
+    let coinsAmount = this.props.coins + amount
+    let coins = logic.calculatePlayerCoins(coinsAmount)
     this.setState({playerCoins: coins})
   }
 
   addCoins() {
-    this.props.winCoins(100)
-    this.calculateCoins()
+    this.props.winCoins(1000)
+    console.log(this.props.coins);
+    this.calculateCoins(1000)
   }
 
   render() {
     return(
       <>
         <div>
-        <button onClick={() => {this.addCoins()}}></button>
+        <div className='cheat-button' onClick={() => {this.addCoins()}}></div>
         </div>
         <div className='board-and-wheel'>
           <div className='wheel'>
-            <Wheel />
+            <Wheel
+              updateWinningNumber={this.updateWinningNumber}
+            />
           </div>
           <div className={this.state.cursor}>
             <Board numbers={this.state.numbers} selectedCoin={this.state.selectedCoin}

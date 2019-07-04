@@ -25,11 +25,14 @@ class CalculateCoins {
   }
 
   calculateBoardCoins(money) {
-    let coins = {g: 0, s: 0, b: 0}
-    coins.g += (Math.floor(money/10))
-    coins.s += (Math.floor((money%10)/5))
-    coins.b += (money%10)%5
-    return coins
+    if (money < 100) {
+      let coins = {g: 0, s: 0, b: 0}
+      coins.g += (Math.floor(money/10))
+      coins.s += (Math.floor((money%10)/5))
+      coins.b += (money%10)%5
+      return coins
+    }
+    return {g:9,s:1,b:5}
   }
 
 }

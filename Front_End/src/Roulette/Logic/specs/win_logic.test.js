@@ -22,8 +22,8 @@ describe('setupForJest', () => {
     winningNumber = null;
   });
 
-// INSIDE BETS
-// STRAIGHT / SINGLE
+// ************************** INSIDE BETS **************************************
+// ************************** STRAIGHT / SINGLE ********************************
   test('player wins bet on single # when it equals the winning #', () => {
     winningNumber = '3';
     board[1][1].value = 5;
@@ -36,20 +36,44 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  test('player wins bet on zero when it equals the winning #', () => {
+  test('player loses bet on single # when winning # is zero', () => {
+    winningNumber = '0';
+    board[1][1].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('player loses bet on single # when winning # is double zero', () => {
     winningNumber = '00';
-    board[3][0].value = 10;
+    board[1][1].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('player wins bet on zero when it equals the winning #', () => {
+    winningNumber = '0';
+    board[1][0].value = 10;
     expect(checkResult(winningNumber, board)).toEqual(360);
   });
 
   test('player loses bet on zero when it NOT equals the winning #', () => {
+    winningNumber = '00';
+    board[1][0].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('player wins bet on double zero when it equals the winning #', () => {
+    winningNumber = '00';
+    board[3][0].value = 11;
+    expect(checkResult(winningNumber, board)).toEqual(396);
+  });
+
+  test('player loses bet on dbl zero when it NOT equals the winning #', () => {
     winningNumber = '1';
     board[3][0].value = 5;
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-// OUTSIDE BETS
-// RED / BLACK
+// ************************** OUTSIDE BETS *************************************
+// ************************** RED / BLACK **************************************
   test('player wins bet on red when winning number is red', () => {
     winningNumber = '7';
     board[5][1].value = 1;
@@ -98,7 +122,7 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-// EVEN / ODD
+// ************************** EVEN / ODD ***************************************
   test('player wins bet on evens when winning number is evens', () => {
     winningNumber = '22';
     board[5][0].value = 15;
@@ -147,7 +171,7 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-// HIGH / LOW
+// ************************** HIGH / LOW ***************************************
   test('player wins bet on low when winning number is low', () => {
     winningNumber = '9';
     board[0][0].value = 5;
@@ -196,7 +220,7 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-// DOZENS
+// ************************** DOZENS *******************************************
   test('player wins bet on 1st doz when winning number is in 1st doz', () => {
     winningNumber = '6';
     board[4][0].value = 101;
@@ -269,7 +293,7 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-// COLUMNS
+// ************************** COLUMNS ******************************************
   test('player wins bet on 1st row when winning # is in 1st row', () => {
     winningNumber = '36';
     board[1][13].value = 3;
@@ -282,32 +306,86 @@ describe('setupForJest', () => {
     expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player loses bet on 1st row when winning # is zero', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player loses bet on 1st row when winning # is zero', () => {
+    winningNumber = '0';
+    board[1][13].value = 3;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player wins bet on 2nd row when winning # is in 2nd row', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player loses bet on 1st row when winning # is double zero', () => {
+    winningNumber = '00';
+    board[1][13].value = 3;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player loses bet on 2nd row when winning # is in 1st/3rd', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player wins bet on 2nd row when winning # is in 2nd row', () => {
+    winningNumber = '32';
+    board[2][12].value = 9;
+    expect(checkResult(winningNumber, board)).toEqual(27);
   });
 
-  xtest('player loses bet on 2nd row when winning # is zero', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player loses bet on 2nd row when winning # is in 1st/3rd', () => {
+    winningNumber = '31';
+    board[2][12].value = 9;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player wins bet on 3rd row when winning # is in 3rd row', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player loses bet on 2nd row when winning # is zero', () => {
+    winningNumber = '0';
+    board[2][12].value = 9;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player loses bet on 3rd row when winning # is in 1st/2nd', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player loses bet on 2nd row when winning # is double zero', () => {
+    winningNumber = '00';
+    board[2][12].value = 9;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
-  xtest('player loses bet on 3rd row when winning # is zero', () => {
-    expect(checkResult(arguments).result).toEqual('something');
+  test('player wins bet on 3rd row when winning # is in 3rd row', () => {
+    winningNumber = '28';
+    board[3][13].value = 7;
+    expect(checkResult(winningNumber, board)).toEqual(21);
+  });
+
+  test('player loses bet on 3rd row when winning # is in 1st/2nd', () => {
+    winningNumber = '29';
+    board[3][13].value = 7;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('player loses bet on 3rd row when winning # is zero', () => {
+    winningNumber = '0';
+    board[3][13].value = 7;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+  test('player loses bet on 3rd row when winning # is double zero', () => {
+    winningNumber = '00';
+    board[3][13].value = 7;
+    expect(checkResult(winningNumber, board)).toEqual(0);
+  });
+
+// ************************** MULTIPLE BETS ************************************
+  test('2 wins from 2 bets: single28, row3', () => {
+    winningNumber = '28';
+    board[3][10].value = 1;
+    board[3][13].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(51);
+  });
+
+  test('1 win from 2 bets: single28, row1', () => {
+    winningNumber = '28';
+    board[3][10].value = 1;
+    board[1][13].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(36);
+  });
+
+  test('no win from 2 bets: single28, row1', () => {
+    winningNumber = '29';
+    board[3][10].value = 1;
+    board[1][13].value = 5;
+    expect(checkResult(winningNumber, board)).toEqual(0);
   });
 
 })

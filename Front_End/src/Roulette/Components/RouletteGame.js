@@ -4,6 +4,8 @@ import Board from './Board'
 import WinnerDisplay from './WinnerDisplay'
 import PlayerView from './PlayerView'
 import CalculateCoins from '../Logic/CalculateCoins'
+import SpinButton from './SpinButton'
+import checkResult from '../Logic/WinLogic.js'
 
 import './roulette.css'
 
@@ -15,6 +17,8 @@ class RouletteGame extends Component {
       playerCoins: {g: 0, s: 0, b: 0},
       numbers: [],
       wheelSpinning: false,
+      wheelSpinCompleted: false,
+      wheelCssClasses: 'wheel-container',
       board: [
         [{name: '1to18', value: 0}, {name: '19to36', value: 0}],
         [{name: '0', value: 0}, {name: '3', value: 0}, {name: '6', value: 0}, {name: '9', value: 0}, {name: '12', value: 0}, {name: '15', value: 0}, {name: '18', value: 0}, {name: '21', value: 0}, {name: '24', value: 0}, {name: '27', value: 0}, {name: '30', value: 0}, {name: '33', value: 0}, {name: '36', value: 0}, {name: 'row1', value: 0}],
@@ -32,6 +36,8 @@ class RouletteGame extends Component {
     this.calculateCoins = this.calculateCoins.bind(this)
     this.updateWinningNumber = this.updateWinningNumber.bind(this)
     this.updateWheelSpinning = this.updateWheelSpinning.bind(this)
+    this.updateWheelSpinCompleted = this.updateWheelSpinCompleted.bind(this)
+    this.startSpin = this.startSpin.bind(this)
   }
 
   componentDidMount() {
@@ -41,6 +47,12 @@ class RouletteGame extends Component {
     }
     this.setState({numbers: numbers})
     this.calculateCoins(0)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.winningNumber !== prevState.winningNumber) {
+      checkResult(this.state.winningNumber, this.state.board);
+    }
   }
 
   changeSelectedCoin(coin, value) {
@@ -73,7 +85,6 @@ class RouletteGame extends Component {
   }
 
   updateWinningNumber(number) {
-    console.log('updateWinningNumber call');
     this.setState({ winningNumber: number });
   };
 
@@ -94,6 +105,15 @@ class RouletteGame extends Component {
     this.setState({ wheelSpinning: !this.state.wheelSpinning });
   };
 
+  updateWheelSpinCompleted() {
+    this.setState({ wheelSpinCompleted: !this.state.wheelSpinCompleted });
+  }
+
+  startSpin() {
+    this.setState({ wheelCssClasses: this.state.wheelCssClasses+=' wheel-spinning' }, this.updateWheelSpinning);
+    setTimeout(this.updateWheelSpinCompleted, 5000)
+  };
+
   render() {
     return(
       <>
@@ -106,6 +126,8 @@ class RouletteGame extends Component {
               updateWinningNumber={this.updateWinningNumber}
               updateWheelSpinning={this.updateWheelSpinning}
               wheelSpinning={this.state.wheelSpinning}
+              wheelSpinCompleted={this.state.wheelSpinCompleted}
+              wheelCssClasses={this.state.wheelCssClasses}
             />
           </div>
           <div className={this.state.cursor}>
@@ -116,7 +138,8 @@ class RouletteGame extends Component {
         <div>
           <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
-        <div className="player-buttons">
+        <div className="player-buttons result-output">
+          <SpinButton startSpin={this.startSpin} wheelSpinning={this.state.wheelSpinning} />
           <WinnerDisplay
             winningNumber={this.state.winningNumber}
           />

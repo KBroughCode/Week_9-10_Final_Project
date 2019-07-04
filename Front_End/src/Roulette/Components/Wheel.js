@@ -11,16 +11,18 @@ class Wheel extends Component {
     };
     this.rouletteWheel = this.rouletteWheel.bind(this);
     this.setBackgroundColor = this.setBackgroundColor.bind(this);
-    this.startSpin = this.startSpin.bind(this);
-    this.delayResultOutput = this.delayResultOutput.bind(this);
     this.selectWinningNumber = this.selectWinningNumber.bind(this);
     this.rouletteNumbers = ['0','28','9','26','30','11','7','20','32','17','5','22','34','15','3','24','36','13','1','00','27','10','25','29','12','8','19','31','18','6','21','33','16','4','23','35','14','2'];
     this.segmentAngle = -360/38;
-    this.wheelClasses = ['wheel-container'];
   }
-
   componentDidMount() {
     this.selectWinningNumber();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.wheelSpinCompleted !== prevProps.wheelSpinCompleted) {
+      this.props.updateWinningNumber(this.state.spinResult)
+    }
   }
 
   selectWinningNumber() {
@@ -33,18 +35,6 @@ class Wheel extends Component {
   setBackgroundColor(number, index) {
     return (number === '0' || number === '00') ? '#1D7137' :
       ((parseInt(index) % 2 === 0) ? 'red' : 'black');
-  };
-
-  delayResultOutput() {
-    this.props.updateWinningNumber(this.state.spinResult)
-    this.selectWinningNumber();
-    // this.props.updateWheelSpinning();
-  }
-
-  startSpin() {
-    this.props.updateWheelSpinning();
-    this.wheelClasses.push('wheel-spinning');
-    setTimeout(this.delayResultOutput, 5000)
   };
 
   rouletteWheel() {
@@ -72,7 +62,7 @@ class Wheel extends Component {
               </clipPath>
             </defs>
           </svg>
-          <div className={this.wheelClasses.join(' ')} >
+          <div className={this.props.wheelCssClasses} >
             <div className="menu-box">
               <ul className="menu wheel">
                 {this.rouletteWheel()}
@@ -82,12 +72,11 @@ class Wheel extends Component {
               </svg>
             </div>
           </div>
-          <SpinButton startSpin={this.startSpin} wheelSpinning={this.props.wheelSpinning} />
         </div>
       </>
     )
   }
 
 };
-// style={{transform: `rotate(${this.state.rotationCounter}deg)`}}
+
 export default Wheel;

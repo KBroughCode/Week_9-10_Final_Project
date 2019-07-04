@@ -34,3 +34,7 @@
   left:36vw;
   z-index: 2
 }
+
+.result-output {
+  width: 100%;
+}

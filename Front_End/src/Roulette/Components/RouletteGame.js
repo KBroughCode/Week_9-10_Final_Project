@@ -8,8 +8,8 @@ class RouletteGame extends Component {
     super(props)
     this.state = {
       winningNumber: 0,
-      betsPlaced: true
     }
+    this.updateWinningNumber = this.updateWinningNumber.bind(this);
   }
 
   updateWinningNumber(number) {
@@ -21,7 +21,6 @@ class RouletteGame extends Component {
       <>
         <div>
           <Wheel
-            betsPlaced={this.state.betsPlaced}
             updateWinningNumber={this.updateWinningNumber}
           />
         </div>

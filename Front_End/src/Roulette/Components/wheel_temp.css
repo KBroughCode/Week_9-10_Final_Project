@@ -3,12 +3,13 @@
 .wheel-container {
   width: 25vw;
   font-size: 0.7em;
+  transition: transform 3s;
+  margin-bottom: 10px;
 }
 
 .menu-box {
   position: relative;
   margin: 0;
-  border: 1px solid;
   /* padding trick for maintaining aspect ratio */
   height: 0;
   padding: 0;
@@ -45,13 +46,9 @@
 
 .icon {
   position: absolute;
-  /* exact values here depend on what you are placing inside the items (icon, image, text, etc.) */
   right: 4%;
   top: 45%;
-  /* angle of rotation = angle of the sector itself */
   transform: rotate(85deg);
-
-  /* style further as needed */
 }
 
 .middle-circle {

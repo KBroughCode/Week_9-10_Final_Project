@@ -62,7 +62,7 @@
 
 .bronze-coin-stack, .silver-coin-stack, .gold-coin-stack{
   position: relative;
-  height: 0px;
+  height: 0;
 }
 .single-coin {
   width: 1.9vw;
@@ -131,7 +131,7 @@
 .gold-coin-stack:nth-child(n+210):nth-child(-n+1000000) {display: none}
 
 
-.gold-coin-stack:nth-child(20n-20) {top:0px;}
+.gold-coin-stack:nth-child(20n-20) {top:0;}
 .gold-coin-stack:nth-child(20n-19) {top:-.32vw;}
 .gold-coin-stack:nth-child(20n-18) {top:-.64vw;}
 .gold-coin-stack:nth-child(20n-17) {top:-.96vw;}
@@ -144,7 +144,7 @@
 .gold-coin-stack:nth-child(20n-10) {top:.96vw;}
 .gold-coin-stack:nth-child(20n-9) {top:.64vw;}
 .gold-coin-stack:nth-child(20n-8) {top:.32vw;}
-.gold-coin-stack:nth-child(20n-7) {top:0px;}
+.gold-coin-stack:nth-child(20n-7) {top:0;}
 .gold-coin-stack:nth-child(20n-6) {top:-.32vw;}
 .gold-coin-stack:nth-child(20n-5) {top:-.64vw;}
 .gold-coin-stack:nth-child(20n-4) {top:-.96vw;}

@@ -7,7 +7,7 @@
   text-align: center;
   font-size: 2vw;
   font-weight: 700;
-  grid-gap: 5px;
+  grid-gap: 0.25vw;
   display: grid;
   grid-template-columns: 3.8vw;
   grid-template-rows: 5.8vw 5.85vw;
@@ -18,17 +18,17 @@
 
 .board-grid {
   position: relative;
-  left: -5px;
+  left: -0.25vw;
   font-size: 1.5vw;
   font-weight: 700;
   text-align: center;
   display: grid;
   grid-template-columns: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
   grid-template-rows: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
-  grid-gap: 5px;
+  grid-gap: 0.25vw;
   color: white;
   background-color: white;
-  border: 5px solid white;
+  border: 0.25vw solid white;
 }
 
 .numbers-cont {
@@ -37,7 +37,7 @@
   display: grid;
   grid-template-columns: 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw 3.8vw;
   grid-template-rows: 3.8vw 3.8vw 3.8vw;
-  grid-gap: 5px;
+  grid-gap: 0.25vw;
 }
 
 .numbers-background {

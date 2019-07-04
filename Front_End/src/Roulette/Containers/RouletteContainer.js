@@ -13,6 +13,12 @@ const mapDispatchToProps = (dispatch) => ({
       type:'ADD_COINS',
       amount
     })
+  },
+  loseCoins(amount) {
+    dispatch({
+      type:'REMOVE_COINS',
+      amount
+    })
   }
 })
 

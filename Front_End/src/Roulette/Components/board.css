@@ -121,10 +121,13 @@
   align-items: center;
 }
 
-.zero-coins {
-
-}
-
-.outer-grid {
-
+.over100 {
+  position: relative;
+  font-family: arial;
+  color: black;
+  -webkit-text-stroke: 0.8px white;
+  font-weight: 700;
+  left: 0.1vw;
+  z-index: 2;
+  font-size: 1.2vw;
 }

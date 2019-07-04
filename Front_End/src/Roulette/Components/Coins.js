@@ -19,19 +19,38 @@ const Coins = (props) => {
     let coins = coinsLogic.calculateBoardCoins(money)
 
     let logic = new CoinStack()
-    return(
-      <div className={props.containerClass}>
-        <div className='bronze-stack'>
-          {logic.getBronzeStack(coins.b)}
+    if (money < 100) {
+      return(
+        <div className={props.containerClass}>
+          <div className='bronze-stack'>
+            {logic.getBronzeStack(coins.b)}
+          </div>
+          <div className='silver-stack'>
+            {logic.getSilverStack(coins.s)}
+          </div>
+          <div className='gold-stack'>
+            {logic.getGoldStack(coins.g)}
+          </div>
         </div>
-        <div className='silver-stack'>
-          {logic.getSilverStack(coins.s)}
+      )
+    }else {
+      return(
+        <div className={props.containerClass}>
+          <div className='over100'>₡{money}</div>
+          <div className='bronze-stack'>
+            {logic.getBronzeStack(coins.b)}
+          </div>
+          <div className='silver-stack'>
+            {logic.getSilverStack(coins.s)}
+          </div>
+          <div className='gold-stack'>
+            {logic.getGoldStack(coins.g)}
+          </div>
         </div>
-        <div className='gold-stack'>
-          {logic.getGoldStack(coins.g)}
-        </div>
-      </div>
-    )
+      )
+    }
+
+
   }
 
   return(

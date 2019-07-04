@@ -24,3 +24,12 @@
   border-top-left-radius: 20vw;
 
 }
+.cheat-button {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background-color: black;
+  top: 48.1vw;
+  left:36vw;
+  z-index: 2
+}

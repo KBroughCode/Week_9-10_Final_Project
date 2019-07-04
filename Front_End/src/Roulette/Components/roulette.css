@@ -20,7 +20,7 @@
   box-shadow: 0 0 0 1vw rgb(128, 84, 43);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 30vh;
-  border-top-left-radius: 30vh;
+  border-bottom-left-radius: 20vw;
+  border-top-left-radius: 20vw;
 
 }

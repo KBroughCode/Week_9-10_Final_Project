@@ -64,7 +64,12 @@ class RouletteGame extends Component {
       this.setState({board: board})
       this.calculateCoins(-this.state.selectedCoin.value)
     }
+    this.updateWinningNumber = this.updateWinningNumber.bind(this);
   }
+
+  updateWinningNumber(number) {
+    this.setState({ winningNumber: number });
+  };
 
   calculateCoins(amount) {
     let logic = new CalculateCoins()
@@ -87,7 +92,9 @@ class RouletteGame extends Component {
         </div>
         <div className='board-and-wheel'>
           <div className='wheel'>
-            <Wheel />
+            <Wheel
+              updateWinningNumber={this.updateWinningNumber}
+            />
           </div>
           <div className={this.state.cursor}>
             <Board numbers={this.state.numbers} selectedCoin={this.state.selectedCoin}

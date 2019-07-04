@@ -1,60 +1,88 @@
-import React from 'react';
+import React, { Component } from 'react';
+import WheelItem from './WheelItem.js'
 import './wheel_temp.css';
 
-const Wheel = (props) => {
 
-  return (
+class Wheel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rotationCounter: 0,
+    };
+    this.setBackgroundColor = this.setBackgroundColor.bind(this);
+    this.rouletteWheel = this.rouletteWheel.bind(this);
+    this.startSpin = this.startSpin.bind(this);
+    this.rotateWheel = this.rotateWheel.bind(this);
+    this.selectWinningNumber = this.selectWinningNumber.bind(this);
+    this.rouletteNumbers = ['0','28','9','26','30','11','7','20','32','17','5','22','34','15','3','24','36','13','1','00','27','10','25','29','12','8','19','31','18','6','21','33','16','4','23','35','14','2'];
+    this.segmentAngle = -9.4763684;
+  }
 
-    <>
-      <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10 10 H 90 V 90 H 30 L 10 10"/>
-        <circle cx="10" cy="10" r="2" fill="red"/>
-        <circle cx="90" cy="90" r="2" fill="red"/>
-        <circle cx="90" cy="10" r="2" fill="red"/>
-        <circle cx="10" cy="90" r="2" fill="red"/>
-      </svg>
-      <svg height="0" width="0">
-        <defs>
-          <clipPath clipPathUnits="objectBoundingBox" id="sector">
-            <path fill="lime" stroke="#111" strokeWidth="1" className="sector" d="M0.5,0.5 l0.5,0 A0.5,0.5 0 0,0 0.75,.066987298 z"></path>
-          </clipPath>
-        </defs>
-      </svg>
-      <ul className="menu">
-        <li className="wheel-one">
-          <a href="#">
-            <span className="icon">icon-1</span>
-          </a>
-        </li>
-        <li className="wheel-two">
-          <a href="#">
-            <span className="icon">icon-2</span>
-          </a>
-        </li>
-        <li className="wheel-three">
-          <a href="#">
-            <span className="icon">icon-3</span>
-          </a>
-        </li>
-        <li className="wheel-four">
-          <a href="#">
-            <span className="icon">icon-4</span>
-          </a>
-        </li>
-        <li className="wheel-five">
-          <a href="#">
-            <span className="icon">icon-5</span>
-          </a>
-        </li>
-        <li className="wheel-six">
-          <a href="#">
-            <span className="icon">icon-6</span>
-          </a>
-        </li>
-      </ul>
-    </>
+  componentDidMount() {
+    this.selectWinningNumber();
+  }
 
-  )
+  selectWinningNumber() {
+    const totalWheelSegments = 38;
+    const randomNumber = Math.floor(Math.random() * totalWheelSegments);
+    this.props.updateWinningNumber(this.rouletteNumbers[randomNumber]);
+  }
+
+  setBackgroundColor(number, index) {
+    return (number === '0' || number === '00') ? 'green' :
+      ((parseInt(index) % 2 === 0) ? 'red' : 'black');
+  };
+
+  rotateWheel() {
+    // can i rotate the wheel without completely re-rendering every 1 degree? Use css transition?
+    this.setState({ rotationCounter: (this.state.rotationCounter+1) })
+  };
+
+  startSpin() {
+    const waitTime = 50;
+    for (let i=0; i<720; i++) {
+      setTimeout(this.rotateWheel, waitTime);
+    }
+  };
+
+  rouletteWheel() {
+    const wheelItems = this.rouletteNumbers.map((number, index) => {
+      return <WheelItem
+        wheelNumber={number}
+        id={number}
+        angle={this.segmentAngle}
+        angleMultiplier={index}
+        backgroundColor={this.setBackgroundColor(number, index)}
+        key={index}
+      />
+    });
+    return wheelItems;
+  };
+
+  render() {
+    return (
+      <>
+        <svg height="0" width="0">
+          <defs>
+            <clipPath clipPathUnits="objectBoundingBox" id="sector">
+              <path fill="none" stroke="#111" strokeWidth="1" className="sector" d="M0.5,0.5 l0.5,0 A0.5 0.5 0 0 0 0.9938 0.418 z"></path>
+            </clipPath>
+          </defs>
+        </svg>
+        <div className="wheel-container" style={{transform: `rotate(${this.state.rotationCounter}deg)`}}>
+          <div className="menu-box">
+            <ul className="menu wheel">
+              {this.rouletteWheel()}
+            </ul>
+            <svg height="30%" width="30%" className="middle-circle" >
+              <circle cx="50%" cy="50%" r="50" fill="black"  onClick={this.startSpin} />
+            </svg>
+          </div>
+        </div>
+        <button className="action-button" onClick={this.startSpin}>Spin</button>
+      </>
+    )
+  }
 
 };
 

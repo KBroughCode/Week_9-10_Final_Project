@@ -29,6 +29,7 @@ class RouletteGame extends Component {
     this.changeSelectedCoin = this.changeSelectedCoin.bind(this)
     this.clickBox = this.clickBox.bind(this)
     this.calculateCoins = this.calculateCoins.bind(this)
+    this.updateWinningNumber = this.updateWinningNumber.bind(this)
   }
 
   componentDidMount() {

@@ -20,8 +20,10 @@ class Wheel extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.wheelSpinCompleted !== prevProps.wheelSpinCompleted) {
+    if (this.props.wheelSpinCompleted !== prevProps.wheelSpinCompleted
+        && this.props.wheelSpinCompleted) {
       this.props.updateWinningNumber(this.state.spinResult)
+      this.selectWinningNumber();
     }
   }
 

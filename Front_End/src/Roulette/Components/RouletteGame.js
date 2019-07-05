@@ -101,9 +101,8 @@ class RouletteGame extends Component {
   }
 
   addCoins() {
-    this.props.winCoins(10000)
-    console.log(this.props.coins);
-    this.calculateCoins(10000)
+    this.props.winCoins(1000)
+    this.calculateCoins(1000)
   }
 
   updateWheelSpinning() {
@@ -134,7 +133,6 @@ class RouletteGame extends Component {
   }
 
   resetWinningNumber() {
-    console.log('resetWinningNumber call');
     this.setState({ winningNumber: null });
   }
 

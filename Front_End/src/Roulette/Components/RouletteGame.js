@@ -38,6 +38,9 @@ class RouletteGame extends Component {
     this.updateWheelSpinning = this.updateWheelSpinning.bind(this)
     this.updateWheelSpinCompleted = this.updateWheelSpinCompleted.bind(this)
     this.startSpin = this.startSpin.bind(this)
+    this.resetBoard = this.resetBoard.bind(this)
+    this.resetWinningNumber = this.resetWinningNumber.bind(this)
+    this.resetWheelCssClasses = this.resetWheelCssClasses.bind(this)
   }
 
   componentDidMount() {
@@ -51,7 +54,8 @@ class RouletteGame extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.winningNumber !== prevState.winningNumber) {
-      checkResult(this.state.winningNumber, this.state.board);
+      const result = checkResult(this.state.winningNumber, this.state.board);
+      this.props.winCoins(result);
     }
   }
 
@@ -114,6 +118,29 @@ class RouletteGame extends Component {
     setTimeout(this.updateWheelSpinCompleted, 5000)
   };
 
+  resetBoard() {
+    let newBoard = [...this.state.board];
+    newBoard.forEach(row => {
+      row.forEach(cell => {
+        cell.value = 0;
+      })
+    })
+    this.setState({ board: newBoard });
+    this.resetWinningNumber();
+    this.updateWheelSpinning();
+    this.resetWheelCssClasses();
+    this.updateWheelSpinCompleted();
+  }
+
+  resetWinningNumber() {
+    console.log('resetWinningNumber call');
+    this.setState({ winningNumber: null });
+  }
+
+  resetWheelCssClasses() {
+    this.setState({ wheelCssClasses: 'wheel-container' });
+  }
+
   render() {
     return(
       <>
@@ -144,6 +171,7 @@ class RouletteGame extends Component {
           </div>
           <WinnerDisplay
             winningNumber={this.state.winningNumber}
+            resetBoard={this.resetBoard}
           />
         </div>
 

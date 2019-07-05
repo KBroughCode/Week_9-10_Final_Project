@@ -38,3 +38,12 @@
 .result-output {
   width: 100%;
 }
+.bronze:hover {
+  cursor: url(images/Bronzecoin.png), auto;
+}
+.silver:hover {
+  cursor: url(images/Silvercoin.png), auto;
+}
+.gold:hover {
+  cursor: url(images/Goldcoin.png), auto;
+}

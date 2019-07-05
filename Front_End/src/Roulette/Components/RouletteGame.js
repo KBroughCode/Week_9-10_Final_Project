@@ -141,7 +141,9 @@ class RouletteGame extends Component {
           <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
         <div className="player-buttons result-output">
-          <SpinButton startSpin={this.startSpin} wheelSpinning={this.state.wheelSpinning} />
+          <div className='bottom-bar-cell-1'>
+            <SpinButton startSpin={this.startSpin} wheelSpinning={this.state.wheelSpinning} />
+          </div>
           <WinnerDisplay
             winningNumber={this.state.winningNumber}
           />

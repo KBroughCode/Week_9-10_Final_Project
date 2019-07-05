@@ -37,6 +37,10 @@
 
 .result-output {
   width: 100%;
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-areas:
+    "cell-1 cell-2"
 }
 .bronze:hover {
   cursor: url(images/Bronzecoin.png), auto;
@@ -46,4 +50,9 @@
 }
 .gold:hover {
   cursor: url(images/Goldcoin.png), auto;
+}
+
+.bottom-bar-cell-1 {
+  grid-area: cell-1;
+  font-size: 1.6em;
 }

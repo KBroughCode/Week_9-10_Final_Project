@@ -23,7 +23,7 @@ class RouletteGame extends Component {
         [{name: 'even', value: 0}, {name: 'red', value: 0}, {name: 'black', value: 0}, {name: 'odd', value: 0}]
       ],
       selectedCoin: {coin: 'bronze', value: 1},
-      cursor: 'gameboard'
+      cursor: 'gameboard bronze'
     }
 
     this.changeSelectedCoin = this.changeSelectedCoin.bind(this)
@@ -80,16 +80,16 @@ class RouletteGame extends Component {
   }
 
   addCoins() {
-    this.props.winCoins(1000)
+    this.props.winCoins(10000)
     console.log(this.props.coins);
-    this.calculateCoins(1000)
+    this.calculateCoins(10000)
   }
 
   render() {
     return(
       <>
         <div>
-        <div className='cheat-button' onClick={() => {this.addCoins()}}></div>
+          <div className='cheat-button' onClick={() => {this.addCoins()}}></div>
         </div>
         <div className='board-and-wheel'>
           <div className='wheel'>
@@ -102,7 +102,7 @@ class RouletteGame extends Component {
             clickBox={this.clickBox} board={this.state.board}/>
           </div>
         </div>
-        <div>
+        <div className={this.state.selectedCoin.coin}>
           <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
       </>

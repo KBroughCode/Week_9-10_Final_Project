@@ -139,7 +139,7 @@ class RouletteGame extends Component {
   }
 
   resetWheelCssClasses() {
-    this.setState({ wheelCssClasses: 'wheel-container' });
+    this.setState({ wheelCssClasses: 'wheel-container', middleWheelCssClasses: 'wheel-center' });
   }
 
   render() {

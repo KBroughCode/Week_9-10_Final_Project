@@ -9,8 +9,8 @@ const displayResult = (numberString) => {
 const displayButtons = (numberString) => {
     return numberString ?
       <>
-        <Link className='game-link' to='/roulette' >New Game</Link>
-        <Link className='game-link' to='/' >Exit to Main Menu</Link>
+        <Link className='action-button' to='/roulette' >New Game</Link>
+        <Link className='action-button' to='/' >Exit to Main Menu</Link>
       </>
      : null;
 }
@@ -31,14 +31,14 @@ const WinnerDisplay = (props) => {
 
 
   return(
-    <>
-      <div className='bottom-bar-cell-1'>
-        {displayResult(props.winningNumber)}
-      </div>
+    <div className='win-display'>
       <div>
         {displayButtons(props.winningNumber)}
       </div>
-    </>
+      <div className='bottom-bar-cell-2'>
+        {displayResult(props.winningNumber)}
+      </div>
+    </div>
   );
 // onClick={handleClick}
 // onClick={handleHomeClick}

@@ -19,6 +19,7 @@ class RouletteGame extends Component {
       wheelSpinning: false,
       wheelSpinCompleted: false,
       wheelCssClasses: 'wheel-container',
+      middleWheelCssClasses: 'wheel-center',
       board: [
         [{name: '1to18', value: 0}, {name: '19to36', value: 0}],
         [{name: '0', value: 0}, {name: '3', value: 0}, {name: '6', value: 0}, {name: '9', value: 0}, {name: '12', value: 0}, {name: '15', value: 0}, {name: '18', value: 0}, {name: '21', value: 0}, {name: '24', value: 0}, {name: '27', value: 0}, {name: '30', value: 0}, {name: '33', value: 0}, {name: '36', value: 0}, {name: 'row1', value: 0}],
@@ -28,7 +29,7 @@ class RouletteGame extends Component {
         [{name: 'even', value: 0}, {name: 'red', value: 0}, {name: 'black', value: 0}, {name: 'odd', value: 0}]
       ],
       selectedCoin: {coin: 'bronze', value: 1},
-      cursor: 'gameboard'
+      cursor: 'gameboard bronze'
     }
 
     this.changeSelectedCoin = this.changeSelectedCoin.bind(this)
@@ -113,7 +114,7 @@ class RouletteGame extends Component {
   }
 
   startSpin() {
-    this.setState({ wheelCssClasses: this.state.wheelCssClasses+=' wheel-spinning' }, this.updateWheelSpinning);
+    this.setState({ wheelCssClasses: this.state.wheelCssClasses+=' wheel-spinning', middleWheelCssClasses: this.state.middleWheelCssClasses+=' wheel-spinning' }, this.updateWheelSpinning);
     setTimeout(this.updateWheelSpinCompleted, 5000)
   };
 
@@ -136,14 +137,14 @@ class RouletteGame extends Component {
   }
 
   resetWheelCssClasses() {
-    this.setState({ wheelCssClasses: 'wheel-container' });
+    this.setState({ wheelCssClasses: 'wheel-container', middleWheelCssClasses: 'wheel-center' });
   }
 
   render() {
     return(
       <>
         <div>
-        <div className='cheat-button' onClick={() => {this.addCoins()}}></div>
+          <div className='cheat-button' onClick={() => {this.addCoins()}}></div>
         </div>
         <div className='board-and-wheel'>
           <div className='wheel'>
@@ -153,6 +154,7 @@ class RouletteGame extends Component {
               wheelSpinning={this.state.wheelSpinning}
               wheelSpinCompleted={this.state.wheelSpinCompleted}
               wheelCssClasses={this.state.wheelCssClasses}
+              middleWheelCssClasses={this.state.middleWheelCssClasses}
             />
           </div>
           <div className={this.state.cursor}>
@@ -160,7 +162,7 @@ class RouletteGame extends Component {
             clickBox={this.clickBox} board={this.state.board}/>
           </div>
         </div>
-        <div>
+        <div className={this.state.selectedCoin.coin}>
           <PlayerView coins={this.state.playerCoins} money={this.props.coins} grid={this.state.board} selectCoin={this.changeSelectedCoin}/>
         </div>
         <div className="player-buttons result-output">

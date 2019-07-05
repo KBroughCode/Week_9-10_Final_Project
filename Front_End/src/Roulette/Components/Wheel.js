@@ -64,6 +64,8 @@ class Wheel extends Component {
               </clipPath>
             </defs>
           </svg>
+          <div className='wheel-border'></div>
+          <div><img className={this.props.middleWheelCssClasses} src='./images/wheel-0.png' alt='center-wheel'/></div>
           <div className={this.props.wheelCssClasses} >
             <div className="menu-box">
               <ul className="menu wheel">

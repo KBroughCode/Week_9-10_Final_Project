@@ -15,6 +15,25 @@
   margin-bottom: 10px;
 }
 
+.wheel-border {
+  position: absolute;
+  bottom: 0.1vw;
+  left: -0.55vw;
+  width: 25vw;
+  height: 25vw;
+  border: 0.5vw solid rgb(56, 36, 18);
+  box-shadow: 0 0 0 0.5vw rgb(128, 84, 43);
+  border-radius: 50%;
+}
+
+.wheel-center {
+  position: absolute;
+  width: 20vw;
+  z-index: 2;
+  right: 2.5vw;
+  top: 2.5vw;
+}
+
 .wheel-spinning {
   transition: 5s;
   transform: rotate(1420deg);
@@ -33,6 +52,9 @@
 .menu {
   list-style: none;
   color: #FFFFFF;
+
+  font-size: 1vw;
+  font-weight: 700;
 
   position: absolute;
   top: 0;
@@ -59,8 +81,8 @@
 
 .icon {
   position: absolute;
-  right: 4%;
-  top: 45%;
+  right:0.8vw;
+  top: 44%;
   transform: rotate(85deg);
 }
 

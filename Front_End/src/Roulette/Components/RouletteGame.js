@@ -19,6 +19,7 @@ class RouletteGame extends Component {
       wheelSpinning: false,
       wheelSpinCompleted: false,
       wheelCssClasses: 'wheel-container',
+      middleWheelCssClasses: 'wheel-center',
       board: [
         [{name: '1to18', value: 0}, {name: '19to36', value: 0}],
         [{name: '0', value: 0}, {name: '3', value: 0}, {name: '6', value: 0}, {name: '9', value: 0}, {name: '12', value: 0}, {name: '15', value: 0}, {name: '18', value: 0}, {name: '21', value: 0}, {name: '24', value: 0}, {name: '27', value: 0}, {name: '30', value: 0}, {name: '33', value: 0}, {name: '36', value: 0}, {name: 'row1', value: 0}],
@@ -110,7 +111,7 @@ class RouletteGame extends Component {
   }
 
   startSpin() {
-    this.setState({ wheelCssClasses: this.state.wheelCssClasses+=' wheel-spinning' }, this.updateWheelSpinning);
+    this.setState({ wheelCssClasses: this.state.wheelCssClasses+=' wheel-spinning', middleWheelCssClasses: this.state.middleWheelCssClasses+=' wheel-spinning' }, this.updateWheelSpinning);
     setTimeout(this.updateWheelSpinCompleted, 5000)
   };
 
@@ -128,6 +129,7 @@ class RouletteGame extends Component {
               wheelSpinning={this.state.wheelSpinning}
               wheelSpinCompleted={this.state.wheelSpinCompleted}
               wheelCssClasses={this.state.wheelCssClasses}
+              middleWheelCssClasses={this.state.middleWheelCssClasses}
             />
           </div>
           <div className={this.state.cursor}>

@@ -17,9 +17,13 @@ const WinnerDisplay = (props) => {
     props.handleGameStart();
   };
 
+  const winnerText = (props.playerBust && props.dealerBust) ?
+    <div>The dealer wins</div> :
+    <div>The {props.winner.winner} wins with a total of {props.winner.value}</div>;
+
   return(
     <div>
-      <div>The {props.winner.winner} wins with a total of {props.winner.value}</div>
+      {winnerText}
       <Link className='game-link' to='/blackjack' onClick={handleClick}>New Game</Link>
       <Link className='game-link' to='/' onClick={handleHomeClick}>Exit to Main Menu</Link>
     </div>

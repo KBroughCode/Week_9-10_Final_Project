@@ -1,0 +1,79 @@
+/* https://css-tricks.com/building-a-circular-navigation-with-css-clip-paths/ */
+
+.wheel-flex {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1vw 0 0 3vw;
+}
+
+.wheel-container {
+  width: 25vw;
+  font-size: 0.7em;
+  /* transition: transform 3s; */
+  margin-bottom: 10px;
+}
+
+.wheel-spinning {
+  transition: 5s;
+  transform: rotate(1420deg);
+}
+
+.menu-box {
+  position: relative;
+  margin: 0;
+  /* padding trick for maintaining aspect ratio */
+  height: 0;
+  padding: 0;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  color: #FFFFFF;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+.menu li {
+  position: absolute;
+  top: 100;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  clip-path: url(#sector)
+}
+
+.icon {
+  position: absolute;
+  right: 4%;
+  top: 45%;
+  transform: rotate(85deg);
+}
+
+.middle-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  position: absolute;
+  right: -10px;
+  bottom: -25px;
+}

@@ -7,6 +7,7 @@ import "./App/Components/navbar.css"
 import BlackJack from "./BlackJack/BlackJack";
 import Snap from "./Snap/Snap";
 import OldMaid from "./OldMaid/OldMaid";
+import Roulette from "./Roulette/Roulette";
 import Main from "./App/Components/main";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route path="/BlackJack" component={BlackJack} />
               <Route path="/Snap" component={Snap} />
               <Route path="/OldMaid" component={OldMaid} />
+              <Route path="/Roulette" component={Roulette} />
             </Switch>
           </div>
         </React.Fragment>

@@ -19,16 +19,20 @@ const Player = (props) =>{
           coins={props.coins}
           winCoins={props.winCoins}
           payCoins={props.payCoins}
+          cards={props.cards}
+          playerBust={props.playerBust}
+          dealerBust={props.dealerBust}
         />
       </div>
       <div className = 'player-container'>
         <PlayerCards
           cards={props.cards}
+          setPlayerBust={props.setPlayerBust}
         />
       </div>
     </>
   )
-  
+
 };
 
 export default Player;

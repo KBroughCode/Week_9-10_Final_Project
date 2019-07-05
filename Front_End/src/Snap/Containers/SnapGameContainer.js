@@ -5,18 +5,20 @@ import SnapStartButton from '../Components/SnapStartButton'
 import DeckCards from '../Components/DeckCards';
 import PileCards from '../Components/PileCards';
 import PlayerActions from '../Components/PlayerActions';
+import WinnerDisplay from '../Components/WinnerDisplay';
 import PropTypes from 'prop-types';
 
 const SnapGameContainer = (props) => {
 
-const handleClick = () => {
-   props.handleGameStart();
-   props.resetDefault();
-   props.getDeck();
- }
+  const handleClick = () => {
+    props.handleGameStart();
+    props.resetDefault();
+    props.getDeck();
+  }
 
  const handleHomeClick = () => {
    props.resetDefault();
+   props.handleExitClick();
    props.handleGameStart();
  }
 
@@ -24,6 +26,7 @@ const handleClick = () => {
    return(
      <div>
        <div className="snap-cards-container">
+         <WinnerDisplay snapWin={props.snapWin}/>
          <div className ="snap-cards">
          <DeckCards
            deck = {props.deck}
@@ -36,13 +39,11 @@ const handleClick = () => {
          </div>
        </div>
        <div className ="snap-player-buttons">
-         <SnapStartButton />
+         <SnapStartButton
+          handleGameStart={props.handleGameStart}
+         />
          <PlayerActions
-          handleGamePause = {props.handleGamePause}
-          startGame={props.startGame}
-          pile = {props.pile}
-          winCoins={props.winCoins}
-          payCoins={props.payCoins}
+          {...props}
           />
         </div>
       </div>
@@ -60,7 +61,6 @@ const handleClick = () => {
    }
   }
 
-
 const mapStateToProps = (state) => {
   return {
     deck: state.snap.deck,
@@ -73,13 +73,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'ADD_TO_PILE'
     })
-  },
-  resetDefault() {
-    dispatch({
-      type: 'RETURN_DEFAULT'
-    })
-  },
-
+  }
 })
 
 SnapGameContainer.propTypes = {

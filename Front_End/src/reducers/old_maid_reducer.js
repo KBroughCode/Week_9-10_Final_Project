@@ -40,6 +40,9 @@ const oldMaidReducer = (state = {deck: [], one: [], two: [], three: [], four: []
         ]
       }
       return pickDeck
+    case 'UPDATE_CPU':
+      const newDeck = {...state, [action.player]: [...action.hand]}
+      return newDeck;
     case 'RETURN_OLD_MAID_DEFAULT':
       const defaultState = {deck: []};
       return defaultState;

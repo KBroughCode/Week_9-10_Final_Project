@@ -9,11 +9,11 @@
   font: 24px "Trebuchet MS", Helvetica, sans-serif;
 
   display:grid;
-  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 0.2fr 0.16fr 0.16fr 0.16fr 0.16fr 0.16fr;
   grid-template-rows: 30px;
   grid-template-areas:
 
-  "coin-display button-1 button-2 button-3 button-4"
+  "coin-display button-1 button-2 button-3 button-4 button-5"
 
 }
 
@@ -34,6 +34,10 @@
 
 .five{
   grid-area: button-4;
+}
+
+.six{
+  grid-area: button-5;
 }
 
 .link{

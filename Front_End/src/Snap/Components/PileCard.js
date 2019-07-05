@@ -6,7 +6,7 @@ const PileCard = (props) =>{
     <div className = "pile-container">
       <div className = "card-container">
         <div className = "snap-card" onClick = {props.handleGamePause}>
-          <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' key={props.key} ></img>
+          <img aria-label='image' src={props.image} alt={props.code} width = '180' height = '255' ></img>
         </div>
       </div>
     </div>

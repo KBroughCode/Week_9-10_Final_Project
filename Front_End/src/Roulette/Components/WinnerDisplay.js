@@ -12,8 +12,8 @@ const WinnerDisplay = (props) => {
   const displayButtons = (numberString) => {
     return numberString ?
     <>
-    <Link className='game-link' to='/roulette' onClick={handleClick} >New Game</Link>
-    <Link className='game-link' to='/' >Exit to Main Menu</Link>
+    <Link className='action-button' to='/roulette' onClick={handleClick} >New Game</Link>
+    <Link className='action-button' to='/' >Exit to Main Menu</Link>
     </>
     : null;
   }
